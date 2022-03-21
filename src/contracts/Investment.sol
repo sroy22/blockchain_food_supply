@@ -23,6 +23,7 @@ contract Investment {
         address payable owner;
         address payable investor;
         uint holding;
+        uint costToProduce;
     }
 
         struct Agreement{
@@ -67,7 +68,8 @@ contract Investment {
                         uint _farmerQuantity,
                         uint _farmerExpectedPrice,
                         string memory _farmerExpiryDate,
-                        uint holding) public  {
+                        uint holding,
+                        uint _costToProduce) public  {
         
         //Require a valid name
         require(bytes(_farmerName).length > 0);
@@ -77,12 +79,14 @@ contract Investment {
         require(_farmerQuantity > 0);
         // Require a crop
         require(bytes(_farmerCrop).length > 0);
+        // require cost to produce to be greater than 0
+        require(_costToProduce > 0);
         //Increment product count
         farmerCount ++;
         // Create the farmer
         farmers[farmerCount] = Farmer(farmerCount, _farmerName, _farmerLandLocation, 
                                     _farmerCrop, _farmerQuantity, _farmerExpectedPrice,
-                                    _farmerExpiryDate, msg.sender, msg.sender, holding);
+                                    _farmerExpiryDate, msg.sender, msg.sender, holding, _costToProduce);
     }
 
         function createAgreement(

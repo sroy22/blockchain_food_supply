@@ -2,25 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Web3 from 'web3'
 import Investment from './abis/Investment.json'
 import Navbar from './Navbar'
-import Main from './Main'
-import Weather from './Weather';
-import WeatherApp from './WeatherApp';
-import Marketplace from './abis/Marketplace.json'
+import InvestorPage from './Main';
 
 
 
-function Example() {
+function FarmerInvestor() {
   const [account, setAccount] = useState(0);
   const [investment, setInvestment] = useState(null);
-  const [marketplace, setMarketplace] = useState(null);
-
   const [farmerCount, setFarmerCount] = useState(0);
   const [farmers, setFarmers] = useState([]);
-
-  const [productCount, setProductCount] = useState(0);
-  const [products, setProducts] = useState([]);
-
-  const [pro, setPro] = useState(0);
   const [initial, setInitial] = useState(0);
   const [investorCount, SetInvestorCount] = useState(0);
 
@@ -50,13 +40,10 @@ function Example() {
       setInvestment(place);
       const count = await place.methods.farmerCount().call()
       setFarmerCount(count);
-      // Load products
-
       const dealcount = await place.methods.dealCount().call()
       SetInvestorCount(dealcount);
       let p = []
       let deals = [];
-      let c;
       for (var i = 1; i <= count; i++) {
         const farmer = await place.methods.farmers(i).call()
         p.push(farmer);
@@ -67,129 +54,73 @@ function Example() {
       }
       setFarmers(p);
     } else {
-      window.alert('Marketplace contract not deployed to detected network.')
-    }
-
-    const networkDataMarketplace = Marketplace.networks[networkId]
-    if(networkDataMarketplace) {
-      const place = new web3.eth.Contract(Marketplace.abi, networkDataMarketplace.address)
-      setMarketplace(place);
-      const count = await place.methods.productCount().call()
-      console.log(count);
-      setProductCount(count);
-      // Load products
-
-      let p = []
-      let deals = [];
-      let c;
-      for (var i = 1; i <= count; i++) {
-        const farmer = await place.methods.products(i).call()
-        p.push(farmer);
-      }
-      setProducts(p);
-    } else {
-      window.alert('Marketplace contract not deployed to detected network.')
+      window.alert('Investment contract not deployed to detected network.')
     }
   }
 
 
   async function createInsurance(name, price) {
-    console.log(initial);
-     console.log("Hhsjdhfskj");
-     marketplace.methods.createProduct(name, price, initial).send({ from: account, value: price })
+     investment.methods.createProduct(name, price, initial).send({ from: account, value: price })
      .on('transactionHash', (hash) => {
-       setPro(1);
      })
- 
      var delayInMilliseconds = 8000; //1 second
- 
- setTimeout( async function() {
-   //your code to be executed after 1 second
-   loadBlockchainData();
- 
- }, delayInMilliseconds);
- 
-     // let tx = await marketplace.methods.createProduct(name, price).send({ from: account })
-     // tx.wait().then({
-     //   loadBlockchainData
-     // })
+    setTimeout( async function() {
+    //your code to be executed after 1 second
+    loadBlockchainData();
+    }, delayInMilliseconds);
    }
  
    function   reimburse(id, price) {
-     console.log(price);
-     console.log(id);
-     console.log(initial);
-     console.log(account);
-      marketplace.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
-     .once('receipt', (receipt) => {
- //      this.setState({ loading: false })
-     })
- 
- 
-     var delayInMilliseconds = 8000; //1 second
- 
- setTimeout( async function() {
-   //your code to be executed after 1 second
-   loadBlockchainData();
- 
- }, delayInMilliseconds);
-   }
+      investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial }) 
+      var delayInMilliseconds = 8000; //1 second
+      setTimeout( async function() {
+      loadBlockchainData();
+      }, delayInMilliseconds);
+    }
+
    window.ethereum.on('accountsChanged', function (accounts) {
      // Time to reload your interface with accounts[0]!
-     console.log(accounts);
      setAccount(accounts[0])
    })
   
- async function createProduct(name, location, crop, quantity, price, expiryDate, holding) {
-    investment.methods.createFarmer(name, location, crop, quantity, price, expiryDate, holding).send({ from: account })
+ async function createAccount(name, location, crop, quantity, price, expiryDate, holding, costToProduce) {
+    investment.methods.createFarmer(name, location, crop, quantity, price, expiryDate, holding, costToProduce).send({ from: account })
     var delayInMilliseconds = 8000; //1 second
-setTimeout( async function() {
-  //your code to be executed after 1 second
-  loadBlockchainData();
-
-}, delayInMilliseconds);
-  }
-
-
+    setTimeout( async function() {
+      //your code to be executed after 1 second
+      loadBlockchainData();
+      }, delayInMilliseconds);
+    }
 
   async function payBackToInvestor(event){
     let deals = [];
+    console.log(investorCount);
     for (var i = 1; i <= investorCount; i++) {
       const deal = await investment.methods.deals(i).call()
-      deal.amount = deal.amount + "000000000000000000";
+      deal.amount = deal.amount;
       investment.methods.repay(deal.farmerID).send({ from: account, value: deal.amount, to: deal.investorAddress})
       deals.push(deal);
     }
   }
 
-  function   purchaseProduct(id, price, amount, holdingPercent) {
-     investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
-
-    investment.methods.createAgreement(id,amount, holdingPercent).send({ from: account })
-    .on('transactionHash', (hash) => {
-      setPro(1);
-    })
-        var delayInMilliseconds = 8000; //1 second
-
-setTimeout( async function() {
-  //your code to be executed after 1 second
-  loadBlockchainData();
-
-}, delayInMilliseconds);
-  }
-  window.ethereum.on('accountsChanged', function (accounts) {
-    // Time to reload your interface with accounts[0]!
-    setAccount(accounts[0])
-  })
+ async function   makeInvestment(id, costToProduce, holdingPercent) {
+    const price = holdingPercent*0.01*costToProduce +  "000000000000000000";
+    const farmer = await investment.methods.farmers(id).call();
+    investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
+    investment.methods.createAgreement(id,price, holdingPercent).send({ from: account })
+    var delayInMilliseconds = 8000; //1 second
+  setTimeout( async function() {
+        //your code to be executed after 1 second
+    loadBlockchainData();
+    }, delayInMilliseconds);
+    }
 
   // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-    loadWeb3();
-    loadBlockchainData();
-    // Update the document title using the browser API
-  }, []);
+    useEffect(() => {
+      loadWeb3();
+      loadBlockchainData();
+    }, []);
   
-
   return (
     <div>
     <Navbar account={account} />
@@ -198,22 +129,16 @@ setTimeout( async function() {
         <main role="main" className="col-lg-12 d-flex">
           
             <div> 
-            <Main
+            <InvestorPage
               products={farmers}
-              createProduct={createProduct}
-              purchaseProduct={purchaseProduct} />
+              createProduct={createAccount}
+              purchaseProduct={makeInvestment} />
                 </div>
                 <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button>
-        
-        {/* <Weather
-          customers = {products}
-          createInsurance = {createInsurance}
-          reimburse = {reimburse}
-        /> */}
         </main>
       </div>
     </div>
   </div>
   );
 }
-export default Example;
+export default FarmerInvestor;

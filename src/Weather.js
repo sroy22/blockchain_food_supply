@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Web3 from 'web3'
 import Investment from './abis/Investment.json'
 import Marketplace from './abis/Marketplace.json'
-
+import WeatherApp from './WeatherApp'
 function Weather (props) {
 
   const [account, setAccount] = useState(0);
@@ -19,9 +19,10 @@ function Weather (props) {
   const [initial, setInitial] = useState(0);
   const [investorCount, SetInvestorCount] = useState(0);
 
-  const [farmerName, setFarmenName] = useState('');
-  const [premium, setPremium] = useState(0);
-  const [type, setType] = useState('');
+  const farmerName = useRef(null);
+  const premium = useRef(null);
+  const type = useRef(null);
+
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -92,64 +93,37 @@ function Weather (props) {
   }
 
 
-  async function createInsurance(name, price) {
-    console.log(initial);
-     console.log("Hhsjdhfskj");
-     marketplace.methods.createProduct(name, price, initial).send({ from: account, value: price })
-     .on('transactionHash', (hash) => {
-       setPro(1);
-     })
- 
+  async function createInsurance(name, premium, type) {
+     marketplace.methods.createProduct(name, premium,type, initial).send({ from: account, value: premium })
      var delayInMilliseconds = 8000; //1 second
- 
- setTimeout( async function() {
-   //your code to be executed after 1 second
-   loadBlockchainData();
- 
- }, delayInMilliseconds);
- 
-     // let tx = await marketplace.methods.createProduct(name, price).send({ from: account })
-     // tx.wait().then({
-     //   loadBlockchainData
-     // })
+    setTimeout( async function() {
+      //your code to be executed after 1 second
+    loadBlockchainData();
+     }, delayInMilliseconds);
    }
  
    function   reimburse(id, price) {
-     console.log(price);
-     console.log(id);
-     console.log(initial);
-     console.log(account);
       marketplace.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
-     .once('receipt', (receipt) => {
- //      this.setState({ loading: false })
-     })
- 
- 
      var delayInMilliseconds = 8000; //1 second
- 
- setTimeout( async function() {
-   //your code to be executed after 1 second
-   loadBlockchainData();
- 
- }, delayInMilliseconds);
-   }
+    setTimeout( async function() {
+      //your code to be executed after 1 second
+    loadBlockchainData();
+    }, delayInMilliseconds);
+    }
+
    window.ethereum.on('accountsChanged', function (accounts) {
      // Time to reload your interface with accounts[0]!
-     console.log(accounts);
      setAccount(accounts[0])
    })
   
  async function createProduct(name, location, crop, quantity, price, expiryDate, holding) {
     investment.methods.createFarmer(name, location, crop, quantity, price, expiryDate, holding).send({ from: account })
     var delayInMilliseconds = 8000; //1 second
-setTimeout( async function() {
-  //your code to be executed after 1 second
-  loadBlockchainData();
-
-}, delayInMilliseconds);
-  }
-
-
+    setTimeout( async function() {
+      //your code to be executed after 1 second
+    loadBlockchainData();
+    }, delayInMilliseconds);
+    }
 
   async function payBackToInvestor(event){
     let deals = [];
@@ -163,19 +137,13 @@ setTimeout( async function() {
 
   function   purchaseProduct(id, price, amount, holdingPercent) {
      investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
-
     investment.methods.createAgreement(id,amount, holdingPercent).send({ from: account })
-    .on('transactionHash', (hash) => {
-      setPro(1);
-    })
-        var delayInMilliseconds = 8000; //1 second
-
-setTimeout( async function() {
-  //your code to be executed after 1 second
-  loadBlockchainData();
-
-}, delayInMilliseconds);
-  }
+    var delayInMilliseconds = 8000; //1 second
+  setTimeout( async function() {
+    //your code to be executed after 1 second
+    loadBlockchainData();
+    }, delayInMilliseconds);
+    }
   window.ethereum.on('accountsChanged', function (accounts) {
     // Time to reload your interface with accounts[0]!
     setAccount(accounts[0])
@@ -190,17 +158,18 @@ setTimeout( async function() {
 
     return (
       <div id="content">
+        <h3> {initial}</h3>
         <h1>Buy Insurance</h1>
         <form onSubmit={(event) => {
           event.preventDefault()
-          const premiumVal = window.web3.utils.toWei(premium.toString(), 'Ether')
-          this.props.createInsurance(farmerName, premiumVal, type)
+          const premiumVal = window.web3.utils.toWei(premium.current.value.toString(), 'Ether')
+          createInsurance(farmerName.current.value, premiumVal, type.current.value)
         }}>
           <div className="form-group mr-sm-2">
             <input
               id="farmerName"
               type="text"
-              ref={(input) => { setFarmenName(input) }}
+              ref={farmerName}
               className="form-control"
               placeholder="Famer Name"
               required />
@@ -209,7 +178,7 @@ setTimeout( async function() {
             <input
               id="premium"
               type="text"
-              ref={(input) => { setPremium(input) }}
+              ref={premium}
               className="form-control"
               placeholder="Premium"
               required />
@@ -218,7 +187,7 @@ setTimeout( async function() {
             <input
               id="type"
               type="text"
-              ref={(input) => { setType(input) }}
+              ref={type}
               className="form-control"
               placeholder="type"
               required />
@@ -242,17 +211,17 @@ setTimeout( async function() {
               console.log(product);
               return(
                 <tr key={key}>
-                  <th scope="row">{product.farmerId}</th>
-                  <td>{product.name}</td>
-                  <td>{product.type}</td>
-                  <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} Eth</td>
+                  <th scope="row">{product.id}</th>
+                  <td>{product.farmerName}</td>
+                  <td>{product.insuranceType}</td>
+                  <td>{window.web3.utils.fromWei(product.premium.toString(), 'Ether')} Eth</td>
                   <td>
                     { !product.purchased
                       ? <button
                           name={product.id}
-                          value={product.price}
+                          value={product.premium}
                           onClick={(event) => {
-                            this.props.reimburse(event.target.name, event.target.value)
+                            reimburse(event.target.name, event.target.value)
                           }}
                         >
                           Reimburse
@@ -265,6 +234,7 @@ setTimeout( async function() {
             })}
           </tbody>
         </table>
+        <WeatherApp/>
       </div>
     );
   

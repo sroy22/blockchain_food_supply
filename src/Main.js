@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-class Main extends Component {
+class InvestorPage extends Component {
 
 
   render() {
-    console.log(this.props.products);
     this.props.products.map((product, key) => {
-console.log(product.farmerName);
     });
     return (
       <div id="content">
@@ -20,7 +18,8 @@ console.log(product.farmerName);
           const quantity = parseInt(this.quantity.value);
           const expiryDate = this.expiryDate.value;
           const holding = this.holding.value;
-          this.props.createProduct(name, location, crop, quantity, price, expiryDate, holding)
+          const costToProduce = this.costToProduce.value;
+          this.props.createProduct(name, location, crop, quantity, price, expiryDate, holding, costToProduce)
         }}>
           <div className="form-group mr-sm-2">
             <input
@@ -85,6 +84,15 @@ console.log(product.farmerName);
               placeholder="Holding"
               required />
           </div>
+          <div className="form-group mr-sm-2">
+            <input
+              id="holding"
+              type="text"
+              ref={(input) => { this.costToProduce = input }}
+              className="form-control"
+              placeholder="costToProduce"
+              required />
+          </div>
           <button type="submit" className="btn btn-primary">Add Farmer Details</button>
         </form>
         <p>&nbsp;</p>
@@ -100,6 +108,8 @@ console.log(product.farmerName);
               <th scope="col">Quantity</th>
               <th scope="col">Expiry Date</th>
               <th scope="col">Holding</th>
+              <th scope="col">Cost to produce</th>
+              <th scope="col">Address</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -115,16 +125,8 @@ console.log(product.farmerName);
                   <td>{product.quantity}</td>
                   <td>{product.expDate}</td>
                   <td>{product.holding}</td>
-                  <div className="form-group mr-sm-2">
-            <input
-              id="amount"
-              type="text"
-              ref={(input) => { this.amount = input
-               }}
-              className="form-control"
-              placeholder="Investment amount"
-              required />
-          </div>
+                  <td>{product.costToProduce}</td>
+                  <td>{product.owner}</td>
           <div className="form-group mr-sm-2">
             <input
               id="holdingPercent"
@@ -138,11 +140,10 @@ console.log(product.farmerName);
                     { !product.purchased
                       ? <button
                           name={product.farmerId}
-                          value={product.expectedPrice}
-                          amount = {this.amount}
+                          value={product.costToProduce}
                           holdingPercent = {this.holdingPercent}
                           onClick={(event) => {
-                            this.props.purchaseProduct(event.target.name, event.target.value, this.amount.value, this.holdingPercent.value)
+                            this.props.purchaseProduct(event.target.name, event.target.value,  this.holdingPercent.value)
                           }}
                         >
                           Buy
@@ -159,5 +160,4 @@ console.log(product.farmerName);
     );
   }
 }
-
-export default Main;
+export default InvestorPage;
