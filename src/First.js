@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Outlet, Link } from "react-router-dom";
 
+import "tabler-react/dist/Tabler.css";
+import { Card, Button } from "tabler-react";
+
+
 function First (props) {
 
     return (
