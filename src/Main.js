@@ -127,7 +127,7 @@ class InvestorPage extends Component {
                   <td>{product.holding}</td>
                   <td>{product.costToProduce}</td>
                   <td>{product.owner}</td>
-          <div className="form-group mr-sm-2">
+          <div className="form-group mr-sm-4">
             <input
               id="holdingPercent"
               type="text"
