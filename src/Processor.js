@@ -14,6 +14,9 @@ function Processor() {
   const [farmers, setFarmers] = useState([]);
   const [initial, setInitial] = useState(0);
   const [processed, setProcessed] = useState([]);
+  const [priceToSell, setPriceToSell] = useState([]);
+  const [quantityToSell, setQuantityToSell] = useState([]);
+  const [nameToSell, setNameToSell] = useState([]);
 
 
   async function loadWeb3() {
@@ -62,6 +65,19 @@ function Processor() {
       const processGood = await place.methods.processedItems(i).call()
       processedGoods.push(processGood);
     }
+
+    const marketProducs = await place.methods.marketProductCount().call();
+    console.log(marketProducs);
+
+    let marketGoodsToSell = [];
+
+    for (var i = 1; i <= marketProducs; i++) {
+      const marketGood = await place.methods.marketProducts(i).call()
+      marketGoodsToSell.push(marketGood);
+    }
+
+    console.log(marketGoodsToSell);
+
     console.log(processedGoods);
     setProcessed(processedGoods);
       setFarmers(p);
@@ -123,12 +139,26 @@ function Processor() {
 
 
 
-async function   marketProductCreation(id, price, quantity, name) {
-
+async function   marketProductCreation(id, key) {
   console.log(id);
-  console.log(price);
-  console.log(quantity);
-  console.log(name);
+  console.log(key);
+  console.log(priceToSell[key]);
+  console.log(quantityToSell[key]);
+  console.log(nameToSell[key]);
+
+
+  farmerExchange.methods.createMarketProduct(id, priceToSell[key], quantityToSell[key], nameToSell[key] ).send({ from: account})
+
+
+  var delayInMilliseconds = 5000; //1 second
+  setTimeout( async function() {
+        //your code to be executed after 1 second
+        
+    console.log(process);
+        
+    loadBlockchainData();
+    
+    }, delayInMilliseconds);
 }
 
  async function   makeInvestment(crop, id, quantityToBuy, pricePerQuantity) {
@@ -151,13 +181,34 @@ async function   marketProductCreation(id, price, quantity, name) {
     }
 
   // Similar to componentDidMount and componentDidUpdate:
-    useEffect(() => {
-      loadWeb3();
-      loadBlockchainData();
-    }, []);
+  useEffect(() => {
+    loadWeb3();
+    loadBlockchainData();
+  }, []);
+
+  function updateVal(e, id, name, value) {
+    console.log(id, name,value);
+    
+    let val;
+
+    if(name === "priceToSell") {
+      val = priceToSell.slice();
+      val[id] = value;
+      setPriceToSell(val);
+    } else if(name === "quantityToSell") {
+      val = quantityToSell.slice();
+      val[id] = value;
+      setQuantityToSell(val);
+    } else if(name === "nameToSell") {
+      val = nameToSell.slice();
+      val[id] = value;
+      setNameToSell(val);
+    }
+    }
   
   return (
     <div>
+      {console.log("render")}
      <Navbar account={account} />
     <div className="container-fluid mt-5">
       <div className="row">
@@ -168,7 +219,12 @@ async function   marketProductCreation(id, price, quantity, name) {
               products={farmers}
               processedGoods = {processed}
               createMarketProduct = {marketProductCreation}
-              purchaseProduct={makeInvestment} />
+              purchaseProduct={makeInvestment}
+              updateVal = {updateVal}
+              priceToSell={priceToSell}
+              quantityToSell={quantityToSell}
+              nameToSell={nameToSell}
+            />
                 </div>
         </main>
       </div>

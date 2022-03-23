@@ -20,8 +20,7 @@ function First (props) {
 
         <button> <Link to="/farmer"> Farmer Account</Link></button>
         <button> <Link to="/processor"> Processor</Link></button>
-
-
+        <button> <Link to="/customer"> Customer</Link></button>
         <Outlet />
       </div>
     );

@@ -3,6 +3,7 @@ import Web3 from 'web3'
 import Investment from './abis/Investment.json'
 import Navbar from './Navbar'
 import InvestorPage from './Main';
+import './App.css';
 
 
 

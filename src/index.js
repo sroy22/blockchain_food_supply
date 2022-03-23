@@ -8,6 +8,7 @@ import Weather from './Weather';
 import reportWebVitals from './reportWebVitals';
 import FarmerAccount from './FarmerAccount';
 import Processor from './Processor';
+import Customer from './Customer';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path="/insurance/" element={<Weather />} />
         <Route path="/farmer" element = {<FarmerAccount />} />
         <Route path="/processor" element = {<Processor />} />
+        <Route path="/customer" element = {<Customer />} />
       </Route>
     </Routes>
   </BrowserRouter>,
