@@ -107,6 +107,9 @@ function FarmerInvestor() {
     const price = holdingPercent*0.01*costToProduce +  "000000000000000000";
     const farmer = await investment.methods.farmers(id).call();
     investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
+    console.log(price);
+    console.log(id);
+    console.log(holdingPercent);
     investment.methods.createAgreement(id,price, holdingPercent).send({ from: account })
     var delayInMilliseconds = 8000; //1 second
   setTimeout( async function() {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Outlet, Link } from "react-router-dom";
 
-import "tabler-react/dist/Tabler.css";
-import { Card, Button } from "tabler-react";
+//import "tabler-react/dist/Tabler.css";
+//import { Card, Button } from "tabler-react";
 
 
 function First (props) {
@@ -17,6 +17,10 @@ function First (props) {
                 }
             }}>Insurance</Link>
         </button>
+
+        <button> <Link to="/farmer"> Farmer Account</Link></button>
+        <button> <Link to="/processor"> Processor</Link></button>
+
 
         <Outlet />
       </div>

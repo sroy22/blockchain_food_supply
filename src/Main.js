@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 
 class InvestorPage extends Component {
-
 
   render() {
     this.props.products.map((product, key) => {
@@ -54,7 +53,7 @@ class InvestorPage extends Component {
               type="text"
               ref={(input) => { this.expectedPrice = input }}
               className="form-control"
-              placeholder="Expected Price"
+              placeholder="Price per unit"
               required />
           </div>
           <div className="form-group mr-sm-2">
@@ -67,9 +66,9 @@ class InvestorPage extends Component {
               required />
           </div>
           <div className="form-group mr-sm-2">
-            <input
+           Expiry Date <input
               id="expiryDate"
-              type="text"
+              type="date"
               ref={(input) => { this.expiryDate = input }}
               className="form-control"
               placeholder="Expiry Date"
@@ -96,7 +95,7 @@ class InvestorPage extends Component {
           <button type="submit" className="btn btn-primary">Add Farmer Details</button>
         </form>
         <p>&nbsp;</p>
-        <h2>Invest in Farmer</h2>
+        <h2>Farmer Account details</h2>
         <table className="table">
           <thead>
             <tr>
@@ -127,7 +126,7 @@ class InvestorPage extends Component {
                   <td>{product.holding}</td>
                   <td>{product.costToProduce}</td>
                   <td>{product.owner}</td>
-          <div className="form-group mr-sm-4">
+          {/* <div className="form-group mr-sm-4">
             <input
               id="holdingPercent"
               type="text"
@@ -135,8 +134,8 @@ class InvestorPage extends Component {
               className="form-control"
               placeholder="Holding Percent"
               required />
-          </div>
-                  <td>
+          </div> */}
+                  {/* <td>
                     { !product.purchased
                       ? <button
                           name={product.farmerId}
@@ -150,7 +149,7 @@ class InvestorPage extends Component {
                         </button>
                       : null
                     }
-                    </td>
+                    </td> */}
                 </tr>
               )
             })}
