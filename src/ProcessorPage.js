@@ -157,7 +157,7 @@ class ProcessorPage extends Component {
                 </div>
               </div>
             );
-          })};
+          })}
         </div>
         {/* <table className="table">
           <thead>
