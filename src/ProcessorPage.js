@@ -33,7 +33,7 @@ class ProcessorPage extends Component {
     console.log(">>>>", this.props)
     return (
       <div id="content">
-        <h2>Invest in Farmer</h2>
+        <h2>All Farmer Products ready to be processed</h2>
         <table className="table">
           <thead>
             <tr>
@@ -96,7 +96,7 @@ class ProcessorPage extends Component {
           </tbody>
         </table>
         <p>&nbsp;</p>
-        <h2>Farmer Account details</h2>
+        <h2>Processor Account details</h2>
         <div style={{display: "flex", flexWrap: "wrap"}}>
           {this.props.processedGoods.map((product, key) => {
             return (

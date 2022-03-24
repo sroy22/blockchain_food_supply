@@ -28,6 +28,7 @@ function FarmerAccount() {
   window.ethereum.on('accountsChanged', function (accounts) {
     // Time to reload your interface with accounts[0]!
     setAccount(accounts[0])
+    loadBlockchainData();
   })
   
   async function loadBlockchainData() {
@@ -48,7 +49,11 @@ function FarmerAccount() {
       let deals = [];
       for (var i = 1; i <= count; i++) {
         const farmer = await place.methods.farmers(i).call()
-        p.push(farmer);
+        if (farmer.owner == accounts[0]){
+          p.push(farmer);
+        }
+        console.log(accounts[0]);
+        console.log(farmer.owner);
       }
       setFarmers(p);
     } else {

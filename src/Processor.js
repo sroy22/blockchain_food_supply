@@ -35,6 +35,7 @@ function Processor() {
   window.ethereum.on('accountsChanged', function (accounts) {
     // Time to reload your interface with accounts[0]!
     setAccount(accounts[0])
+    loadBlockchainData();
   })
 
   async function loadBlockchainData() {
@@ -63,7 +64,12 @@ function Processor() {
 
     for (var i = 1; i <= process; i++) {
       const processGood = await place.methods.processedItems(i).call()
-      processedGoods.push(processGood);
+      console.log(accounts[0]);
+      console.log(processGood.processorAddress);
+      console.log(processGood);
+      if (accounts[0] == processGood.processorAddress) {
+        processedGoods.push(processGood);
+        }
     }
 
     const marketProducs = await place.methods.marketProductCount().call();
@@ -164,6 +170,8 @@ async function   marketProductCreation(id, key) {
  async function   makeInvestment(crop, id, quantityToBuy, pricePerQuantity) {
    console.log("Hello");
    const price = quantityToBuy*pricePerQuantity ;
+   console.log(quantityToBuy);
+   console.log(pricePerQuantity);
    console.log(price);
     const farmer = await farmerExchange.methods.farmers(id).call();
     farmerExchange.methods.purchaseProduct(id, quantityToBuy).send({ from: account, value: price, to: initial })
