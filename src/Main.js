@@ -5,6 +5,19 @@ class InvestorPage extends Component {
   render() {
     this.props.products.map((product, key) => {
     });
+
+    async function payBackToInvestor(event){
+      console.log('change');
+      // let deals = [];
+      // console.log(investorCount);
+      // for (var i = 1; i <= investorCount; i++) {
+      //   const deal = await investment.methods.deals(i).call()
+      //   deal.amount = deal.amount;
+      //   investment.methods.repay(deal.farmerID).send({ from: account, value: deal.amount, to: deal.investorAddress})
+      //   deals.push(deal);
+      // }
+    }
+
     return (
       <div id="content">
         <h1>Add Farmer</h1>
@@ -126,6 +139,7 @@ class InvestorPage extends Component {
                   <td>{product.holding}</td>
                   <td>{product.costToProduce}</td>
                   <td>{product.owner}</td>
+                  <td> <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button></td>
           {/* <div className="form-group mr-sm-4">
             <input
               id="holdingPercent"

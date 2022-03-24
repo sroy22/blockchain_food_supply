@@ -130,15 +130,13 @@ function FarmerInvestor() {
     <Navbar account={account} />
     <div className="container-fluid mt-5">
       <div className="row">
-        <main role="main" className="col-lg-12 d-flex">
-          
-            <div> 
+        <main role="main" className="col-lg-12">
+
             <InvestorPage
               products={farmers}
               createProduct={createAccount}
               purchaseProduct={makeInvestment} />
-                </div>
-                <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button>
+               
         </main>
       </div>
     </div>
