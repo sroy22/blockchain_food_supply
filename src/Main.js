@@ -7,19 +7,6 @@ class InvestorPage extends Component {
   render() {
     this.props.products.map((product, key) => {
     });
-
-    async function payBackToInvestor(event){
-      console.log('change');
-      // let deals = [];
-      // console.log(investorCount);
-      // for (var i = 1; i <= investorCount; i++) {
-      //   const deal = await investment.methods.deals(i).call()
-      //   deal.amount = deal.amount;
-      //   investment.methods.repay(deal.farmerID).send({ from: account, value: deal.amount, to: deal.investorAddress})
-      //   deals.push(deal);
-      // }
-    }
-
     return (
       <div id="content">
         <h1>Add Farmer</h1>
@@ -90,9 +77,11 @@ class InvestorPage extends Component {
               required />
           </div>
           <div className="form-group mr-sm-2">
+            Holding
             <input
               id="holding"
               type="text"
+              value = "100"
               ref={(input) => { this.holding = input }}
               className="form-control"
               placeholder="Holding"
@@ -111,81 +100,13 @@ class InvestorPage extends Component {
         </form>
         <p>&nbsp;</p>
         <h2>Farmer Account details</h2>
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Crop</th>
-              <th scope="col">Price</th>
-              <th scope="col">Location</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Expiry Date</th>
-              <th scope="col">Holding</th>
-              <th scope="col">Cost to produce</th>
-              <th scope="col">Address</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody id="productList">
-            { this.props.products.map((product, key) => {
-              return(
-                <tr key={key}>
-                  <th scope="row">{product.farmerId}</th>
-                  <td>{product.farmerName}</td>
-                  <td>{product.crop}</td>
-                  <td>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</td>
-                  <td>{product.landLocation}</td>
-                  <td>{product.quantity}</td>
-                  <td>{product.expDate}</td>
-                  <td>{product.holding}</td>
-                  <td>{product.costToProduce}</td>
-                  <td>{product.owner}</td>
-                  <td> <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button></td>
-          {/* <div className="form-group mr-sm-4">
-            <input
-              id="holdingPercent"
-              type="text"
-              ref={(input) => { this.holdingPercent = input }}
-              className="form-control"
-              placeholder="Holding Percent"
-              required />
-          </div> */}
-                  {/* <td>
-                    { !product.purchased
-                      ? <button
-                          name={product.farmerId}
-                          value={product.costToProduce}
-                          holdingPercent = {this.holdingPercent}
-                          onClick={(event) => {
-                            this.props.purchaseProduct(event.target.name, event.target.value,  this.holdingPercent.value)
-                          }}
-                        >
-                          Buy
-                        </button>
-                      : null
-                    }
-                    </td> */}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-        <div className="container-fluid">
+           <div className="container-fluid">
           <div className="row">
         { this.props.products.map((product, key) => {
               return(
         <Card className="col-sm-5 classWithPad" key={key}>
           <Card.Header>
             <Card.Title>Farmer #{product.farmerId} : <b>{product.farmerName}</b></Card.Title>
-            <Card.Options>
-              <Button color="primary" size="sm" type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>
-              Pay back to investors
-              </Button>
-              {/* <Button color="secondary" size="sm" className="ml-2">
-                Action 2
-              </Button> */}
-            </Card.Options>
           </Card.Header>
           <Card.Body>
             <p><b>Crop: </b>{product.crop}</p>
