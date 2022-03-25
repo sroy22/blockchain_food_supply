@@ -30,7 +30,7 @@ function First (props) {
     <Card.Title>Investor</Card.Title>
     <Card.Options>
       <Button color="primary" size="sm">
-      <Link to="/farmer" style={{color:"white"}}> Invest </Link>
+      <Link to="/investment" style={{color:"white"}}> Invest </Link>
       </Button>
     </Card.Options>
   </Card.Header>
