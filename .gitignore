@@ -4,3 +4,5 @@ yarn.lock
 package-lock.json
 node_modules/.package-lock.json
 .gitignore
+src/abis/Investment.json
+src/abis/Investment.json

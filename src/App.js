@@ -140,7 +140,7 @@ function FarmerInvestor() {
                 <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button>
         </main>
       </div>
-    </div>
+    </div>x
   </div>
   );
 }
