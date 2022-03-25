@@ -11,7 +11,8 @@ class Navbar extends Component {
   <Nav.Item hasSubNav value="Menu" icon="menu">
     <Nav.SubItem value="Farmer" to="/farmer" />
     <Nav.SubItem value="Processor" to="/processor" />
-    <Nav.SubItem value="Investor" to="/investor" />
+    <Nav.SubItem value="Investor" to="/investment" />
+    <Nav.SubItem value="Insurance" to="/insurance" />
     {/* <Nav.SubItem value="Insurance" to={{
             pathname: "/insurance", 
             state: {
