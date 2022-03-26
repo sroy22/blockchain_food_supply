@@ -107,7 +107,7 @@ function Customer() {
 
  async function   purchaseProduct(id, pricePerUnit, quantity, processorAddress) {
     const price = pricePerUnit * quantity + "000000000000000000";
-   // const farmer = await investment.methods.farmers(id).call();
+    // const farmer = await investment.methods.farmers(id).call();
     farmerExchange.methods.purchaseMarketProduct(id, quantity).send({ from: account, value: price });
     console.log(price);
     console.log(id);

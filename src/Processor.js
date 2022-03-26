@@ -218,11 +218,9 @@ async function   marketProductCreation(id, key) {
     <div>
       {console.log("render")}
      <Navbar account={account} />
-    <div className="container-fluid mt-5">
+    <div className="container-fluid">
       <div className="row">
         <main role="main" className="col-lg-12 d-flex">
-          
-            <div> 
             <ProcessorPage
               products={farmers}
               processedGoods = {processed}
@@ -233,7 +231,6 @@ async function   marketProductCreation(id, key) {
               quantityToSell={quantityToSell}
               nameToSell={nameToSell}
             />
-                </div>
         </main>
       </div>
     </div> 
