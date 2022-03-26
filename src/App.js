@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3'
-import Investment from './abis/Investment.json'
+import FarmExchange from './abis/FarmExchange.json'
 import Navbar from './Navbar'
-import InvestorPage from './Main';
+import NewInvestorPage from './NewInvestmentPage';
 import './App.css';
 
 
@@ -28,6 +28,7 @@ function FarmerInvestor() {
     }
   }
   async function loadBlockchainData() {
+    console.log("Hello");
     const web3 = window.web3
     // Load account
     const accounts = await web3.eth.getAccounts()
@@ -35,27 +36,31 @@ function FarmerInvestor() {
     setAccount(accounts[0]);
     //this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
-    const networkData = Investment.networks[networkId]
+    const networkData = FarmExchange.networks[networkId]
     if(networkData) {
-      const place = new web3.eth.Contract(Investment.abi, networkData.address)
+      const place = new web3.eth.Contract(FarmExchange.abi, networkData.address)
       setInvestment(place);
       const count = await place.methods.farmerCount().call()
+      console.log(count);
       setFarmerCount(count);
       const dealcount = await place.methods.dealCount().call()
       SetInvestorCount(dealcount);
+
+      console.log(dealcount);
       let p = []
       let deals = [];
       for (var i = 1; i <= count; i++) {
         const farmer = await place.methods.farmers(i).call()
+        console.log(farmer);
         p.push(farmer);
       }
-      for (var i = 1; i <= dealcount; i++) {
-        const deal = await place.methods.deals(i).call()
-        deals.push(deal);
-      }
+      // for (var i = 1; i <= dealcount; i++) {
+      //   const deal = await place.methods.deals(i).call()
+      //   deals.push(deal);
+      // }
       setFarmers(p);
     } else {
-      window.alert('Investment contract not deployed to detected network.')
+      window.alert('Investment contract 4 not deployed to detected network.')
     }
   }
 
@@ -104,14 +109,27 @@ function FarmerInvestor() {
     }
   }
 
- async function   makeInvestment(id, costToProduce, holdingPercent) {
-    const price = holdingPercent*0.01*costToProduce +  "000000000000000000";
+
+  async function   repayToInvestor(id) {
     const farmer = await investment.methods.farmers(id).call();
-    investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial })
+    console.log(farmer);
+  }
+
+ async function   makeInvestment(id, costToProduce, holdingPercent) {
+
+console.log(id);
+console.log(costToProduce);
+console.log(holdingPercent);
+
+    const price = 20*0.01*costToProduce +  "000000000000000000";
+    console.log(price);
+    const farmer = await investment.methods.farmers(id).call();
+    investment.methods.purchaseFarmerShare(id).send({ from: account, value: price })
     console.log(price);
     console.log(id);
     console.log(holdingPercent);
-    investment.methods.createAgreement(id,price, holdingPercent).send({ from: account })
+    console.log(20*0.01*costToProduce);
+    investment.methods.createAgreement(id,20*0.01*costToProduce, 20).send({ from: account })
     var delayInMilliseconds = 8000; //1 second
   setTimeout( async function() {
         //your code to be executed after 1 second
@@ -132,10 +150,12 @@ function FarmerInvestor() {
       <div className="row">
       <main role="main" className="col-lg-12">          
             <div> 
-            <InvestorPage
+            <NewInvestorPage
               products={farmers}
               createProduct={createAccount}
-              purchaseProduct={makeInvestment} />
+              purchaseProduct={makeInvestment}
+              repayToInvestor = {repayToInvestor}
+              />
                 </div>
                 <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button>
         </main>

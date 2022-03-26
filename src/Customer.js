@@ -51,7 +51,7 @@ function Customer() {
       }
       setMarketProducts(goodsToSell);
     } else {
-      window.alert('Investment contract not deployed to detected network.')
+      window.alert('Investment contract 3 not deployed to detected network.')
     }
   }
 
