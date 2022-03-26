@@ -3,6 +3,8 @@ import Web3 from 'web3'
 import Investment from './abis/Investment.json'
 import Marketplace from './abis/Marketplace.json'
 import WeatherApp from './WeatherApp'
+import Navbar from './Navbar';
+
 function Weather (props) {
 
   const [account, setAccount] = useState(0);
@@ -158,7 +160,7 @@ function Weather (props) {
 
     return (
       <div id="content">
-        <h3> {initial}</h3>
+        <Navbar account={account} />
         <h1>Buy Insurance</h1>
         <form onSubmit={(event) => {
           event.preventDefault()
@@ -196,6 +198,9 @@ function Weather (props) {
         </form>
         <p>&nbsp;</p>
         <h2>Farmer Payouts</h2>
+
+        
+
         <table className="table">
           <thead>
             <tr>

@@ -35,9 +35,50 @@ class ProcessorPage extends Component {
     const { priceToSell, quantityToSell, nameToSell } = this.props;
     console.log(">>>>", this.props)
     return (
-      <div id="content">
-        <h2>All Farmer Products ready to be processed</h2>
-        <table className="table">
+      <div id="container-fluid">
+        <h2>Products ready for processing</h2>
+        <div className='row'>
+        {this.props.products.map((product, key) => {
+           return (
+
+<Card key={key} className="col-sm-5 classWithPad">
+  <Card.Header>
+    <Card.Title> #{product.farmerId} Farmer: <b>{product.farmerName}</b> selling <b>{product.crop}</b> </Card.Title>
+  </Card.Header>
+  <Card.Body>
+            <p>Agriculture Product: <b>{product.crop}</b></p>
+            <p>Price per unit: <b>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</b></p>
+            <p>Location: <b>{product.landLocation}</b></p>
+            <p>Quanity Remaining: <b>{product.quantity} units</b></p>
+            <p>Expiry Date: <b>{product.expDate}</b></p>
+            <p>Percentage holdings: <b>{product.holding}%</b></p>
+            <p>Farmer cost to produce yield: <b>{product.costToProduce} ETH</b></p>
+            <input 
+                      id="quantityToBuy"
+                      type="text"
+                      ref={(input) => { this.quantityToBuy = input }}
+                      className="form-control classWithPad"
+                      placeholder="Quantity to buy"
+                      required />
+      {!product.purchased
+                      ? <button
+                        name={product.farmerId}
+                        value={product.expectedPrice}
+                        quantityToBuy={this.quantityToBuy}
+                        onClick={(event) => {
+                          event.preventDefault()
+                          this.props.purchaseProduct(product.crop, event.target.name, this.quantityToBuy.value, event.target.value)
+                        }}
+                      >
+                        Buy
+                      </button>
+                      : null
+                    }
+  </Card.Body>
+  <Card.Footer>Farmer Address: <b>{product.owner}</b></Card.Footer>
+</Card>
+           )})}
+        {/* <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -97,10 +138,11 @@ class ProcessorPage extends Component {
               )
             })}
           </tbody>
-        </table>
+        </table> */}
+        </div>
       <hr />
-        <h2>Processor Account details</h2>
-        <div style={{display: "flex", flexWrap: "wrap"}}>
+        <h2>Products ready for market</h2>
+        <div className='row'>
 
         { this.props.processedGoods.map((product, key) => {
               return(
@@ -141,7 +183,7 @@ class ProcessorPage extends Component {
                     value={priceToSell[key]}
                     type="text"
                     onChange={(input) => { this.updateVal(input) }}
-                    className="form-control"
+                    className="form-control classWithPad"
                     placeholder="Price to sell"
                     required
                   />
@@ -151,7 +193,7 @@ class ProcessorPage extends Component {
                     value={quantityToSell[key]}
                     type="text"
                     onChange={(input) => { this.updateVal(input) }}
-                    className="form-control"
+                    className="form-control classWithPad"
                     placeholder="Quantity To Sell"
                     required
                   />
@@ -161,17 +203,9 @@ class ProcessorPage extends Component {
                     value={nameToSell[key]}
                     type="text"
                     onChange={(input) => { this.updateVal(input) }}
-                    className="form-control"
+                    className="form-control classWithPad"
                     placeholder="Name of Product"
                     required />
-                 
-            {/* <p><b>Price: </b>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</p>
-            <p><b>Location: </b>{product.location}</p>
-            <p><b>Quantity: </b>{product.quantity}</p>
-            <p><b>Expiry Date: </b>{product.expDate}</p>
-            <p><b>Holding Remaining: </b>{product.holding}</p>
-            <p><b>Cost to Produce: </b>{product.costToProduce}</p>
-            <p><b>Address: </b></p> */}
           </Card.Body>
     </Card>
               )})}
