@@ -88,7 +88,7 @@ function Processor() {
     setProcessed(processedGoods);
       setFarmers(p);
     } else {
-      window.alert('Investment contract not deployed to detected network.')
+      window.alert('Investment contract 1 not deployed to detected network.')
     }
   }
 

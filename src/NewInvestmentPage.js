@@ -2,11 +2,11 @@ import React, { Component, useRef } from 'react';
 import { Button, Card } from "tabler-react";
 import './bootstrapCSS.css';
 
-class InvestorPage extends Component {
+class NewInvestorPage extends Component {
 
   render() {
     this.props.products.map((product, key) => {
-      console.log(product);
+        console.log(product);
     });
     return (
       <div id="content">
@@ -18,10 +18,10 @@ class InvestorPage extends Component {
           const crop = this.cropName.value;
           const location = this.location.value;
           const quantity = parseInt(this.quantity.value);
-          //const expiryDate = this.expiryDate.value;
+          const expiryDate = this.expiryDate.value;
           const holding = this.holding.value;
           const costToProduce = this.costToProduce.value;
-          this.props.createProduct(name, location, crop, quantity, price, holding, costToProduce)
+          this.props.createProduct(name, location, crop, quantity, price, expiryDate, holding, costToProduce)
         }}>
           <div className="form-group mr-sm-2">
             <input
@@ -68,7 +68,7 @@ class InvestorPage extends Component {
               placeholder="Quantity"
               required />
           </div>
-          {/* <div className="form-group mr-sm-2">
+          <div className="form-group mr-sm-2">
            Expiry Date <input
               id="expiryDate"
               type="date"
@@ -76,7 +76,7 @@ class InvestorPage extends Component {
               className="form-control"
               placeholder="Expiry Date"
               required />
-          </div> */}
+          </div>
           <div className="form-group mr-sm-2">
             Holding
             <input
@@ -104,7 +104,7 @@ class InvestorPage extends Component {
            <div className="container-fluid">
           <div className="row">
         { this.props.products.map((product, key) => {
-          console.log(product);
+            console.log(product);
               return(
         <Card className="col-sm-5 classWithPad" key={key}>
           <Card.Header>
@@ -119,23 +119,42 @@ class InvestorPage extends Component {
             <p><b>Holding Remaining: </b>{product.holding}</p>
             <p><b>Cost to Produce: </b>{product.costToProduce}</p>
             <p><b>Address: </b></p>
-            { product.investmentMade == true && product.boughtByProcessor  == true
+                    <input
+                      id="quantityToBuy"
+                      type="text"
+                      ref={(input) => { this.quantityToBuy = input }}
+                      className="form-control"
+                      placeholder="Quantity to buy"
+                      required />
+                  <div>
+                    {!product.purchased
+                      ? <button
+                        name={product.farmerId}
+                        value={product.expectedPrice}
+                        quantityToBuy={this.quantityToBuy}
+                        onClick={(event) => {
+                          event.preventDefault()
+                          this.props.purchaseProduct(event.target.name, product.costToProduce, this.quantityToBuy.value)
+                        }}
+                      >
+                        Buy
+                      </button>
+                      : null
+                    }
+                    { product.investmentMade && product.boughtByProcesor
                       ? <button
                           name={product.farmerId}
                           onClick={(event) => {
                             this.props.repayToInvestor(event.target.name)
                           }}
                         >
-                          Repay to investor
+                          Repay
                         </button>
                       : null
                     }
-                    
+                  </div>
           </Card.Body>
           <Card.Footer>{product.owner}</Card.Footer>
-          
-
-                    
     </Card>
               )})}
               </div>
@@ -144,4 +163,4 @@ class InvestorPage extends Component {
     );
   }
 }
-export default InvestorPage;
+export default NewInvestorPage;

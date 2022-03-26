@@ -4,24 +4,45 @@ contract FarmExchange {
     uint public farmerCount = 0;
     uint public processedItemsCount = 0 ;
     uint public marketProductCount = 0;
+    uint public dealCount = 0;
+    uint public insuranceCount = 0;
     mapping(uint => Farmer) public farmers;
     mapping(uint => ProcessedItem) public processedItems;
     mapping(uint => MarketProduct) public marketProducts;
+    
+    mapping(uint => Agreement) public deals;
+    mapping(uint => Insurance) public insurances;
 
         struct Farmer{
         uint farmerId;
         string farmerName;
-        string landLocation;
         string crop;
         uint256 quantity;
         uint256 expectedPrice;
-        string expDate;
         address payable owner;
         address payable processor;
         uint holding;
         uint costToProduce;
+        bool investmentMade;
+        bool boughtByProcessor;
+        uint processorPrice;
     }
 
+        struct Insurance {
+        uint insuranceId;
+        string farmerName;
+        string typeOfInsurance;
+        uint premium;
+    }
+
+    struct Agreement{
+        uint farmerID;
+        address farmerAddress;
+        address payable investorAddress;
+        uint256 amount;
+        uint256 holdingPercent;
+    }
+  
     struct ProcessedItem {
         uint processorId;
         string item;
@@ -51,11 +72,9 @@ contract FarmExchange {
 
     function createFarmer(
                         string memory _farmerName,
-                        string memory _farmerLandLocation,
                         string memory _farmerCrop,
                         uint _farmerQuantity,
                         uint _farmerExpectedPrice,
-                        string memory _farmerExpiryDate,
                         uint holding,
                         uint _costToProduce) public  {
         
@@ -72,11 +91,86 @@ contract FarmExchange {
         //Increment product count
         farmerCount ++;
         // Create the farmer
-        farmers[farmerCount] = Farmer(farmerCount, _farmerName, _farmerLandLocation, 
+        farmers[farmerCount] = Farmer(farmerCount, _farmerName,
                                     _farmerCrop, _farmerQuantity, _farmerExpectedPrice,
-                                    _farmerExpiryDate, msg.sender, msg.sender, holding, _costToProduce);
+                                     msg.sender, msg.sender, holding, _costToProduce, false, false, 0);
     }
 
+
+    function createInsurance(
+                        string memory _farmerName,
+                        uint premium,
+                        string memory _insuranceType
+                        ) public  {
+        
+        //Require a valid name
+        require(bytes(_farmerName).length > 0);
+        // Require a valid price
+        require(premium > 0);
+        // Require a valid quantity
+        require(bytes(_insuranceType).length > 0);
+        //Increment product count
+        insuranceCount ++;
+        // Create the farmer
+        insurances[insuranceCount] = Insurance(insuranceCount, _farmerName,_insuranceType, premium);
+    }
+
+
+
+        function payToInvestor(uint _id) public payable {
+        Agreement memory _deal = deals[_id];
+        address payable _seller = _deal.investorAddress;
+        address(_seller).transfer(msg.value);
+        }
+
+        function purchaseFarmerShare(uint _id) public payable {
+        // Fetch the product
+        Farmer memory _farmer = farmers[_id];
+
+        _farmer.investmentMade = true;
+        // Fetch the owner
+        address payable _seller = _farmer.owner;
+        // Make sure the product has a valid id
+        require(_farmer.farmerId > 0 && _farmer.farmerId <= farmerCount);
+        // Require that there is enough Ether in the transaction
+        // require(msg.value >= _product.price);
+        // Require that the product has not been purchased already
+        // require(!_product.purchased);
+        // Require that the buyer is not the seller
+        require(_seller != msg.sender);
+        // Transfer ownership to the buyer
+        // Mark as purchased
+        _farmer.processor = msg.sender;
+        // Update the product
+        farmers[_id] = _farmer;
+        // Pay the seller by sending them Ether
+        address(_seller).transfer(msg.value);
+    }
+
+    function createAgreement(
+                        uint _farmerId,
+                        uint _amount,
+                        uint _holding) public  {
+        
+               // Fetch the product
+        Farmer memory _farmer = farmers[_farmerId];
+
+        _farmer.holding = _farmer.holding - _holding;
+        _farmer.processor = msg.sender;
+        // Fetch the owner
+        address payable _farmerAddress = _farmer.owner;
+        // Require a valid amount
+        require(_amount > 0);
+
+        farmers[_farmerId] = _farmer;
+        // Require a valid holding
+        require(_holding > 0);
+
+        dealCount++;
+        // Create the agreement
+        deals[dealCount] = Agreement(_farmerId, _farmerAddress, msg.sender, 
+                                    _amount, _holding);
+    }
 
     function createProcessedItem( string memory item,
                             uint _id, uint pricePerQuantity, uint quantity) public {
@@ -114,6 +208,8 @@ contract FarmExchange {
         Farmer memory _farmer = farmers[_id];
         // Fetch the owner
         address payable _seller = _farmer.owner;
+        _farmer.processorPrice = msg.value;
+        _farmer.boughtByProcessor = true;
         // Make sure the product has a valid id
         require(_farmer.farmerId > 0 && _farmer.farmerId <= farmerCount);
         require(_farmer.quantity >= quantity);        

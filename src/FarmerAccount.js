@@ -9,6 +9,8 @@ import InvestorPage from './Main';
 function FarmerAccount() {
   const [account, setAccount] = useState(0);
   const [farmerCount, setFarmerCount] = useState(0);
+  const [dealCount, setDealCount] = useState(0);
+
   const [farmerExchange, setFarmerExchange] = useState(0);
   const [farmers, setFarmers] = useState([]);
 
@@ -52,6 +54,16 @@ function FarmerAccount() {
         if (farmer.owner == accounts[0]){
           p.push(farmer);
         }
+
+
+    
+
+      const dealCount1 = await place.methods.dealCount().call()
+      console.log(dealCount1);
+      //         for (var i = 1; i <= dealcount; i++) {
+      //   const deal = await place.methods.deals(i).call()
+      //   deals.push(deal);
+      // }
         console.log(accounts[0]);
         console.log(farmer.owner);
       }
@@ -86,9 +98,42 @@ function FarmerAccount() {
 //      setAccount(accounts[0])
 //    })
   
- async function createAccount(name, location, crop, quantity, price, expiryDate, holding, costToProduce) {
+async function repayToInvestor(id) {
+    
 
-    farmerExchange.methods.createFarmer(name, location, crop, quantity, price, expiryDate, holding, costToProduce).send({ from: account })
+  const dealCount1 = await farmerExchange.methods.dealCount().call()
+  let d;
+  console.log(dealCount1);
+          for (var i = 1; i <= dealCount1; i++) {
+            const deal = await farmerExchange.methods.deals(i).call()
+            if(deal.farmerID == id) {
+              d = deal;
+            }
+  }
+
+  const f= await farmerExchange.methods.farmers(id).call()
+console.log(f);
+const pri = f.processorPrice * d.holding;
+console.log(f.processorPrice);
+console.log(d.holdingPercent);
+const finalPrie = d.holdingPercent * 0.01 * f.processorPrice;
+
+
+farmerExchange.methods.payToInvestor(id).send({ from: account, value: finalPrie })
+.on('transactionHash', (hash) => {
+  })
+var delayInMilliseconds = 8000; //1 second
+setTimeout( async function() {
+  //your code to be executed after 1 second
+  loadBlockchainData();
+  }, delayInMilliseconds);
+
+}
+
+
+ async function createAccount(name, location, crop, quantity, price,  holding, costToProduce) {
+
+    farmerExchange.methods.createFarmer(name,  crop, quantity, price,  holding, costToProduce).send({ from: account })
     .on('transactionHash', (hash) => {
       })
     var delayInMilliseconds = 8000; //1 second
@@ -142,7 +187,9 @@ function FarmerAccount() {
             <div> 
             <InvestorPage
               products={farmers}
-              createProduct={createAccount} />
+              createProduct={createAccount}
+              repayToInvestor = {repayToInvestor}
+              rep />
                 </div>
         </main>
       </div>
