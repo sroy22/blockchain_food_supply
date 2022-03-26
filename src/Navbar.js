@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
+import {Nav} from "tabler-react"
 
 class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a
-          className="navbar-brand col-sm-3 col-md-2 mr-0"
-          href="https://github.com/sroy22/blockchain_food_supply"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CSC 2512 blockchain_food_supply
-        </a>
-        <ul className="navbar-nav px-3">
-          <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-            <small className="text-white"><span id="account">{this.props.account}</span></small>
-          </li>
-        </ul>
-      </nav>
+
+<Nav>
+ <Nav.Item value="CSC 2512 Blockchain Food Supply" id="account" to="https://github.com/sroy22/blockchain_food_supply"/>
+  <Nav.Item hasSubNav value="Menu" icon="menu">
+    <Nav.SubItem value="Farmer" to="/farmer" />
+    <Nav.SubItem value="Processor" to="/processor" />
+    <Nav.SubItem value="Investor" to="/investment" />
+    <Nav.SubItem value="Insurance" to="/insurance" />
+    {/* <Nav.SubItem value="Insurance" to={{
+            pathname: "/insurance", 
+            state: {
+                customers: []
+                }
+            }}/> */}
+    <Nav.SubItem value="Customer" to="/customer" />
+  </Nav.Item>
+  <Nav.Item active icon="user" id="account">
+   {this.props.account}
+  </Nav.Item>
+</Nav>
     );
   }
 }

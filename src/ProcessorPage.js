@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Outlet, Link } from "react-router-dom";
 import { updateVariableDeclaration } from 'typescript';
+import { Button, Card, Form} from "tabler-react";
+import './bootstrapCSS.css';
 
 class ProcessorPage extends Component {
   constructor(props) {
@@ -95,10 +98,85 @@ class ProcessorPage extends Component {
             })}
           </tbody>
         </table>
-        <p>&nbsp;</p>
+      <hr />
         <h2>Processor Account details</h2>
         <div style={{display: "flex", flexWrap: "wrap"}}>
-          {this.props.processedGoods.map((product, key) => {
+
+        { this.props.processedGoods.map((product, key) => {
+              return(
+        <Card className="col-sm-5 classWithPad" key={key}>
+          <Card.Header>
+            <Card.Title>Farmer #{product.farmerId} : <b>{product.farmerName}</b></Card.Title>
+            <Card.Options>
+    
+      {!product.productPosted
+                    ? <button
+                    color="Primary"
+                      name={product.processorId}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        console.log(key);
+
+                        this.props.createMarketProduct(event.target.name, key)
+
+                        this.props.updateVal(null, key, "priceToSell", '');
+                        this.props.updateVal(null, key, "quantityToSell", '');
+                        this.props.updateVal(null, key, "nameToSell", '');
+                      }}
+                    >
+                      Post to Market
+                    </button>
+                    : null
+                  }
+    </Card.Options>
+          </Card.Header>
+          <Card.Body>
+            <p><b>Processor ID: </b>{product.processorId}</p>
+            <p><b>Processor Address:</b> {product.processorAddress}</p>
+            <p>Product Posted: {product.productPosted.toString()}</p>
+            <p>Quantity: {product.quantity}</p>
+            <input
+                    id={key}
+                    name="priceToSell"
+                    value={priceToSell[key]}
+                    type="text"
+                    onChange={(input) => { this.updateVal(input) }}
+                    className="form-control"
+                    placeholder="Price to sell"
+                    required
+                  />
+                  <input
+                    id={key}
+                    name="quantityToSell"
+                    value={quantityToSell[key]}
+                    type="text"
+                    onChange={(input) => { this.updateVal(input) }}
+                    className="form-control"
+                    placeholder="Quantity To Sell"
+                    required
+                  />
+                  <input
+                    id={key}
+                    name="nameToSell"
+                    value={nameToSell[key]}
+                    type="text"
+                    onChange={(input) => { this.updateVal(input) }}
+                    className="form-control"
+                    placeholder="Name of Product"
+                    required />
+                 
+            {/* <p><b>Price: </b>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</p>
+            <p><b>Location: </b>{product.location}</p>
+            <p><b>Quantity: </b>{product.quantity}</p>
+            <p><b>Expiry Date: </b>{product.expDate}</p>
+            <p><b>Holding Remaining: </b>{product.holding}</p>
+            <p><b>Cost to Produce: </b>{product.costToProduce}</p>
+            <p><b>Address: </b></p> */}
+          </Card.Body>
+    </Card>
+              )})}
+
+          {/* {this.props.processedGoods.map((product, key) => {
             return (
               <div class="card">
                 <div class="container">
@@ -157,7 +235,7 @@ class ProcessorPage extends Component {
                 </div>
               </div>
             );
-          })};
+          })}; */}
         </div>
         {/* <table className="table">
           <thead>

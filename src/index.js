@@ -12,13 +12,13 @@ import Customer from './Customer';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<First />}>
+    <Routes>  
         <Route path="/investment/" element={<App />} />
         <Route path="/insurance/" element={<Weather />} />
         <Route path="/farmer" element = {<FarmerAccount />} />
         <Route path="/processor" element = {<Processor />} />
         <Route path="/customer" element = {<Customer />} />
+        <Route path="/" element={<First />}>
       </Route>
     </Routes>
   </BrowserRouter>,
