@@ -46,7 +46,7 @@ class WeatherApp extends React.Component {
   getWeatherData = (lat, lon) => {
     console.log(lat,lon);
     //const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_KEY}`;
-  const weatherApi = 'http://api.openweathermap.org/data/2.5/weather?lat=43.6690119&lon=-79.391594&units=metric&appid=7f3854a13e075772db49937ef6b4cca9'
+  const weatherApi = 'http://api.openweathermap.org/data/2.5/weather?lat=43.780918&lon=-79.421371&units=metric&appid=7f3854a13e075772db49937ef6b4cca9'
     fetch(weatherApi, { signal: this.controllerSignal })
     .then(response => response.json())
     .then((result) => {

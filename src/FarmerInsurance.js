@@ -7,7 +7,7 @@ import FarmExchange from './abis/FarmExchange.json'
 import BuyInsurance from './BuyInsurance';
 import Navbar from './Navbar'
 import ProcessorPage from './ProcessorPage';
-
+import WeatherApp from './WeatherApp';
 
 
 
@@ -226,17 +226,17 @@ if(networkData) {
       {console.log("render")}
      <Navbar account={account} />
     <div className="container-fluid mt-5">
-      <div className="row">
-        <main role="main" className="col-lg-12 d-flex">
+      
+        <main role="main" >
           
             <div> 
             <BuyInsurance
               products={farmers}
               purchaseProduct={makeInvestment}
             />
+             <WeatherApp/>
                 </div>
         </main>
-      </div>
     </div> 
   </div>
   );

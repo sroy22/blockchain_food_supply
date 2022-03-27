@@ -67,42 +67,6 @@ class InsurancePage extends Component {
           </div> */}
           <button type="submit" className="btn btn-primary">Add Insurance Company Details</button>
         </form>
-        <p>&nbsp;</p>
-        <h2>Farmer Account details</h2>
-           <div className="container-fluid">
-          <div className="row">
-        { this.props.products.map((product, key) => {
-          console.log(product);
-              return(
-        <Card className="col-sm-5 classWithPad" key={key}>
-          <Card.Header>
-          <Card.Title>Insurance #{product.insuranceFarmerId}</Card.Title>
-          </Card.Header>
-          <Card.Title>Farmer #{product.farmerId}</Card.Title>
-          <Card.Body>
-            <p><b>Premium: </b>{window.web3.utils.fromWei(product.premium.toString(), 'Ether')} Eth</p>
-            { !product.investmentMade
-                      ? <button
-                          name={product.farmerId}
-                          value = {product.insuranceFarmerId}
-                          onClick={(event) => {
-                            this.props.repayToInvestor(event.target.name, event.target.value, product.insuranceCompanyId)
-                          }}
-                        >
-                          Repay to investor
-                        </button>
-                      : null
-                    }
-                    
-          </Card.Body>
-          <Card.Footer>{product.owner}</Card.Footer>
-          
-
-                    
-    </Card>
-              )})}
-              </div>
-              </div>
       </div>
     );
   }

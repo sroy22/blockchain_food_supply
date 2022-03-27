@@ -1,24 +1,22 @@
 import React from 'react'
+import { Card } from 'tabler-react'
 
 import { DegreesToDirection, Month, Weekday, Day } from './helpers/utils'
 import { Clock } from './Clock'
+import './bootstrapCSS.css';
 
 export const WeatherData = ({ data }) => {
   const { name, country, temp, description, temp_min, temp_max, icon, feels_like, speed, deg, humidity } = data;
 
   return (
-    <>
-      <header>
-        <div>
-          <img 
-          src={require(`./images/clock.png`)} 
-          alt='time icon'
-          />
+  <div className='row'>
+    <Card className="col-md-12 classWithPad">
+      <div className='row'>
+        <div className='col-md-4'>
           <Clock />
+          <h5>{Weekday}, {Month} {Day}</h5>
         </div>
-        <h5>{Weekday}, {Month} {Day}</h5>
-      </header>
-      <main>
+        <div className='col=md-4'>
         <div className='weather-main'>
           <img 
           src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt='weather icon'
@@ -36,17 +34,19 @@ export const WeatherData = ({ data }) => {
             <h5>L {temp_min}°</h5>
           </div>
         </div>
-      </main>
-      <footer>
+        </div>
+    
+      <div className='col-md-04 classWithPad'>
         <div className='weather-prop'>
-          <img src={require('./images/wind.png')} alt=''/>
-          <h4>{DegreesToDirection(deg)} {speed} KPH</h4>
+          <h5>Wind: {DegreesToDirection(deg)} {speed} KPH</h5>
         </div>
         <div className='weather-prop'>
-          <img src={require('./images/drop.png')} alt=''/>
-          <h4>{humidity} %</h4>
+          <h5>Humidity: {humidity} %</h5>
         </div>
-      </footer>
-    </>
+      </div>
+      </div>
+      </Card>
+      </div>
+  
   );
 }

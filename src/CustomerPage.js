@@ -10,7 +10,7 @@ class CustomerPage extends Component {
     return (
       <div id="container">
         
-        <h2>Market</h2>
+        <h2>Marketplace</h2>
         <div className="row">
         { this.props.products.map((product, key) => {
           return (

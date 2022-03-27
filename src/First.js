@@ -39,7 +39,7 @@ function First (props) {
       </Button>
   </Card.Footer>
 </Card>
-<Card className='col-md-2 classWithPad'>
+{/* <Card className='col-md-2 classWithPad'>
   <Card.Header>
     <Card.Title>Insurance</Card.Title>
   </Card.Header>
@@ -56,7 +56,7 @@ function First (props) {
             }} style={{color:"white"}}>Buy Insurance</Link>
       </Button>
   </Card.Footer>
-</Card>
+</Card> */}
 <Card className='col-md-2 classWithPad'>
   <Card.Header>
     <Card.Title>Processor</Card.Title>
@@ -75,9 +75,6 @@ function First (props) {
 <Card className='col-md-2 classWithPad'>
   <Card.Header>
     <Card.Title>Customer</Card.Title>
-    <Card.Options>
-     
-    </Card.Options>
   </Card.Header>
   <Card.Body>
     Buy finished products from the market. 
@@ -89,36 +86,50 @@ function First (props) {
   </Card.Footer>
 </Card>
 
-<Card>
+<Card className='col-md-2 classWithPad'>
   <Card.Header>
-    <Card.Title>Insurance Company</Card.Title>
-    <Card.Options>
-      <Button color="primary" size="sm">
-      <Link to="/insuranceCompany" style={{color:"white"}}> InsuranceCompany</Link>
-      </Button>
-    </Card.Options>
+    <Card.Title>Create Insurance</Card.Title>
   </Card.Header>
   <Card.Body>
-    Create Insurance Company 
+    Create risk insurance plans as an insurance company.
   </Card.Body>
+  <Card.Footer>
+  <Button color="primary" size="sm">
+      <Link to="/insuranceCompany" style={{color:"white"}}> Create insurance</Link>
+      </Button>
+  </Card.Footer>
 </Card>
 
-<Card>
+<Card className='col-md-2 classWithPad'>
   <Card.Header>
-    <Card.Title>Insurance Company</Card.Title>
-    <Card.Options>
-      <Button color="primary" size="sm">
-      <Link to="/buyInsurance" style={{color:"white"}}> Buy the insurance</Link>
-      </Button>
-    </Card.Options>
+    <Card.Title>Insurance Management</Card.Title>
   </Card.Header>
   <Card.Body>
-    Create Insurance Company 
+    Manage inurance payouts to farmers.
   </Card.Body>
+  <Card.Footer>
+  <Button color="primary" size="sm">
+      <Link to="/insuranceManagement" style={{color:"white"}}> Manage Insurance</Link>
+      </Button>
+  </Card.Footer>
+</Card>
+
+<Card className='col-md-2 classWithPad'>
+  <Card.Header>
+    <Card.Title>Buy Insurance</Card.Title>
+  </Card.Header>
+  <Card.Body>
+    Buy disaster and risk insurance plans as a farmer. 
+  </Card.Body>
+  <Card.Footer>
+  <Button color="primary" size="sm">
+      <Link to="/buyInsurance" style={{color:"white"}}> Buy the insurance</Link>
+      </Button>
+  </Card.Footer>
 </Card>
 
         <Outlet />
-      </div>
+      </div> </div>
     );
 }
 

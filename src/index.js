@@ -11,8 +11,10 @@ import Processor from './Processor';
 import Customer from './Customer';
 import InsuranceCompany from './InsuranceCompany';
 import FarmerInsurance from './FarmerInsurance';
+import InsuranceManagement from './InsuranceManagement';
 
 ReactDOM.render(
+
   <BrowserRouter>
     <Routes>  
         <Route path="/investment/" element={<App />} />
@@ -22,7 +24,7 @@ ReactDOM.render(
         <Route path="/customer" element = {<Customer />} />
         <Route path="/insuranceCompany" element = {<InsuranceCompany />} />
         <Route path="/buyinsurance" element = {<FarmerInsurance />} />
-        
+        <Route path="/insuranceManagement" element={<InsuranceManagement/>}/>
         <Route path="/" element={<First />}>
       </Route>
     </Routes>

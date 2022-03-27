@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import {Nav} from "tabler-react"
 
 class Navbar extends Component {
-
-  render() {
+  
+  render() { 
     return (
-
+      <div>
 <Nav>
  <Nav.Item value="CSC 2512 Blockchain Food Supply" id="account" to="https://github.com/sroy22/blockchain_food_supply" icon="globe"/>
   <Nav.Item icon="home" value="Home" to="/" />
@@ -13,19 +13,23 @@ class Navbar extends Component {
     <Nav.SubItem value="Farmer" to="/farmer" />
     <Nav.SubItem value="Processor" to="/processor" />
     <Nav.SubItem value="Investor" to="/investment" />
-    <Nav.SubItem value="Insurance" to="/insurance" />
+    <Nav.SubItem value="Create Insurance" to="/insuranceCompany" />
+    <Nav.SubItem value="Manage Insurance" to="/insuranceManagement" />
+    <Nav.SubItem value="Buy Insurance" to="/buyinsurance" />
     {/* <Nav.SubItem value="Insurance" to={{
             pathname: "/insurance", 
             state: {
                 customers: []
                 }
             }}/> */}
-    <Nav.SubItem value="Customer" to="/customer" />
+
+    <Nav.SubItem value="Customer Market" to="/customer" />
   </Nav.Item>
   <Nav.Item active icon="user" id="account">
    {this.props.account}
   </Nav.Item>
 </Nav>
+</div>
     );
   }
 }

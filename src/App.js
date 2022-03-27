@@ -126,7 +126,7 @@ console.log(holdingPercent);
     const farmer = await investment.methods.farmers(id).call();
     investment.methods.purchaseFarmerShare(id).send({ from: account, value: price })
 
-    investment.methods.createAgreement(id,price, 20).send({ from: account })
+    investment.methods.createAgreement(id,price,holdingPercent).send({ from: account })
     var delayInMilliseconds = 8000; //1 second
   setTimeout( async function() {
         //your code to be executed after 1 second
@@ -154,7 +154,6 @@ console.log(holdingPercent);
               repayToInvestor = {repayToInvestor}
               />
                 </div>
-                <button type="submit" className="btn btn-primary" onClick= {payBackToInvestor}>Pay back to investors</button>
         </main>
       </div>
     </div>
