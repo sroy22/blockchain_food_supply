@@ -156,7 +156,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1856,
+                          "referencedDeclaration": 1369,
                           "src": "267:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -433,7 +433,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1856,
+                                      "referencedDeclaration": 1369,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -616,10 +616,40 @@
       "links": {},
       "address": "0xbe0f830003e2Da0efEee4b44db51fcA43d858955",
       "transactionHash": "0x06a119cde8a74ce0e8fa37808dd87d8f95a1be72cd8cf3b090377a4ad8d25d8e"
+    },
+    "1648411434736": {
+      "events": {},
+      "links": {},
+      "address": "0x745096C4a845D38C03F289527dAbA511667355c3",
+      "transactionHash": "0xd409bd7c661749448b92e1e5599a352b783fb4f5a79d4c55b491af199d7d2880"
+    },
+    "1648413219694": {
+      "events": {},
+      "links": {},
+      "address": "0xa083c101B438986792feAAA89B7Ee545577fbB63",
+      "transactionHash": "0xa9419c64b3fd5a040fe1fcfaee396f4083930c90b1ded3fb8812506f8f2aa900"
+    },
+    "1648415576398": {
+      "events": {},
+      "links": {},
+      "address": "0xa698eE238E1a935B48dAf8CD86fD8334f1F76a3b",
+      "transactionHash": "0xfa0861501e2aed5bda35ceb576e26e2bda214b51c35bba6274c8cbb3cf38892e"
+    },
+    "1648415893463": {
+      "events": {},
+      "links": {},
+      "address": "0x27fC54378642D8DC9ec4D173fc37c4Ca8CaC14a2",
+      "transactionHash": "0xc49fbee19141ef0071786ca69d862d2e951dd7688e84937d0df68511a2fb3611"
+    },
+    "1648416256882": {
+      "events": {},
+      "links": {},
+      "address": "0xc638f8FB98Da03eAeCEB20c2B9E17D4bC3c56E77",
+      "transactionHash": "0x9174392d795ebedcabe86be494ddb1527370ed81c15f47514dffdf88c8b6e4a0"
     }
   },
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-03-27T15:38:48.702Z",
+  "updatedAt": "2022-03-27T21:25:04.580Z",
   "devdoc": {
     "methods": {}
   },

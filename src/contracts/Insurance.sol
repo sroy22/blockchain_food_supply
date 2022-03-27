@@ -21,6 +21,7 @@ contract Insurance {
         uint insuranceCompanyId;
         address payable farmerAddress;
         uint premium;
+        bool triggered;
     }
 
 
@@ -48,7 +49,7 @@ contract Insurance {
         address payable _seller = _insuranceCompany.insuranceCompanyAddress;
         insuranceFarmerCount++;
         insuranceFarmers[insuranceFarmerCount] = InsuranceFarmer(insuranceFarmerCount, _insuranceId,
-        _farmerId, msg.sender, msg.value);
+        _farmerId, msg.sender, msg.value, false);
         // Pay the seller by sending them Ether
         address(_seller).transfer(msg.value);
         // Trigger an event

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect, Component, useRef } from 'react';
 import Web3 from 'web3'
 import Insurance from './abis/Insurance.json'
 import Navbar from './Navbar'
@@ -13,6 +13,8 @@ function InsuranceManagement() {
     const [dealCount, setDealCount] = useState(0);
 
   const [farmerExchange, setFarmerExchange] = useState(0);
+  const temp = useRef(0);
+
   const [farmers, setFarmers] = useState([]);
 
   async function loadWeb3() {
@@ -50,14 +52,32 @@ function InsuranceManagement() {
     console.log(count);
 
     const count1 = await place.methods.insuranceFarmerCount().call()
+    console.log(temp);
+
+    let insuranceCompanyToBeTriggered;
+
+    for (var i = 1; i <= count; i++) {
+      const farmer = await place.methods.insuranceCompanies(i).call()
+      console.log(farmer.trigger);
+      console.log(temp.current);
+      if (farmer.trigger > temp.current ){
+          insuranceCompanyToBeTriggered = farmer.insuranceCompanyId;
+      }
+
+    }
+    console.log(insuranceCompanyToBeTriggered);
+
     console.log(count1);
     setFarmerCount(count);
     let p = []
     let deals = [];
     for (var i = 1; i <= count1; i++) {
       const farmer = await place.methods.insuranceFarmers(i).call()
+
+      if (farmer.insuranceCompanyId == insuranceCompanyToBeTriggered){
       console.log(farmer);
         p.push(farmer);
+      }
 
     }
     setFarmers(p);
@@ -100,6 +120,17 @@ async function createAccount(name, type, trigger, payback) {
   }, []);
 
 
+
+  const temperature = (data) => {
+    console.log(data);
+
+    console.log(data);
+
+temp.current = data;
+
+  }
+
+
   return (
     <div>
      <Navbar account={account} />
@@ -110,7 +141,10 @@ async function createAccount(name, type, trigger, payback) {
              createInsurance={createAccount}
              repayToInvestor = {repayToInvestor}
 
+             
           />
+                        <WeatherApp data = {temperature} />
+
         </main>
     </div> 
   </div>
