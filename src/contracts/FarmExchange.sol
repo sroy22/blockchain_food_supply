@@ -1,6 +1,9 @@
 pragma solidity ^0.5.0;
 
-contract FarmExchange {
+import "./ConsumerRole.sol";
+
+
+contract FarmExchange  {
     uint public farmerCount = 0;
     uint public processedItemsCount = 0 ;
     uint public marketProductCount = 0;
@@ -80,6 +83,7 @@ contract FarmExchange {
         
         //Require a valid name
         require(bytes(_farmerName).length > 0);
+
         // Require a valid price
         require(_farmerExpectedPrice > 0);
         // Require a valid quantity
@@ -191,8 +195,10 @@ contract FarmExchange {
 
     function createMarketProduct(uint _id, uint price, uint quantity, string memory name) public {
         
-        
+        ProcessedItem memory item = processedItems[_id];
+        item.quantity = item.quantity - quantity;
 
+        processedItems[_id] = item;
         require(price > 0);
         // Require a valid quantity
         require(quantity > 0);

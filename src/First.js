@@ -11,6 +11,58 @@ import './bootstrapCSS.css';
 
 function First (props) {
 
+  const [account, setAccount] = useState(0);
+
+
+async function getRole(event){
+  event.preventDefault();
+  console.log("Hello");
+
+  const web3 = window.web3
+  // Load account
+  const accounts = await web3.eth.getAccounts()
+  console.log(accounts[0]);
+  setAccount(accounts[0]);
+  //this.setState({ account: accounts[0] })
+  const networkId = await web3.eth.net.getId()
+  const networkData = ConsumerRole.networks[networkId]
+  if(networkData) {
+    const place = new web3.eth.Contract(ConsumerRole.abi, networkData.address)
+    //      investment.methods.createProduct(name, price, initial).send({ from: account, value: price })
+
+    place.methods.addConsumer().send({from : accounts[0]})
+
+    const p = await place.methods.consumers("0x04deBc1e733eFb99fc6730bBdc026B88d6216a2F").call();
+    console.log(p);
+
+}
+}
+
+async function loadWeb3() {
+  if (window.ethereum) {
+    window.web3 = new Web3(window.ethereum)
+    await window.ethereum.enable()
+  }
+  else if (window.web3) {
+    window.web3 = new Web3(window.web3.currentProvider)
+  }
+  else {
+    window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+  }
+}
+
+window.ethereum.on('accountsChanged', function (accounts) {
+  // Time to reload your interface with accounts[0]!
+  setAccount(accounts[0])
+  
+})
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    loadWeb3();
+    //loadBlockchainData();
+  }, []);
+
 
     return (
       
@@ -122,6 +174,10 @@ function First (props) {
 </Card>
 
         <Outlet />
+        <button
+
+                          onClick={getRole}
+                        ></button>
       </div>
       </div>
     );

@@ -133,6 +133,9 @@ setTimeout( async function() {
 
  async function createAccount(name, location, crop, quantity, price,  holding, costToProduce) {
 
+
+
+  console.log(account);
     farmerExchange.methods.createFarmer(name,  crop, quantity, price,  holding, costToProduce).send({ from: account })
     .on('transactionHash', (hash) => {
       })
