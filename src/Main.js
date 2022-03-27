@@ -9,8 +9,12 @@ class InvestorPage extends Component {
       console.log(product);
     });
     return (
-      <div id="content">
-        <h1>Add Farmer</h1>
+      <div className='container'>
+       <div className='row'>
+        <div className='col-md-10'>
+        <h1>Create crop yield </h1>
+        </div>
+        
         <form onSubmit={(event) => {
           event.preventDefault()
           const name = this.farmerName.value
@@ -99,26 +103,29 @@ class InvestorPage extends Component {
           </div>
           <button type="submit" className="btn btn-primary">Add Farmer Details</button>
         </form>
-        <p>&nbsp;</p>
-        <h2>Farmer Account details</h2>
-           <div className="container-fluid">
+        </div>
+      <hr/>
+        
+<div className="container">
+          <div className='row'>
+            <div className='col-md-110'>
+          <h2>Expected Yields</h2>
+          </div>
+          </div>
           <div className="row">
         { this.props.products.map((product, key) => {
           console.log(product);
               return(
-        <Card className="col-sm-5 classWithPad" key={key}>
+        <Card className="col-sm-3 " key={key}>
           <Card.Header>
-            <Card.Title>Farmer #{product.farmerId} : <b>{product.farmerName}</b></Card.Title>
+            <Card.Title>Farmer: <b>{product.farmerName}</b></Card.Title>
           </Card.Header>
           <Card.Body>
             <p><b>Crop: </b>{product.crop}</p>
             <p><b>Price: </b>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</p>
-            <p><b>Location: </b>{product.location}</p>
             <p><b>Quantity: </b>{product.quantity}</p>
-            <p><b>Expiry Date: </b>{product.expDate}</p>
             <p><b>Holding Remaining: </b>{product.holding}</p>
             <p><b>Cost to Produce: </b>{product.costToProduce}</p>
-            <p><b>Address: </b></p>
             { product.investmentMade == true && product.boughtByProcessor  == true
                       ? <button
                           name={product.farmerId}

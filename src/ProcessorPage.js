@@ -35,12 +35,13 @@ class ProcessorPage extends Component {
     const { priceToSell, quantityToSell, nameToSell } = this.props;
     console.log(">>>>", this.props)
     return (
-      <div id="container-fluid">
+      <div id="container">
         <h2>Products ready for processing</h2>
         <div className='row'>
         {this.props.products.map((product, key) => {
            return (
-
+            <div>
+            { product.quantity != 0 ?
 <Card key={key} className="col-sm-5 classWithPad">
   <Card.Header>
     <Card.Title> #{product.farmerId} Farmer: <b>{product.farmerName}</b> selling <b>{product.crop}</b> </Card.Title>
@@ -77,6 +78,8 @@ class ProcessorPage extends Component {
   </Card.Body>
   <Card.Footer>Farmer Address: <b>{product.owner}</b></Card.Footer>
 </Card>
+: null }
+</div>
            )})}
         {/* <table className="table">
           <thead>
@@ -145,31 +148,15 @@ class ProcessorPage extends Component {
         <div className='row'>
 
         { this.props.processedGoods.map((product, key) => {
+          
               return(
+                <div>
+                { product.quantity != 0 ?
         <Card className="col-sm-5 classWithPad" key={key}>
           <Card.Header>
-            <Card.Title>Farmer #{product.farmerId} : <b>{product.farmerName}</b></Card.Title>
+            <Card.Title><h2>{product.item}</h2></Card.Title>
             <Card.Options>
     
-      {!product.productPosted
-                    ? <button
-                    color="Primary"
-                      name={product.processorId}
-                      onClick={(event) => {
-                        event.preventDefault();
-                        console.log(key);
-
-                        this.props.createMarketProduct(event.target.name, key)
-
-                        this.props.updateVal(null, key, "priceToSell", '');
-                        this.props.updateVal(null, key, "quantityToSell", '');
-                        this.props.updateVal(null, key, "nameToSell", '');
-                      }}
-                    >
-                      Post to Market
-                    </button>
-                    : null
-                  }
     </Card.Options>
           </Card.Header>
           <Card.Body>
@@ -207,49 +194,10 @@ class ProcessorPage extends Component {
                     placeholder="Name of Product"
                     required />
           </Card.Body>
-    </Card>
-              )})}
-
-          {/* {this.props.processedGoods.map((product, key) => {
-            return (
-              <div class="card">
-                <div class="container">
-                  <h4><b>Farmer Id:</b> {product.farmerId}</h4>
-                  <p>Processor Id: {product.processorId}</p>
-                  <p>Product Posted: {product.productPosted.toString()}</p>
-                  <p>Quantity: {product.quantity}</p>
-                  <p>Processor Address: {product.processorAddress}</p>
-                  <input
-                    id={key}
-                    name="priceToSell"
-                    value={priceToSell[key]}
-                    type="text"
-                    onChange={(input) => { this.updateVal(input) }}
-                    className="form-control"
-                    placeholder="Price to sell"
-                    required
-                  />
-                  <input
-                    id={key}
-                    name="quantityToSell"
-                    value={quantityToSell[key]}
-                    type="text"
-                    onChange={(input) => { this.updateVal(input) }}
-                    className="form-control"
-                    placeholder="Quantity To Sell"
-                    required
-                  />
-                  <input
-                    id={key}
-                    name="nameToSell"
-                    value={nameToSell[key]}
-                    type="text"
-                    onChange={(input) => { this.updateVal(input) }}
-                    className="form-control"
-                    placeholder="Name of Product"
-                    required />
-                  {!product.productPosted
+          <Card.Footer>
+          {!product.productPosted
                     ? <button
+                    color="Primary"
                       name={product.processorId}
                       onClick={(event) => {
                         event.preventDefault();
@@ -266,90 +214,13 @@ class ProcessorPage extends Component {
                     </button>
                     : null
                   }
-                </div>
-              </div>
-            );
-          })}; */}
+          </Card.Footer>
+    </Card> 
+    : null }
+    </div>
+              )})}
+
         </div>
-        {/* <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Farmer ID</th>
-              <th scope="col">Processor ID</th>
-              <th scope="col">Product Posted</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Processor Address</th>
-
-            </tr>
-          </thead>
-          <tbody id="productList">
-            {this.props.processedGoods.map((product, key) => {
-              // console.log(product);
-              return (
-                <tr key={key}>
-                  <th scope="row">{product.farmerId}</th>
-                  <td>{product.processorId}</td>
-                  <td>{product.productPosted.toString()}</td>
-                  <td>{product.quantity}</td>
-                  <td>{product.processorAddress}</td>
-                  {<div className="form-group mr-sm-4">
-                    <input
-                      id={key}
-                      name="priceToSell"
-                      value={priceToSell[key]}
-                      type="text"
-                      onChange={(input) => { this.updateVal(input) }}
-                      className="form-control"
-                      placeholder="Price to sell"
-                      required />
-                  </div>}
-                  {<div className="form-group mr-sm-4">
-                    <input
-                      id={key}
-                      name="quantityToSell"
-                      value={quantityToSell[key]}
-                      type="text"
-                      onChange={(input) => { this.updateVal(input) }}
-                      className="form-control"
-                      placeholder="Quantity To Sell"
-                      required />
-                  </div>}
-                  {<div className="form-group mr-sm-4">
-                    <input
-                      id={key}
-                      name="nameToSell"
-                      value={nameToSell[key]}
-                      type="text"
-                      onChange={(input) => { this.updateVal(input) }}
-                      className="form-control"
-                      placeholder="Name of Product"
-                      required />
-                  </div>}
-                  {<td>
-                    {!product.productPosted
-                      ? <button
-                        name={product.processorId}
-                        onClick={(event) => {
-                          event.preventDefault();
-                          console.log(key);
-
-                          this.props.createMarketProduct(event.target.name, key)
-
-                          this.props.updateVal(null, key, "priceToSell", '');
-                          this.props.updateVal(null, key, "quantityToSell", '');
-                          this.props.updateVal(null, key, "nameToSell", '');
-                        }}
-                      >
-                        Post to Market
-                      </button>
-                      : null
-                    }
-                  </td>}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table> */}
       </div>
     );
   }

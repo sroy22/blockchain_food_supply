@@ -17,6 +17,8 @@ class NewInvestorPage extends Component {
         { this.props.products.map((product, key) => {
             console.log(product);
               return(
+                <div>
+                { product.quantity != 0 ?
         <Card className="col-sm-5 classWithPad" key={key}>
           <Card.Header>
             <Card.Title>Farmer #{product.farmerId} : <b>{product.farmerName}</b></Card.Title>
@@ -64,6 +66,8 @@ class NewInvestorPage extends Component {
           </Card.Body>
           <Card.Footer>{product.owner}</Card.Footer>
     </Card>
+    : null }
+    </div>
               )})}
               </div>
               </div>

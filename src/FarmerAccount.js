@@ -183,20 +183,16 @@ setTimeout( async function() {
   return (
     <div>
      <Navbar account={account} />
-    <div className="container-fluid mt-5">
-      <div className="row">
-        <main role="main" className="col-lg-12 d-flex">
+
+        <main role="main">
           
-            <div> 
             <InvestorPage
               products={farmers}
               createProduct={createAccount}
               repayToInvestor = {repayToInvestor}
               rep />
-                </div>
         </main>
-      </div>
-    </div> 
+
   </div>
   );
 }

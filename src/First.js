@@ -185,10 +185,6 @@ window.ethereum.on('accountsChanged', function (accounts) {
 </Card>
 
         <Outlet />
-        <button
-
-                          onClick={getRole}
-                        ></button>
       </div>
       </div>
     );

@@ -168,24 +168,19 @@ console.log(marketProduct);
   return (
     <div>
      <Navbar account={account} />
-    <div className="container-fluid mt-5">
-      <div className="row">
-        <main role="main" className="col-lg-12 d-flex">
-          
-            <div> 
+    
+        <main role="main" >   
             <CustomerPage
               products={marketProducts}
               purchaseProduct={purchaseProduct}
-
               farmerAddress = {chainFarmerAddress}
               farmerId = {chainFarmerId}
               processorId = {chainProcessorId}
-              processorAddress = {chainProcessorAddress}  />
-                </div>
+              processorAddress = {chainProcessorAddress}  />    
         </main>
-      </div>
+      
     </div> 
-  </div>
+  
   );
 }
 export default Customer;

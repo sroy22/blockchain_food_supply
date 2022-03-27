@@ -73,8 +73,8 @@ function InsuranceManagement() {
     let deals = [];
     for (var i = 1; i <= count1; i++) {
       const farmer = await place.methods.insuranceFarmers(i).call()
-
-      if (farmer.insuranceCompanyId == insuranceCompanyToBeTriggered){
+console.log(farmer);
+      if (farmer.insuranceFarmerId == insuranceCompanyToBeTriggered){
       console.log(farmer);
         p.push(farmer);
       }
