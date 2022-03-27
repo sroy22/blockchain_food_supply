@@ -23,6 +23,10 @@ class CustomerPage extends Component {
               <p>Price per unit: <b>{product.price} Eth</b></p>
               <p>Quantity left: <b>{product.quantity}</b></p>
               <p>Processor ID: <b>{product.processorId}</b></p>
+              <p>Farmer ID: {this.props.farmerId}</p>
+              <p>Farmer Address: {this.props.farmerAddress}</p>
+              <p>Processor ID: {this.props.processorId}</p>
+              <p>Processor Address: {this.props.processorAddress}</p>
               <input
               id="holdingPercent"
               type="text"

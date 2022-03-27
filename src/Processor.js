@@ -152,11 +152,14 @@ async function   marketProductCreation(id, key) {
   console.log(quantityToSell[key]);
   console.log(nameToSell[key]);
 
+  const p = await farmerExchange.methods.processedItems(id).call();
+  console.log(p);
+
 
   farmerExchange.methods.createMarketProduct(id, priceToSell[key], quantityToSell[key], nameToSell[key] ).send({ from: account})
 
 
-  var delayInMilliseconds = 5000; //1 second
+  var delayInMilliseconds = 12000; //1 second
   setTimeout( async function() {
         //your code to be executed after 1 second
         
