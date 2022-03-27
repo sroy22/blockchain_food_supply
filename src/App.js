@@ -121,15 +121,12 @@ console.log(id);
 console.log(costToProduce);
 console.log(holdingPercent);
 
-    const price = 20*0.01*costToProduce +  "000000000000000000";
+    const price = holdingPercent*0.01*costToProduce +  "000000000000000000";
     console.log(price);
     const farmer = await investment.methods.farmers(id).call();
     investment.methods.purchaseFarmerShare(id).send({ from: account, value: price })
-    console.log(price);
-    console.log(id);
-    console.log(holdingPercent);
-    console.log(20*0.01*costToProduce);
-    investment.methods.createAgreement(id,20*0.01*costToProduce, 20).send({ from: account })
+
+    investment.methods.createAgreement(id,price, 20).send({ from: account })
     var delayInMilliseconds = 8000; //1 second
   setTimeout( async function() {
         //your code to be executed after 1 second

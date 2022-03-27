@@ -7,7 +7,8 @@ class Navbar extends Component {
     return (
 
 <Nav>
- <Nav.Item value="CSC 2512 Blockchain Food Supply" id="account" to="https://github.com/sroy22/blockchain_food_supply"/>
+ <Nav.Item value="CSC 2512 Blockchain Food Supply" id="account" to="https://github.com/sroy22/blockchain_food_supply" icon="globe"/>
+  <Nav.Item icon="home" value="Home" to="/" />
   <Nav.Item hasSubNav value="Menu" icon="menu">
     <Nav.SubItem value="Farmer" to="/farmer" />
     <Nav.SubItem value="Processor" to="/processor" />
