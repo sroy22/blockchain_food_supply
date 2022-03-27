@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Web3 from 'web3'
 import FarmExchange from './abis/FarmExchange.json'
 import Navbar from './Navbar'
@@ -11,6 +11,16 @@ function Customer() {
   const [marketProductsCount, setMarketProductsCount] = useState(0);
   const [farmerExchange, setFarmerExchange] = useState(0);
   const [marketProducts, setMarketProducts] = useState([]);
+
+
+  const [chainFarmerId, setChainFarmerId] = useState(null);
+
+  const [chainFarmerAddress, setChainFarmerAddress] = useState(null);
+  const [chainProcessorId, setChainProcessorId] = useState(null);
+  const [chainProcessorAddress, setChainProcessorAddress] = useState(null);
+
+
+  const chain = useRef(false);
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -28,6 +38,7 @@ function Customer() {
   window.ethereum.on('accountsChanged', function (accounts) {
     // Time to reload your interface with accounts[0]!
     setAccount(accounts[0])
+    
   })
   
   async function loadBlockchainData() {
@@ -42,6 +53,32 @@ function Customer() {
       const place = new web3.eth.Contract(FarmExchange.abi, networkData.address)
       setFarmerExchange(place);
       const count = await place.methods.marketProductCount().call()
+console.log(count);
+      const marketProduct = await place.methods.marketProducts(count).call();
+      let chainBuyerAddress = marketProduct.buyerAddress;
+console.log(marketProduct);
+
+      //let chainProcesserAddress = marketProduct.processorAddress;
+      setChainProcessorAddress(marketProduct.processorAddress)
+      //let chainProcessorId = marketProduct.processorId;
+      setChainProcessorId(marketProduct.processorId)
+      
+      const processedGood = await place.methods.processedItems(marketProduct.processorId).call();
+      
+      console.log(processedGood);
+      
+      let chainFarmerId = processedGood.farmerId;
+      setChainFarmerId(chainFarmerId)
+      let farmer = await place.methods.farmers(chainFarmerId).call();
+      console.log(farmer);
+      let chainFarmer = farmer.owner;
+      let chainProcessor = farmer.processor;
+
+      setChainFarmerAddress(chainFarmer)
+
+
+      console.log(marketProduct);
+      console.log(count);
       setMarketProductsCount(count);
       let p = []
       let goodsToSell = [];
@@ -106,6 +143,7 @@ function Customer() {
 //   }
 
  async function   purchaseProduct(id, pricePerUnit, quantity, processorAddress) {
+   chain.current = true;
     const price = pricePerUnit * quantity + "000000000000000000";
     // const farmer = await investment.methods.farmers(id).call();
     farmerExchange.methods.purchaseMarketProduct(id, quantity).send({ from: account, value: price });
@@ -137,7 +175,12 @@ function Customer() {
             <div> 
             <CustomerPage
               products={marketProducts}
-              purchaseProduct={purchaseProduct} />
+              purchaseProduct={purchaseProduct}
+
+              farmerAddress = {chainFarmerAddress}
+              farmerId = {chainFarmerId}
+              processorId = {chainProcessorId}
+              processorAddress = {chainProcessorAddress}  />
                 </div>
         </main>
       </div>

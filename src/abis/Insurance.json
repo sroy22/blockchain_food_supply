@@ -195,14 +195,14 @@
     "absolutePath": "project:/src/contracts/Insurance.sol",
     "exportedSymbols": {
       "Insurance": [
-        839
+        818
       ]
     },
-    "id": 840,
+    "id": 819,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 693,
+        "id": 672,
         "literals": [
           "solidity",
           "^",
@@ -218,19 +218,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 839,
+        "id": 818,
         "linearizedBaseContracts": [
-          839
+          818
         ],
         "name": "Insurance",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 696,
+            "id": 675,
             "name": "insuranceCompanyCount",
             "nodeType": "VariableDeclaration",
-            "scope": 839,
+            "scope": 818,
             "src": "55:37:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -239,7 +239,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 694,
+              "id": 673,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "55:4:1",
@@ -251,7 +251,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 695,
+              "id": 674,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -270,10 +270,10 @@
           },
           {
             "constant": false,
-            "id": 699,
+            "id": 678,
             "name": "insuranceFarmerCount",
             "nodeType": "VariableDeclaration",
-            "scope": 839,
+            "scope": 818,
             "src": "99:36:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -282,7 +282,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 697,
+              "id": 676,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "99:4:1",
@@ -294,7 +294,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "30",
-              "id": 698,
+              "id": 677,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -313,14 +313,14 @@
           },
           {
             "canonicalName": "Insurance.InsuranceCompany",
-            "id": 712,
+            "id": 691,
             "members": [
               {
                 "constant": false,
-                "id": 701,
+                "id": 680,
                 "name": "insuranceCompanyId",
                 "nodeType": "VariableDeclaration",
-                "scope": 712,
+                "scope": 691,
                 "src": "179:23:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -329,7 +329,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 700,
+                  "id": 679,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "179:4:1",
@@ -343,10 +343,10 @@
               },
               {
                 "constant": false,
-                "id": 703,
+                "id": 682,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 712,
+                "scope": 691,
                 "src": "213:11:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -355,7 +355,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 702,
+                  "id": 681,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "213:6:1",
@@ -369,10 +369,10 @@
               },
               {
                 "constant": false,
-                "id": 705,
+                "id": 684,
                 "name": "typeOf",
                 "nodeType": "VariableDeclaration",
-                "scope": 712,
+                "scope": 691,
                 "src": "235:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -381,7 +381,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 704,
+                  "id": 683,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "235:6:1",
@@ -395,10 +395,10 @@
               },
               {
                 "constant": false,
-                "id": 707,
+                "id": 686,
                 "name": "trigger",
                 "nodeType": "VariableDeclaration",
-                "scope": 712,
+                "scope": 691,
                 "src": "259:12:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -407,7 +407,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 706,
+                  "id": 685,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "259:4:1",
@@ -421,10 +421,10 @@
               },
               {
                 "constant": false,
-                "id": 709,
+                "id": 688,
                 "name": "payoutValue",
                 "nodeType": "VariableDeclaration",
-                "scope": 712,
+                "scope": 691,
                 "src": "282:16:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -433,7 +433,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 708,
+                  "id": 687,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "282:4:1",
@@ -447,10 +447,10 @@
               },
               {
                 "constant": false,
-                "id": 711,
+                "id": 690,
                 "name": "insuranceCompanyAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 712,
+                "scope": 691,
                 "src": "309:39:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -459,7 +459,7 @@
                   "typeString": "address payable"
                 },
                 "typeName": {
-                  "id": 710,
+                  "id": 689,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "309:15:1",
@@ -475,20 +475,20 @@
             ],
             "name": "InsuranceCompany",
             "nodeType": "StructDefinition",
-            "scope": 839,
+            "scope": 818,
             "src": "144:212:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Insurance.InsuranceFarmer",
-            "id": 723,
+            "id": 702,
             "members": [
               {
                 "constant": false,
-                "id": 714,
+                "id": 693,
                 "name": "insuranceFarmerId",
                 "nodeType": "VariableDeclaration",
-                "scope": 723,
+                "scope": 702,
                 "src": "399:22:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -497,7 +497,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 713,
+                  "id": 692,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "399:4:1",
@@ -511,10 +511,10 @@
               },
               {
                 "constant": false,
-                "id": 716,
+                "id": 695,
                 "name": "farmerId",
                 "nodeType": "VariableDeclaration",
-                "scope": 723,
+                "scope": 702,
                 "src": "432:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -523,7 +523,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 715,
+                  "id": 694,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "432:4:1",
@@ -537,10 +537,10 @@
               },
               {
                 "constant": false,
-                "id": 718,
+                "id": 697,
                 "name": "insuranceCompanyId",
                 "nodeType": "VariableDeclaration",
-                "scope": 723,
+                "scope": 702,
                 "src": "456:23:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -549,7 +549,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 717,
+                  "id": 696,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "456:4:1",
@@ -563,10 +563,10 @@
               },
               {
                 "constant": false,
-                "id": 720,
+                "id": 699,
                 "name": "farmerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 723,
+                "scope": 702,
                 "src": "490:29:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -575,7 +575,7 @@
                   "typeString": "address payable"
                 },
                 "typeName": {
-                  "id": 719,
+                  "id": 698,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "490:15:1",
@@ -590,10 +590,10 @@
               },
               {
                 "constant": false,
-                "id": 722,
+                "id": 701,
                 "name": "premium",
                 "nodeType": "VariableDeclaration",
-                "scope": 723,
+                "scope": 702,
                 "src": "530:12:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -602,7 +602,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 721,
+                  "id": 700,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "530:4:1",
@@ -617,27 +617,27 @@
             ],
             "name": "InsuranceFarmer",
             "nodeType": "StructDefinition",
-            "scope": 839,
+            "scope": 818,
             "src": "364:186:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 727,
+            "id": 706,
             "name": "insuranceCompanies",
             "nodeType": "VariableDeclaration",
-            "scope": 839,
+            "scope": 818,
             "src": "560:59:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$712_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$691_storage_$",
               "typeString": "mapping(uint256 => struct Insurance.InsuranceCompany)"
             },
             "typeName": {
-              "id": 726,
+              "id": 705,
               "keyType": {
-                "id": 724,
+                "id": 703,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "568:4:1",
@@ -649,18 +649,18 @@
               "nodeType": "Mapping",
               "src": "560:33:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$712_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$691_storage_$",
                 "typeString": "mapping(uint256 => struct Insurance.InsuranceCompany)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 725,
+                "id": 704,
                 "name": "InsuranceCompany",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 712,
+                "referencedDeclaration": 691,
                 "src": "576:16:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_InsuranceCompany_$712_storage_ptr",
+                  "typeIdentifier": "t_struct$_InsuranceCompany_$691_storage_ptr",
                   "typeString": "struct Insurance.InsuranceCompany"
                 }
               }
@@ -670,21 +670,21 @@
           },
           {
             "constant": false,
-            "id": 731,
+            "id": 710,
             "name": "insuranceFarmers",
             "nodeType": "VariableDeclaration",
-            "scope": 839,
+            "scope": 818,
             "src": "626:56:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$723_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$702_storage_$",
               "typeString": "mapping(uint256 => struct Insurance.InsuranceFarmer)"
             },
             "typeName": {
-              "id": 730,
+              "id": 709,
               "keyType": {
-                "id": 728,
+                "id": 707,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "634:4:1",
@@ -696,18 +696,18 @@
               "nodeType": "Mapping",
               "src": "626:32:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$723_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$702_storage_$",
                 "typeString": "mapping(uint256 => struct Insurance.InsuranceFarmer)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 729,
+                "id": 708,
                 "name": "InsuranceFarmer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 723,
+                "referencedDeclaration": 702,
                 "src": "642:15:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_InsuranceFarmer_$723_storage_ptr",
+                  "typeIdentifier": "t_struct$_InsuranceFarmer_$702_storage_ptr",
                   "typeString": "struct Insurance.InsuranceFarmer"
                 }
               }
@@ -717,7 +717,7 @@
           },
           {
             "body": {
-              "id": 768,
+              "id": 747,
               "nodeType": "Block",
               "src": "929:296:1",
               "statements": [
@@ -731,7 +731,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 748,
+                        "id": 727,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -743,11 +743,11 @@
                             "arguments": [
                               {
                                 "argumentTypes": null,
-                                "id": 744,
+                                "id": 723,
                                 "name": "_name",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 733,
+                                "referencedDeclaration": 712,
                                 "src": "996:5:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_string_memory_ptr",
@@ -762,7 +762,7 @@
                                   "typeString": "string memory"
                                 }
                               ],
-                              "id": 743,
+                              "id": 722,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -775,7 +775,7 @@
                               },
                               "typeName": "bytes"
                             },
-                            "id": 745,
+                            "id": 724,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -789,7 +789,7 @@
                               "typeString": "bytes memory"
                             }
                           },
-                          "id": 746,
+                          "id": 725,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -808,7 +808,7 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "30",
-                          "id": 747,
+                          "id": 726,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -837,21 +837,21 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 742,
+                      "id": 721,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1404,
-                        1405
+                        1819,
+                        1820
                       ],
-                      "referencedDeclaration": 1404,
+                      "referencedDeclaration": 1819,
                       "src": "982:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 749,
+                    "id": 728,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -865,14 +865,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 750,
+                  "id": 729,
                   "nodeType": "ExpressionStatement",
                   "src": "982:32:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 752,
+                    "id": 731,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -883,11 +883,11 @@
                     "src": "1025:24:1",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 751,
+                      "id": 730,
                       "name": "insuranceCompanyCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 696,
+                      "referencedDeclaration": 675,
                       "src": "1025:21:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -899,14 +899,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 753,
+                  "id": 732,
                   "nodeType": "ExpressionStatement",
                   "src": "1025:24:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 766,
+                    "id": 745,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -915,25 +915,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 754,
+                        "id": 733,
                         "name": "insuranceCompanies",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 727,
+                        "referencedDeclaration": 706,
                         "src": "1090:18:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$712_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$691_storage_$",
                           "typeString": "mapping(uint256 => struct Insurance.InsuranceCompany storage ref)"
                         }
                       },
-                      "id": 756,
+                      "id": 735,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 755,
+                        "id": 734,
                         "name": "insuranceCompanyCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 696,
+                        "referencedDeclaration": 675,
                         "src": "1109:21:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -947,7 +947,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1090:41:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceCompany_$712_storage",
+                        "typeIdentifier": "t_struct$_InsuranceCompany_$691_storage",
                         "typeString": "struct Insurance.InsuranceCompany storage ref"
                       }
                     },
@@ -958,11 +958,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 758,
+                          "id": 737,
                           "name": "insuranceCompanyCount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 696,
+                          "referencedDeclaration": 675,
                           "src": "1151:21:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -971,11 +971,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 759,
+                          "id": 738,
                           "name": "_name",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 733,
+                          "referencedDeclaration": 712,
                           "src": "1174:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -984,11 +984,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 760,
+                          "id": 739,
                           "name": "_type",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 735,
+                          "referencedDeclaration": 714,
                           "src": "1181:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -997,11 +997,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 761,
+                          "id": 740,
                           "name": "trigger",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 737,
+                          "referencedDeclaration": 716,
                           "src": "1188:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1010,11 +1010,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 762,
+                          "id": 741,
                           "name": "payback",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 739,
+                          "referencedDeclaration": 718,
                           "src": "1197:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1025,18 +1025,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 763,
+                            "id": 742,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1401,
+                            "referencedDeclaration": 1816,
                             "src": "1206:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 764,
+                          "id": 743,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1078,18 +1078,18 @@
                             "typeString": "address payable"
                           }
                         ],
-                        "id": 757,
+                        "id": 736,
                         "name": "InsuranceCompany",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 712,
+                        "referencedDeclaration": 691,
                         "src": "1134:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_InsuranceCompany_$712_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_InsuranceCompany_$691_storage_ptr_$",
                           "typeString": "type(struct Insurance.InsuranceCompany storage pointer)"
                         }
                       },
-                      "id": 765,
+                      "id": 744,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1099,39 +1099,39 @@
                       "nodeType": "FunctionCall",
                       "src": "1134:83:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceCompany_$712_memory",
+                        "typeIdentifier": "t_struct$_InsuranceCompany_$691_memory",
                         "typeString": "struct Insurance.InsuranceCompany memory"
                       }
                     },
                     "src": "1090:127:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_InsuranceCompany_$712_storage",
+                      "typeIdentifier": "t_struct$_InsuranceCompany_$691_storage",
                       "typeString": "struct Insurance.InsuranceCompany storage ref"
                     }
                   },
-                  "id": 767,
+                  "id": 746,
                   "nodeType": "ExpressionStatement",
                   "src": "1090:127:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 769,
+            "id": 748,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createInsuranceCompany",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 740,
+              "id": 719,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 733,
+                  "id": 712,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 769,
+                  "scope": 748,
                   "src": "750:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1140,7 +1140,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 732,
+                    "id": 711,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "750:6:1",
@@ -1154,10 +1154,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 735,
+                  "id": 714,
                   "name": "_type",
                   "nodeType": "VariableDeclaration",
-                  "scope": 769,
+                  "scope": 748,
                   "src": "796:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1166,7 +1166,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 734,
+                    "id": 713,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "796:6:1",
@@ -1180,10 +1180,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 737,
+                  "id": 716,
                   "name": "trigger",
                   "nodeType": "VariableDeclaration",
-                  "scope": 769,
+                  "scope": 748,
                   "src": "842:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1192,7 +1192,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 736,
+                    "id": 715,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "842:4:1",
@@ -1206,10 +1206,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 739,
+                  "id": 718,
                   "name": "payback",
                   "nodeType": "VariableDeclaration",
-                  "scope": 769,
+                  "scope": 748,
                   "src": "881:12:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1218,7 +1218,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 738,
+                    "id": 717,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "881:4:1",
@@ -1234,12 +1234,12 @@
               "src": "723:197:1"
             },
             "returnParameters": {
-              "id": 741,
+              "id": 720,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "929:0:1"
             },
-            "scope": 839,
+            "scope": 818,
             "src": "692:533:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1247,37 +1247,37 @@
           },
           {
             "body": {
-              "id": 812,
+              "id": 791,
               "nodeType": "Block",
               "src": "1312:535:1",
               "statements": [
                 {
                   "assignments": [
-                    777
+                    756
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 777,
+                      "id": 756,
                       "name": "_insuranceCompany",
                       "nodeType": "VariableDeclaration",
-                      "scope": 812,
+                      "scope": 791,
                       "src": "1353:41:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceCompany_$712_memory_ptr",
+                        "typeIdentifier": "t_struct$_InsuranceCompany_$691_memory_ptr",
                         "typeString": "struct Insurance.InsuranceCompany"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 776,
+                        "id": 755,
                         "name": "InsuranceCompany",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 712,
+                        "referencedDeclaration": 691,
                         "src": "1353:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_InsuranceCompany_$712_storage_ptr",
+                          "typeIdentifier": "t_struct$_InsuranceCompany_$691_storage_ptr",
                           "typeString": "struct Insurance.InsuranceCompany"
                         }
                       },
@@ -1285,30 +1285,30 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 781,
+                  "id": 760,
                   "initialValue": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 778,
+                      "id": 757,
                       "name": "insuranceCompanies",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 727,
+                      "referencedDeclaration": 706,
                       "src": "1397:18:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$712_storage_$",
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceCompany_$691_storage_$",
                         "typeString": "mapping(uint256 => struct Insurance.InsuranceCompany storage ref)"
                       }
                     },
-                    "id": 780,
+                    "id": 759,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 779,
+                      "id": 758,
                       "name": "_insuranceId",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 771,
+                      "referencedDeclaration": 750,
                       "src": "1416:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1322,7 +1322,7 @@
                     "nodeType": "IndexAccess",
                     "src": "1397:32:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_InsuranceCompany_$712_storage",
+                      "typeIdentifier": "t_struct$_InsuranceCompany_$691_storage",
                       "typeString": "struct Insurance.InsuranceCompany storage ref"
                     }
                   },
@@ -1331,15 +1331,15 @@
                 },
                 {
                   "assignments": [
-                    783
+                    762
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 783,
+                      "id": 762,
                       "name": "_seller",
                       "nodeType": "VariableDeclaration",
-                      "scope": 812,
+                      "scope": 791,
                       "src": "1468:23:1",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1348,7 +1348,7 @@
                         "typeString": "address payable"
                       },
                       "typeName": {
-                        "id": 782,
+                        "id": 761,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1468:15:1",
@@ -1362,30 +1362,30 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 786,
+                  "id": 765,
                   "initialValue": {
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 784,
+                      "id": 763,
                       "name": "_insuranceCompany",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 777,
+                      "referencedDeclaration": 756,
                       "src": "1494:17:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceCompany_$712_memory_ptr",
+                        "typeIdentifier": "t_struct$_InsuranceCompany_$691_memory_ptr",
                         "typeString": "struct Insurance.InsuranceCompany memory"
                       }
                     },
-                    "id": 785,
+                    "id": 764,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "insuranceCompanyAddress",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 711,
+                    "referencedDeclaration": 690,
                     "src": "1494:41:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address_payable",
@@ -1398,7 +1398,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 788,
+                    "id": 767,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1409,11 +1409,11 @@
                     "src": "1546:22:1",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 787,
+                      "id": 766,
                       "name": "insuranceFarmerCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 699,
+                      "referencedDeclaration": 678,
                       "src": "1546:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1425,14 +1425,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 789,
+                  "id": 768,
                   "nodeType": "ExpressionStatement",
                   "src": "1546:22:1"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 802,
+                    "id": 781,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1441,25 +1441,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 790,
+                        "id": 769,
                         "name": "insuranceFarmers",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 731,
+                        "referencedDeclaration": 710,
                         "src": "1579:16:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$723_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$702_storage_$",
                           "typeString": "mapping(uint256 => struct Insurance.InsuranceFarmer storage ref)"
                         }
                       },
-                      "id": 792,
+                      "id": 771,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 791,
+                        "id": 770,
                         "name": "insuranceFarmerCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 699,
+                        "referencedDeclaration": 678,
                         "src": "1596:20:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1473,7 +1473,7 @@
                       "nodeType": "IndexAccess",
                       "src": "1579:38:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceFarmer_$723_storage",
+                        "typeIdentifier": "t_struct$_InsuranceFarmer_$702_storage",
                         "typeString": "struct Insurance.InsuranceFarmer storage ref"
                       }
                     },
@@ -1484,11 +1484,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 794,
+                          "id": 773,
                           "name": "insuranceFarmerCount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 699,
+                          "referencedDeclaration": 678,
                           "src": "1636:20:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1497,11 +1497,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 795,
+                          "id": 774,
                           "name": "_insuranceId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 771,
+                          "referencedDeclaration": 750,
                           "src": "1658:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1510,11 +1510,11 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 796,
+                          "id": 775,
                           "name": "_farmerId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 773,
+                          "referencedDeclaration": 752,
                           "src": "1681:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1525,18 +1525,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 797,
+                            "id": 776,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1401,
+                            "referencedDeclaration": 1816,
                             "src": "1692:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 798,
+                          "id": 777,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1554,18 +1554,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 799,
+                            "id": 778,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1401,
+                            "referencedDeclaration": 1816,
                             "src": "1704:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 800,
+                          "id": 779,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1603,18 +1603,18 @@
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 793,
+                        "id": 772,
                         "name": "InsuranceFarmer",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 723,
+                        "referencedDeclaration": 702,
                         "src": "1620:15:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_InsuranceFarmer_$723_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_InsuranceFarmer_$702_storage_ptr_$",
                           "typeString": "type(struct Insurance.InsuranceFarmer storage pointer)"
                         }
                       },
-                      "id": 801,
+                      "id": 780,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1624,17 +1624,17 @@
                       "nodeType": "FunctionCall",
                       "src": "1620:94:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceFarmer_$723_memory",
+                        "typeIdentifier": "t_struct$_InsuranceFarmer_$702_memory",
                         "typeString": "struct Insurance.InsuranceFarmer memory"
                       }
                     },
                     "src": "1579:135:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_InsuranceFarmer_$723_storage",
+                      "typeIdentifier": "t_struct$_InsuranceFarmer_$702_storage",
                       "typeString": "struct Insurance.InsuranceFarmer storage ref"
                     }
                   },
-                  "id": 803,
+                  "id": 782,
                   "nodeType": "ExpressionStatement",
                   "src": "1579:135:1"
                 },
@@ -1646,18 +1646,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 808,
+                          "id": 787,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1401,
+                          "referencedDeclaration": 1816,
                           "src": "1800:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 809,
+                        "id": 788,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1684,11 +1684,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 805,
+                            "id": 784,
                             "name": "_seller",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 783,
+                            "referencedDeclaration": 762,
                             "src": "1782:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
@@ -1703,7 +1703,7 @@
                               "typeString": "address payable"
                             }
                           ],
-                          "id": 804,
+                          "id": 783,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1716,7 +1716,7 @@
                           },
                           "typeName": "address"
                         },
-                        "id": 806,
+                        "id": 785,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1730,7 +1730,7 @@
                           "typeString": "address payable"
                         }
                       },
-                      "id": 807,
+                      "id": 786,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1744,7 +1744,7 @@
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 810,
+                    "id": 789,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1758,29 +1758,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 811,
+                  "id": 790,
                   "nodeType": "ExpressionStatement",
                   "src": "1774:36:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 813,
+            "id": 792,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "purchaseProduct",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 774,
+              "id": 753,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 771,
+                  "id": 750,
                   "name": "_insuranceId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 813,
+                  "scope": 792,
                   "src": "1262:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1789,7 +1789,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 770,
+                    "id": 749,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1262:4:1",
@@ -1803,10 +1803,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 773,
+                  "id": 752,
                   "name": "_farmerId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 813,
+                  "scope": 792,
                   "src": "1281:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1815,7 +1815,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 772,
+                    "id": 751,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1281:4:1",
@@ -1831,12 +1831,12 @@
               "src": "1261:35:1"
             },
             "returnParameters": {
-              "id": 775,
+              "id": 754,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1312:0:1"
             },
-            "scope": 839,
+            "scope": 818,
             "src": "1237:610:1",
             "stateMutability": "payable",
             "superFunction": null,
@@ -1844,37 +1844,37 @@
           },
           {
             "body": {
-              "id": 837,
+              "id": 816,
               "nodeType": "Block",
               "src": "1903:188:1",
               "statements": [
                 {
                   "assignments": [
-                    819
+                    798
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 819,
+                      "id": 798,
                       "name": "_insurance",
                       "nodeType": "VariableDeclaration",
-                      "scope": 837,
+                      "scope": 816,
                       "src": "1914:33:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceFarmer_$723_memory_ptr",
+                        "typeIdentifier": "t_struct$_InsuranceFarmer_$702_memory_ptr",
                         "typeString": "struct Insurance.InsuranceFarmer"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 818,
+                        "id": 797,
                         "name": "InsuranceFarmer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 723,
+                        "referencedDeclaration": 702,
                         "src": "1914:15:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_InsuranceFarmer_$723_storage_ptr",
+                          "typeIdentifier": "t_struct$_InsuranceFarmer_$702_storage_ptr",
                           "typeString": "struct Insurance.InsuranceFarmer"
                         }
                       },
@@ -1882,30 +1882,30 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 823,
+                  "id": 802,
                   "initialValue": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 820,
+                      "id": 799,
                       "name": "insuranceFarmers",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 731,
+                      "referencedDeclaration": 710,
                       "src": "1950:16:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$723_storage_$",
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_InsuranceFarmer_$702_storage_$",
                         "typeString": "mapping(uint256 => struct Insurance.InsuranceFarmer storage ref)"
                       }
                     },
-                    "id": 822,
+                    "id": 801,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 821,
+                      "id": 800,
                       "name": "_id",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 815,
+                      "referencedDeclaration": 794,
                       "src": "1967:3:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1919,7 +1919,7 @@
                     "nodeType": "IndexAccess",
                     "src": "1950:21:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_InsuranceFarmer_$723_storage",
+                      "typeIdentifier": "t_struct$_InsuranceFarmer_$702_storage",
                       "typeString": "struct Insurance.InsuranceFarmer storage ref"
                     }
                   },
@@ -1928,15 +1928,15 @@
                 },
                 {
                   "assignments": [
-                    825
+                    804
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 825,
+                      "id": 804,
                       "name": "_seller",
                       "nodeType": "VariableDeclaration",
-                      "scope": 837,
+                      "scope": 816,
                       "src": "1982:23:1",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1945,7 +1945,7 @@
                         "typeString": "address payable"
                       },
                       "typeName": {
-                        "id": 824,
+                        "id": 803,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1982:15:1",
@@ -1959,30 +1959,30 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 828,
+                  "id": 807,
                   "initialValue": {
                     "argumentTypes": null,
                     "expression": {
                       "argumentTypes": null,
-                      "id": 826,
+                      "id": 805,
                       "name": "_insurance",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 819,
+                      "referencedDeclaration": 798,
                       "src": "2008:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_InsuranceFarmer_$723_memory_ptr",
+                        "typeIdentifier": "t_struct$_InsuranceFarmer_$702_memory_ptr",
                         "typeString": "struct Insurance.InsuranceFarmer memory"
                       }
                     },
-                    "id": 827,
+                    "id": 806,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "farmerAddress",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 720,
+                    "referencedDeclaration": 699,
                     "src": "2008:24:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address_payable",
@@ -2000,18 +2000,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 833,
+                          "id": 812,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1401,
+                          "referencedDeclaration": 1816,
                           "src": "2069:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 834,
+                        "id": 813,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2038,11 +2038,11 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 830,
+                            "id": 809,
                             "name": "_seller",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 825,
+                            "referencedDeclaration": 804,
                             "src": "2051:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
@@ -2057,7 +2057,7 @@
                               "typeString": "address payable"
                             }
                           ],
-                          "id": 829,
+                          "id": 808,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2070,7 +2070,7 @@
                           },
                           "typeName": "address"
                         },
-                        "id": 831,
+                        "id": 810,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2084,7 +2084,7 @@
                           "typeString": "address payable"
                         }
                       },
-                      "id": 832,
+                      "id": 811,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2098,7 +2098,7 @@
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 835,
+                    "id": 814,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2112,29 +2112,29 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 836,
+                  "id": 815,
                   "nodeType": "ExpressionStatement",
                   "src": "2043:36:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 838,
+            "id": 817,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "payToInvestor",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 816,
+              "id": 795,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 815,
+                  "id": 794,
                   "name": "_id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 838,
+                  "scope": 817,
                   "src": "1878:8:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2143,7 +2143,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 814,
+                    "id": 793,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1878:4:1",
@@ -2159,19 +2159,19 @@
               "src": "1877:10:1"
             },
             "returnParameters": {
-              "id": 817,
+              "id": 796,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1903:0:1"
             },
-            "scope": 839,
+            "scope": 818,
             "src": "1855:236:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 840,
+        "scope": 819,
         "src": "27:2067:1"
       }
     ],
@@ -2182,7 +2182,7 @@
       "absolutePath": "project:/src/contracts/Insurance.sol",
       "exportedSymbols": {
         "Insurance": [
-          839
+          818
         ]
       }
     },
@@ -2196,7 +2196,7 @@
             ".0"
           ]
         },
-        "id": 693,
+        "id": 672,
         "name": "PragmaDirective",
         "src": "0:23:1"
       },
@@ -2212,17 +2212,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            839
+            818
           ],
           "name": "Insurance",
-          "scope": 840
+          "scope": 819
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "insuranceCompanyCount",
-              "scope": 839,
+              "scope": 818,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -2234,7 +2234,7 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 694,
+                "id": 673,
                 "name": "ElementaryTypeName",
                 "src": "55:4:1"
               },
@@ -2251,12 +2251,12 @@
                   "type": "int_const 0",
                   "value": "0"
                 },
-                "id": 695,
+                "id": 674,
                 "name": "Literal",
                 "src": "91:1:1"
               }
             ],
-            "id": 696,
+            "id": 675,
             "name": "VariableDeclaration",
             "src": "55:37:1"
           },
@@ -2264,7 +2264,7 @@
             "attributes": {
               "constant": false,
               "name": "insuranceFarmerCount",
-              "scope": 839,
+              "scope": 818,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -2276,7 +2276,7 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 697,
+                "id": 676,
                 "name": "ElementaryTypeName",
                 "src": "99:4:1"
               },
@@ -2293,12 +2293,12 @@
                   "type": "int_const 0",
                   "value": "0"
                 },
-                "id": 698,
+                "id": 677,
                 "name": "Literal",
                 "src": "134:1:1"
               }
             ],
-            "id": 699,
+            "id": 678,
             "name": "VariableDeclaration",
             "src": "99:36:1"
           },
@@ -2306,7 +2306,7 @@
             "attributes": {
               "canonicalName": "Insurance.InsuranceCompany",
               "name": "InsuranceCompany",
-              "scope": 839,
+              "scope": 818,
               "visibility": "public"
             },
             "children": [
@@ -2314,7 +2314,282 @@
                 "attributes": {
                   "constant": false,
                   "name": "insuranceCompanyId",
-                  "scope": 712,
+                  "scope": 691,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 679,
+                    "name": "ElementaryTypeName",
+                    "src": "179:4:1"
+                  }
+                ],
+                "id": 680,
+                "name": "VariableDeclaration",
+                "src": "179:23:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 691,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 681,
+                    "name": "ElementaryTypeName",
+                    "src": "213:6:1"
+                  }
+                ],
+                "id": 682,
+                "name": "VariableDeclaration",
+                "src": "213:11:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "typeOf",
+                  "scope": 691,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 683,
+                    "name": "ElementaryTypeName",
+                    "src": "235:6:1"
+                  }
+                ],
+                "id": 684,
+                "name": "VariableDeclaration",
+                "src": "235:13:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "trigger",
+                  "scope": 691,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 685,
+                    "name": "ElementaryTypeName",
+                    "src": "259:4:1"
+                  }
+                ],
+                "id": 686,
+                "name": "VariableDeclaration",
+                "src": "259:12:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "payoutValue",
+                  "scope": 691,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 687,
+                    "name": "ElementaryTypeName",
+                    "src": "282:4:1"
+                  }
+                ],
+                "id": 688,
+                "name": "VariableDeclaration",
+                "src": "282:16:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "insuranceCompanyAddress",
+                  "scope": 691,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address payable",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "payable",
+                      "type": "address payable"
+                    },
+                    "id": 689,
+                    "name": "ElementaryTypeName",
+                    "src": "309:15:1"
+                  }
+                ],
+                "id": 690,
+                "name": "VariableDeclaration",
+                "src": "309:39:1"
+              }
+            ],
+            "id": 691,
+            "name": "StructDefinition",
+            "src": "144:212:1"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Insurance.InsuranceFarmer",
+              "name": "InsuranceFarmer",
+              "scope": 818,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "insuranceFarmerId",
+                  "scope": 702,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 692,
+                    "name": "ElementaryTypeName",
+                    "src": "399:4:1"
+                  }
+                ],
+                "id": 693,
+                "name": "VariableDeclaration",
+                "src": "399:22:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "farmerId",
+                  "scope": 702,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 694,
+                    "name": "ElementaryTypeName",
+                    "src": "432:4:1"
+                  }
+                ],
+                "id": 695,
+                "name": "VariableDeclaration",
+                "src": "432:13:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "insuranceCompanyId",
+                  "scope": 702,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 696,
+                    "name": "ElementaryTypeName",
+                    "src": "456:4:1"
+                  }
+                ],
+                "id": 697,
+                "name": "VariableDeclaration",
+                "src": "456:23:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "farmerAddress",
+                  "scope": 702,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address payable",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "payable",
+                      "type": "address payable"
+                    },
+                    "id": 698,
+                    "name": "ElementaryTypeName",
+                    "src": "490:15:1"
+                  }
+                ],
+                "id": 699,
+                "name": "VariableDeclaration",
+                "src": "490:29:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "premium",
+                  "scope": 702,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -2329,290 +2604,15 @@
                     },
                     "id": 700,
                     "name": "ElementaryTypeName",
-                    "src": "179:4:1"
+                    "src": "530:4:1"
                   }
                 ],
                 "id": 701,
                 "name": "VariableDeclaration",
-                "src": "179:23:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "name",
-                  "scope": 712,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "string",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "string",
-                      "type": "string"
-                    },
-                    "id": 702,
-                    "name": "ElementaryTypeName",
-                    "src": "213:6:1"
-                  }
-                ],
-                "id": 703,
-                "name": "VariableDeclaration",
-                "src": "213:11:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "typeOf",
-                  "scope": 712,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "string",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "string",
-                      "type": "string"
-                    },
-                    "id": 704,
-                    "name": "ElementaryTypeName",
-                    "src": "235:6:1"
-                  }
-                ],
-                "id": 705,
-                "name": "VariableDeclaration",
-                "src": "235:13:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "trigger",
-                  "scope": 712,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 706,
-                    "name": "ElementaryTypeName",
-                    "src": "259:4:1"
-                  }
-                ],
-                "id": 707,
-                "name": "VariableDeclaration",
-                "src": "259:12:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "payoutValue",
-                  "scope": 712,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 708,
-                    "name": "ElementaryTypeName",
-                    "src": "282:4:1"
-                  }
-                ],
-                "id": 709,
-                "name": "VariableDeclaration",
-                "src": "282:16:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "insuranceCompanyAddress",
-                  "scope": 712,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "address payable",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "address",
-                      "stateMutability": "payable",
-                      "type": "address payable"
-                    },
-                    "id": 710,
-                    "name": "ElementaryTypeName",
-                    "src": "309:15:1"
-                  }
-                ],
-                "id": 711,
-                "name": "VariableDeclaration",
-                "src": "309:39:1"
-              }
-            ],
-            "id": 712,
-            "name": "StructDefinition",
-            "src": "144:212:1"
-          },
-          {
-            "attributes": {
-              "canonicalName": "Insurance.InsuranceFarmer",
-              "name": "InsuranceFarmer",
-              "scope": 839,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "insuranceFarmerId",
-                  "scope": 723,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 713,
-                    "name": "ElementaryTypeName",
-                    "src": "399:4:1"
-                  }
-                ],
-                "id": 714,
-                "name": "VariableDeclaration",
-                "src": "399:22:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "farmerId",
-                  "scope": 723,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 715,
-                    "name": "ElementaryTypeName",
-                    "src": "432:4:1"
-                  }
-                ],
-                "id": 716,
-                "name": "VariableDeclaration",
-                "src": "432:13:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "insuranceCompanyId",
-                  "scope": 723,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 717,
-                    "name": "ElementaryTypeName",
-                    "src": "456:4:1"
-                  }
-                ],
-                "id": 718,
-                "name": "VariableDeclaration",
-                "src": "456:23:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "farmerAddress",
-                  "scope": 723,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "address payable",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "address",
-                      "stateMutability": "payable",
-                      "type": "address payable"
-                    },
-                    "id": 719,
-                    "name": "ElementaryTypeName",
-                    "src": "490:15:1"
-                  }
-                ],
-                "id": 720,
-                "name": "VariableDeclaration",
-                "src": "490:29:1"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "premium",
-                  "scope": 723,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 721,
-                    "name": "ElementaryTypeName",
-                    "src": "530:4:1"
-                  }
-                ],
-                "id": 722,
-                "name": "VariableDeclaration",
                 "src": "530:12:1"
               }
             ],
-            "id": 723,
+            "id": 702,
             "name": "StructDefinition",
             "src": "364:186:1"
           },
@@ -2620,7 +2620,7 @@
             "attributes": {
               "constant": false,
               "name": "insuranceCompanies",
-              "scope": 839,
+              "scope": 818,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(uint256 => struct Insurance.InsuranceCompany)",
@@ -2638,7 +2638,7 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 724,
+                    "id": 703,
                     "name": "ElementaryTypeName",
                     "src": "568:4:1"
                   },
@@ -2646,20 +2646,20 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "InsuranceCompany",
-                      "referencedDeclaration": 712,
+                      "referencedDeclaration": 691,
                       "type": "struct Insurance.InsuranceCompany"
                     },
-                    "id": 725,
+                    "id": 704,
                     "name": "UserDefinedTypeName",
                     "src": "576:16:1"
                   }
                 ],
-                "id": 726,
+                "id": 705,
                 "name": "Mapping",
                 "src": "560:33:1"
               }
             ],
-            "id": 727,
+            "id": 706,
             "name": "VariableDeclaration",
             "src": "560:59:1"
           },
@@ -2667,7 +2667,7 @@
             "attributes": {
               "constant": false,
               "name": "insuranceFarmers",
-              "scope": 839,
+              "scope": 818,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(uint256 => struct Insurance.InsuranceFarmer)",
@@ -2685,7 +2685,7 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 728,
+                    "id": 707,
                     "name": "ElementaryTypeName",
                     "src": "634:4:1"
                   },
@@ -2693,20 +2693,20 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "InsuranceFarmer",
-                      "referencedDeclaration": 723,
+                      "referencedDeclaration": 702,
                       "type": "struct Insurance.InsuranceFarmer"
                     },
-                    "id": 729,
+                    "id": 708,
                     "name": "UserDefinedTypeName",
                     "src": "642:15:1"
                   }
                 ],
-                "id": 730,
+                "id": 709,
                 "name": "Mapping",
                 "src": "626:32:1"
               }
             ],
-            "id": 731,
+            "id": 710,
             "name": "VariableDeclaration",
             "src": "626:56:1"
           },
@@ -2720,7 +2720,7 @@
                 null
               ],
               "name": "createInsuranceCompany",
-              "scope": 839,
+              "scope": 818,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -2732,7 +2732,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_name",
-                      "scope": 769,
+                      "scope": 748,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2745,12 +2745,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 732,
+                        "id": 711,
                         "name": "ElementaryTypeName",
                         "src": "750:6:1"
                       }
                     ],
-                    "id": 733,
+                    "id": 712,
                     "name": "VariableDeclaration",
                     "src": "750:19:1"
                   },
@@ -2758,7 +2758,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_type",
-                      "scope": 769,
+                      "scope": 748,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2771,12 +2771,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 734,
+                        "id": 713,
                         "name": "ElementaryTypeName",
                         "src": "796:6:1"
                       }
                     ],
-                    "id": 735,
+                    "id": 714,
                     "name": "VariableDeclaration",
                     "src": "796:19:1"
                   },
@@ -2784,7 +2784,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "trigger",
-                      "scope": 769,
+                      "scope": 748,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2797,12 +2797,12 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 736,
+                        "id": 715,
                         "name": "ElementaryTypeName",
                         "src": "842:4:1"
                       }
                     ],
-                    "id": 737,
+                    "id": 716,
                     "name": "VariableDeclaration",
                     "src": "842:12:1"
                   },
@@ -2810,7 +2810,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "payback",
-                      "scope": 769,
+                      "scope": 748,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2823,17 +2823,17 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 738,
+                        "id": 717,
                         "name": "ElementaryTypeName",
                         "src": "881:4:1"
                       }
                     ],
-                    "id": 739,
+                    "id": 718,
                     "name": "VariableDeclaration",
                     "src": "881:12:1"
                   }
                 ],
-                "id": 740,
+                "id": 719,
                 "name": "ParameterList",
                 "src": "723:197:1"
               },
@@ -2844,7 +2844,7 @@
                   ]
                 },
                 "children": [],
-                "id": 741,
+                "id": 720,
                 "name": "ParameterList",
                 "src": "929:0:1"
               },
@@ -2876,14 +2876,14 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1404,
-                                1405
+                                1819,
+                                1820
                               ],
-                              "referencedDeclaration": 1404,
+                              "referencedDeclaration": 1819,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
-                            "id": 742,
+                            "id": 721,
                             "name": "Identifier",
                             "src": "982:7:1"
                           },
@@ -2944,7 +2944,7 @@
                                           "type": "type(bytes storage pointer)",
                                           "value": "bytes"
                                         },
-                                        "id": 743,
+                                        "id": 722,
                                         "name": "ElementaryTypeNameExpression",
                                         "src": "990:5:1"
                                       },
@@ -2954,21 +2954,21 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 733,
+                                          "referencedDeclaration": 712,
                                           "type": "string memory",
                                           "value": "_name"
                                         },
-                                        "id": 744,
+                                        "id": 723,
                                         "name": "Identifier",
                                         "src": "996:5:1"
                                       }
                                     ],
-                                    "id": 745,
+                                    "id": 724,
                                     "name": "FunctionCall",
                                     "src": "990:12:1"
                                   }
                                 ],
-                                "id": 746,
+                                "id": 725,
                                 "name": "MemberAccess",
                                 "src": "990:19:1"
                               },
@@ -2985,22 +2985,22 @@
                                   "type": "int_const 0",
                                   "value": "0"
                                 },
-                                "id": 747,
+                                "id": 726,
                                 "name": "Literal",
                                 "src": "1012:1:1"
                               }
                             ],
-                            "id": 748,
+                            "id": 727,
                             "name": "BinaryOperation",
                             "src": "990:23:1"
                           }
                         ],
-                        "id": 749,
+                        "id": 728,
                         "name": "FunctionCall",
                         "src": "982:32:1"
                       }
                     ],
-                    "id": 750,
+                    "id": 729,
                     "name": "ExpressionStatement",
                     "src": "982:32:1"
                   },
@@ -3024,21 +3024,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 696,
+                              "referencedDeclaration": 675,
                               "type": "uint256",
                               "value": "insuranceCompanyCount"
                             },
-                            "id": 751,
+                            "id": 730,
                             "name": "Identifier",
                             "src": "1025:21:1"
                           }
                         ],
-                        "id": 752,
+                        "id": 731,
                         "name": "UnaryOperation",
                         "src": "1025:24:1"
                       }
                     ],
-                    "id": 753,
+                    "id": 732,
                     "name": "ExpressionStatement",
                     "src": "1025:24:1"
                   },
@@ -3071,11 +3071,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 727,
+                                  "referencedDeclaration": 706,
                                   "type": "mapping(uint256 => struct Insurance.InsuranceCompany storage ref)",
                                   "value": "insuranceCompanies"
                                 },
-                                "id": 754,
+                                "id": 733,
                                 "name": "Identifier",
                                 "src": "1090:18:1"
                               },
@@ -3085,16 +3085,16 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 696,
+                                  "referencedDeclaration": 675,
                                   "type": "uint256",
                                   "value": "insuranceCompanyCount"
                                 },
-                                "id": 755,
+                                "id": 734,
                                 "name": "Identifier",
                                 "src": "1109:21:1"
                               }
                             ],
-                            "id": 756,
+                            "id": 735,
                             "name": "IndexAccess",
                             "src": "1090:41:1"
                           },
@@ -3144,11 +3144,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 712,
+                                  "referencedDeclaration": 691,
                                   "type": "type(struct Insurance.InsuranceCompany storage pointer)",
                                   "value": "InsuranceCompany"
                                 },
-                                "id": 757,
+                                "id": 736,
                                 "name": "Identifier",
                                 "src": "1134:16:1"
                               },
@@ -3158,11 +3158,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 696,
+                                  "referencedDeclaration": 675,
                                   "type": "uint256",
                                   "value": "insuranceCompanyCount"
                                 },
-                                "id": 758,
+                                "id": 737,
                                 "name": "Identifier",
                                 "src": "1151:21:1"
                               },
@@ -3172,11 +3172,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 733,
+                                  "referencedDeclaration": 712,
                                   "type": "string memory",
                                   "value": "_name"
                                 },
-                                "id": 759,
+                                "id": 738,
                                 "name": "Identifier",
                                 "src": "1174:5:1"
                               },
@@ -3186,11 +3186,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 735,
+                                  "referencedDeclaration": 714,
                                   "type": "string memory",
                                   "value": "_type"
                                 },
-                                "id": 760,
+                                "id": 739,
                                 "name": "Identifier",
                                 "src": "1181:5:1"
                               },
@@ -3200,11 +3200,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 737,
+                                  "referencedDeclaration": 716,
                                   "type": "uint256",
                                   "value": "trigger"
                                 },
-                                "id": 761,
+                                "id": 740,
                                 "name": "Identifier",
                                 "src": "1188:7:1"
                               },
@@ -3214,11 +3214,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 739,
+                                  "referencedDeclaration": 718,
                                   "type": "uint256",
                                   "value": "payback"
                                 },
-                                "id": 762,
+                                "id": 741,
                                 "name": "Identifier",
                                 "src": "1197:7:1"
                               },
@@ -3240,41 +3240,41 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1401,
+                                      "referencedDeclaration": 1816,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 763,
+                                    "id": 742,
                                     "name": "Identifier",
                                     "src": "1206:3:1"
                                   }
                                 ],
-                                "id": 764,
+                                "id": 743,
                                 "name": "MemberAccess",
                                 "src": "1206:10:1"
                               }
                             ],
-                            "id": 765,
+                            "id": 744,
                             "name": "FunctionCall",
                             "src": "1134:83:1"
                           }
                         ],
-                        "id": 766,
+                        "id": 745,
                         "name": "Assignment",
                         "src": "1090:127:1"
                       }
                     ],
-                    "id": 767,
+                    "id": 746,
                     "name": "ExpressionStatement",
                     "src": "1090:127:1"
                   }
                 ],
-                "id": 768,
+                "id": 747,
                 "name": "Block",
                 "src": "929:296:1"
               }
             ],
-            "id": 769,
+            "id": 748,
             "name": "FunctionDefinition",
             "src": "692:533:1"
           },
@@ -3288,7 +3288,7 @@
                 null
               ],
               "name": "purchaseProduct",
-              "scope": 839,
+              "scope": 818,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -3300,7 +3300,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_insuranceId",
-                      "scope": 813,
+                      "scope": 792,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3313,12 +3313,12 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 770,
+                        "id": 749,
                         "name": "ElementaryTypeName",
                         "src": "1262:4:1"
                       }
                     ],
-                    "id": 771,
+                    "id": 750,
                     "name": "VariableDeclaration",
                     "src": "1262:17:1"
                   },
@@ -3326,7 +3326,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_farmerId",
-                      "scope": 813,
+                      "scope": 792,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3339,17 +3339,17 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 772,
+                        "id": 751,
                         "name": "ElementaryTypeName",
                         "src": "1281:4:1"
                       }
                     ],
-                    "id": 773,
+                    "id": 752,
                     "name": "VariableDeclaration",
                     "src": "1281:14:1"
                   }
                 ],
-                "id": 774,
+                "id": 753,
                 "name": "ParameterList",
                 "src": "1261:35:1"
               },
@@ -3360,7 +3360,7 @@
                   ]
                 },
                 "children": [],
-                "id": 775,
+                "id": 754,
                 "name": "ParameterList",
                 "src": "1312:0:1"
               },
@@ -3369,7 +3369,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        777
+                        756
                       ]
                     },
                     "children": [
@@ -3377,7 +3377,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "_insuranceCompany",
-                          "scope": 812,
+                          "scope": 791,
                           "stateVariable": false,
                           "storageLocation": "memory",
                           "type": "struct Insurance.InsuranceCompany",
@@ -3389,15 +3389,15 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "InsuranceCompany",
-                              "referencedDeclaration": 712,
+                              "referencedDeclaration": 691,
                               "type": "struct Insurance.InsuranceCompany"
                             },
-                            "id": 776,
+                            "id": 755,
                             "name": "UserDefinedTypeName",
                             "src": "1353:16:1"
                           }
                         ],
-                        "id": 777,
+                        "id": 756,
                         "name": "VariableDeclaration",
                         "src": "1353:41:1"
                       },
@@ -3417,11 +3417,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 727,
+                              "referencedDeclaration": 706,
                               "type": "mapping(uint256 => struct Insurance.InsuranceCompany storage ref)",
                               "value": "insuranceCompanies"
                             },
-                            "id": 778,
+                            "id": 757,
                             "name": "Identifier",
                             "src": "1397:18:1"
                           },
@@ -3431,28 +3431,28 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 771,
+                              "referencedDeclaration": 750,
                               "type": "uint256",
                               "value": "_insuranceId"
                             },
-                            "id": 779,
+                            "id": 758,
                             "name": "Identifier",
                             "src": "1416:12:1"
                           }
                         ],
-                        "id": 780,
+                        "id": 759,
                         "name": "IndexAccess",
                         "src": "1397:32:1"
                       }
                     ],
-                    "id": 781,
+                    "id": 760,
                     "name": "VariableDeclarationStatement",
                     "src": "1353:76:1"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        783
+                        762
                       ]
                     },
                     "children": [
@@ -3460,7 +3460,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "_seller",
-                          "scope": 812,
+                          "scope": 791,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "address payable",
@@ -3474,12 +3474,12 @@
                               "stateMutability": "payable",
                               "type": "address payable"
                             },
-                            "id": 782,
+                            "id": 761,
                             "name": "ElementaryTypeName",
                             "src": "1468:15:1"
                           }
                         ],
-                        "id": 783,
+                        "id": 762,
                         "name": "VariableDeclaration",
                         "src": "1468:23:1"
                       },
@@ -3491,7 +3491,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "insuranceCompanyAddress",
-                          "referencedDeclaration": 711,
+                          "referencedDeclaration": 690,
                           "type": "address payable"
                         },
                         "children": [
@@ -3501,21 +3501,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 777,
+                              "referencedDeclaration": 756,
                               "type": "struct Insurance.InsuranceCompany memory",
                               "value": "_insuranceCompany"
                             },
-                            "id": 784,
+                            "id": 763,
                             "name": "Identifier",
                             "src": "1494:17:1"
                           }
                         ],
-                        "id": 785,
+                        "id": 764,
                         "name": "MemberAccess",
                         "src": "1494:41:1"
                       }
                     ],
-                    "id": 786,
+                    "id": 765,
                     "name": "VariableDeclarationStatement",
                     "src": "1468:67:1"
                   },
@@ -3539,21 +3539,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 699,
+                              "referencedDeclaration": 678,
                               "type": "uint256",
                               "value": "insuranceFarmerCount"
                             },
-                            "id": 787,
+                            "id": 766,
                             "name": "Identifier",
                             "src": "1546:20:1"
                           }
                         ],
-                        "id": 788,
+                        "id": 767,
                         "name": "UnaryOperation",
                         "src": "1546:22:1"
                       }
                     ],
-                    "id": 789,
+                    "id": 768,
                     "name": "ExpressionStatement",
                     "src": "1546:22:1"
                   },
@@ -3586,11 +3586,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 731,
+                                  "referencedDeclaration": 710,
                                   "type": "mapping(uint256 => struct Insurance.InsuranceFarmer storage ref)",
                                   "value": "insuranceFarmers"
                                 },
-                                "id": 790,
+                                "id": 769,
                                 "name": "Identifier",
                                 "src": "1579:16:1"
                               },
@@ -3600,16 +3600,16 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 699,
+                                  "referencedDeclaration": 678,
                                   "type": "uint256",
                                   "value": "insuranceFarmerCount"
                                 },
-                                "id": 791,
+                                "id": 770,
                                 "name": "Identifier",
                                 "src": "1596:20:1"
                               }
                             ],
-                            "id": 792,
+                            "id": 771,
                             "name": "IndexAccess",
                             "src": "1579:38:1"
                           },
@@ -3655,11 +3655,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 723,
+                                  "referencedDeclaration": 702,
                                   "type": "type(struct Insurance.InsuranceFarmer storage pointer)",
                                   "value": "InsuranceFarmer"
                                 },
-                                "id": 793,
+                                "id": 772,
                                 "name": "Identifier",
                                 "src": "1620:15:1"
                               },
@@ -3669,11 +3669,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 699,
+                                  "referencedDeclaration": 678,
                                   "type": "uint256",
                                   "value": "insuranceFarmerCount"
                                 },
-                                "id": 794,
+                                "id": 773,
                                 "name": "Identifier",
                                 "src": "1636:20:1"
                               },
@@ -3683,11 +3683,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 771,
+                                  "referencedDeclaration": 750,
                                   "type": "uint256",
                                   "value": "_insuranceId"
                                 },
-                                "id": 795,
+                                "id": 774,
                                 "name": "Identifier",
                                 "src": "1658:12:1"
                               },
@@ -3697,11 +3697,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 773,
+                                  "referencedDeclaration": 752,
                                   "type": "uint256",
                                   "value": "_farmerId"
                                 },
-                                "id": 796,
+                                "id": 775,
                                 "name": "Identifier",
                                 "src": "1681:9:1"
                               },
@@ -3723,16 +3723,16 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1401,
+                                      "referencedDeclaration": 1816,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 797,
+                                    "id": 776,
                                     "name": "Identifier",
                                     "src": "1692:3:1"
                                   }
                                 ],
-                                "id": 798,
+                                "id": 777,
                                 "name": "MemberAccess",
                                 "src": "1692:10:1"
                               },
@@ -3754,31 +3754,31 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1401,
+                                      "referencedDeclaration": 1816,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 799,
+                                    "id": 778,
                                     "name": "Identifier",
                                     "src": "1704:3:1"
                                   }
                                 ],
-                                "id": 800,
+                                "id": 779,
                                 "name": "MemberAccess",
                                 "src": "1704:9:1"
                               }
                             ],
-                            "id": 801,
+                            "id": 780,
                             "name": "FunctionCall",
                             "src": "1620:94:1"
                           }
                         ],
-                        "id": 802,
+                        "id": 781,
                         "name": "Assignment",
                         "src": "1579:135:1"
                       }
                     ],
-                    "id": 803,
+                    "id": 782,
                     "name": "ExpressionStatement",
                     "src": "1579:135:1"
                   },
@@ -3846,7 +3846,7 @@
                                       "type": "type(address)",
                                       "value": "address"
                                     },
-                                    "id": 804,
+                                    "id": 783,
                                     "name": "ElementaryTypeNameExpression",
                                     "src": "1774:7:1"
                                   },
@@ -3856,21 +3856,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 783,
+                                      "referencedDeclaration": 762,
                                       "type": "address payable",
                                       "value": "_seller"
                                     },
-                                    "id": 805,
+                                    "id": 784,
                                     "name": "Identifier",
                                     "src": "1782:7:1"
                                   }
                                 ],
-                                "id": 806,
+                                "id": 785,
                                 "name": "FunctionCall",
                                 "src": "1774:16:1"
                               }
                             ],
-                            "id": 807,
+                            "id": 786,
                             "name": "MemberAccess",
                             "src": "1774:25:1"
                           },
@@ -3892,36 +3892,36 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1401,
+                                  "referencedDeclaration": 1816,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 808,
+                                "id": 787,
                                 "name": "Identifier",
                                 "src": "1800:3:1"
                               }
                             ],
-                            "id": 809,
+                            "id": 788,
                             "name": "MemberAccess",
                             "src": "1800:9:1"
                           }
                         ],
-                        "id": 810,
+                        "id": 789,
                         "name": "FunctionCall",
                         "src": "1774:36:1"
                       }
                     ],
-                    "id": 811,
+                    "id": 790,
                     "name": "ExpressionStatement",
                     "src": "1774:36:1"
                   }
                 ],
-                "id": 812,
+                "id": 791,
                 "name": "Block",
                 "src": "1312:535:1"
               }
             ],
-            "id": 813,
+            "id": 792,
             "name": "FunctionDefinition",
             "src": "1237:610:1"
           },
@@ -3935,7 +3935,7 @@
                 null
               ],
               "name": "payToInvestor",
-              "scope": 839,
+              "scope": 818,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -3947,7 +3947,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_id",
-                      "scope": 838,
+                      "scope": 817,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3960,17 +3960,17 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 814,
+                        "id": 793,
                         "name": "ElementaryTypeName",
                         "src": "1878:4:1"
                       }
                     ],
-                    "id": 815,
+                    "id": 794,
                     "name": "VariableDeclaration",
                     "src": "1878:8:1"
                   }
                 ],
-                "id": 816,
+                "id": 795,
                 "name": "ParameterList",
                 "src": "1877:10:1"
               },
@@ -3981,7 +3981,7 @@
                   ]
                 },
                 "children": [],
-                "id": 817,
+                "id": 796,
                 "name": "ParameterList",
                 "src": "1903:0:1"
               },
@@ -3990,7 +3990,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        819
+                        798
                       ]
                     },
                     "children": [
@@ -3998,7 +3998,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "_insurance",
-                          "scope": 837,
+                          "scope": 816,
                           "stateVariable": false,
                           "storageLocation": "memory",
                           "type": "struct Insurance.InsuranceFarmer",
@@ -4010,15 +4010,15 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "InsuranceFarmer",
-                              "referencedDeclaration": 723,
+                              "referencedDeclaration": 702,
                               "type": "struct Insurance.InsuranceFarmer"
                             },
-                            "id": 818,
+                            "id": 797,
                             "name": "UserDefinedTypeName",
                             "src": "1914:15:1"
                           }
                         ],
-                        "id": 819,
+                        "id": 798,
                         "name": "VariableDeclaration",
                         "src": "1914:33:1"
                       },
@@ -4038,11 +4038,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 731,
+                              "referencedDeclaration": 710,
                               "type": "mapping(uint256 => struct Insurance.InsuranceFarmer storage ref)",
                               "value": "insuranceFarmers"
                             },
-                            "id": 820,
+                            "id": 799,
                             "name": "Identifier",
                             "src": "1950:16:1"
                           },
@@ -4052,28 +4052,28 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 815,
+                              "referencedDeclaration": 794,
                               "type": "uint256",
                               "value": "_id"
                             },
-                            "id": 821,
+                            "id": 800,
                             "name": "Identifier",
                             "src": "1967:3:1"
                           }
                         ],
-                        "id": 822,
+                        "id": 801,
                         "name": "IndexAccess",
                         "src": "1950:21:1"
                       }
                     ],
-                    "id": 823,
+                    "id": 802,
                     "name": "VariableDeclarationStatement",
                     "src": "1914:57:1"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        825
+                        804
                       ]
                     },
                     "children": [
@@ -4081,7 +4081,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "_seller",
-                          "scope": 837,
+                          "scope": 816,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "address payable",
@@ -4095,12 +4095,12 @@
                               "stateMutability": "payable",
                               "type": "address payable"
                             },
-                            "id": 824,
+                            "id": 803,
                             "name": "ElementaryTypeName",
                             "src": "1982:15:1"
                           }
                         ],
-                        "id": 825,
+                        "id": 804,
                         "name": "VariableDeclaration",
                         "src": "1982:23:1"
                       },
@@ -4112,7 +4112,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "farmerAddress",
-                          "referencedDeclaration": 720,
+                          "referencedDeclaration": 699,
                           "type": "address payable"
                         },
                         "children": [
@@ -4122,21 +4122,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 819,
+                              "referencedDeclaration": 798,
                               "type": "struct Insurance.InsuranceFarmer memory",
                               "value": "_insurance"
                             },
-                            "id": 826,
+                            "id": 805,
                             "name": "Identifier",
                             "src": "2008:10:1"
                           }
                         ],
-                        "id": 827,
+                        "id": 806,
                         "name": "MemberAccess",
                         "src": "2008:24:1"
                       }
                     ],
-                    "id": 828,
+                    "id": 807,
                     "name": "VariableDeclarationStatement",
                     "src": "1982:50:1"
                   },
@@ -4204,7 +4204,7 @@
                                       "type": "type(address)",
                                       "value": "address"
                                     },
-                                    "id": 829,
+                                    "id": 808,
                                     "name": "ElementaryTypeNameExpression",
                                     "src": "2043:7:1"
                                   },
@@ -4214,21 +4214,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 825,
+                                      "referencedDeclaration": 804,
                                       "type": "address payable",
                                       "value": "_seller"
                                     },
-                                    "id": 830,
+                                    "id": 809,
                                     "name": "Identifier",
                                     "src": "2051:7:1"
                                   }
                                 ],
-                                "id": 831,
+                                "id": 810,
                                 "name": "FunctionCall",
                                 "src": "2043:16:1"
                               }
                             ],
-                            "id": 832,
+                            "id": 811,
                             "name": "MemberAccess",
                             "src": "2043:25:1"
                           },
@@ -4250,46 +4250,46 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1401,
+                                  "referencedDeclaration": 1816,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 833,
+                                "id": 812,
                                 "name": "Identifier",
                                 "src": "2069:3:1"
                               }
                             ],
-                            "id": 834,
+                            "id": 813,
                             "name": "MemberAccess",
                             "src": "2069:9:1"
                           }
                         ],
-                        "id": 835,
+                        "id": 814,
                         "name": "FunctionCall",
                         "src": "2043:36:1"
                       }
                     ],
-                    "id": 836,
+                    "id": 815,
                     "name": "ExpressionStatement",
                     "src": "2043:36:1"
                   }
                 ],
-                "id": 837,
+                "id": 816,
                 "name": "Block",
                 "src": "1903:188:1"
               }
             ],
-            "id": 838,
+            "id": 817,
             "name": "FunctionDefinition",
             "src": "1855:236:1"
           }
         ],
-        "id": 839,
+        "id": 818,
         "name": "ContractDefinition",
         "src": "27:2067:1"
       }
     ],
-    "id": 840,
+    "id": 819,
     "name": "SourceUnit",
     "src": "0:2100:1"
   },
@@ -4375,10 +4375,70 @@
       "links": {},
       "address": "0x132B2a83321fb18F9d45a4B4e93d60148f635404",
       "transactionHash": "0x98013c5c4c43ce9669c64e2e54a5b165d6118c158db4b64770d6fa8dcfba258a"
+    },
+    "1648345224047": {
+      "events": {},
+      "links": {},
+      "address": "0x5B2D4a3A2CAD879c47DE75a8245c3Cab647AaeC9",
+      "transactionHash": "0xcc73e2724051d0e7ce5ca17d594068368877add2a18a17ff41982d47b4540aad"
+    },
+    "1648348275988": {
+      "events": {},
+      "links": {},
+      "address": "0x0b93FC7FFb79426b45Ba34D9d33E5AEdd717a4C3",
+      "transactionHash": "0xcbdf3f08e37c387896d2f959fb3255f5141361cb4da570662044c1efc0360b15"
+    },
+    "1648349727866": {
+      "events": {},
+      "links": {},
+      "address": "0x07e430Ed941cb06CcFd30eD6533873248C2Fe387",
+      "transactionHash": "0xe9535a3c9b17f4e7eee43421dc01760268e85c89616c86087b3bf37de0c7b7d8"
+    },
+    "1648351317614": {
+      "events": {},
+      "links": {},
+      "address": "0x772fE3d002c1a818C3f89bA9A1bDD32780868704",
+      "transactionHash": "0xdd899d19f324e09d8aaf9e6ac5f1f92527fb3365eadae7ff34a26ad0dbdeacf2"
+    },
+    "1648352061487": {
+      "events": {},
+      "links": {},
+      "address": "0x551BDCF70Bc31A303ADbbE61ce32A6C1e231565A",
+      "transactionHash": "0xd4c4971cef2b88b58baace337fe9e9e53289ecfc6bb4f518ef5ebf5f0db1f376"
+    },
+    "1648352429755": {
+      "events": {},
+      "links": {},
+      "address": "0x32FBA12bEd3f2e23adb7C0bDD620291c2281e8f7",
+      "transactionHash": "0x6695dd65b27a11a9aee2524dbf8a2d1495c835bf3792fe24e6e01050d5445b62"
+    },
+    "1648353624321": {
+      "events": {},
+      "links": {},
+      "address": "0xe4B39b598Fde6BB07bCD21D3091f246d00574D7a",
+      "transactionHash": "0xcca5498ca5a6847c9f903f3f3929f36acb8ab08b6c5259a137e2bb66fc76f930"
+    },
+    "1648354448978": {
+      "events": {},
+      "links": {},
+      "address": "0x6D86F0d49A473353216659b37a349c3736a97A23",
+      "transactionHash": "0x0474d3156c63505a6fb904dda7466bf4acdb589a9766c330c9657c6866575588"
+    },
+    "1648355924142": {
+      "events": {},
+      "links": {},
+      "address": "0x805e8452f8D320C94D675417bb4911f5dbc29450",
+      "transactionHash": "0xea9ce2e40a1ea3769458fabba6a0ed106e7ca606237366c49567dee121fb492e"
+    },
+    "1648356792252": {
+      "events": {},
+      "links": {},
+      "address": "0x3A6f3044EA88E6380FD0AEBF75A478Ebe7a0c469",
+      "transactionHash": "0x222c71e8a8ff44ee1046f600fdbd3af75a3c03860db5abe9c13194ae469f2408"
     }
   },
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-03-27T00:13:36.159Z",
+  "updatedAt": "2022-03-27T04:53:50.171Z",
   "devdoc": {
     "methods": {}
   },

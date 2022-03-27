@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
+import Web3 from 'web3'
 import Navbar from './Navbar'
+import ConsumerRole from './abis/ConsumerRole.json'
+
 
 import "tabler-react/dist/Tabler.css";
 import { Card, Button } from "tabler-react";
 import './bootstrapCSS.css';
 
 function First (props) {
+
 
     return (
       
@@ -118,6 +122,7 @@ function First (props) {
 </Card>
 
         <Outlet />
+      </div>
       </div>
     );
 }

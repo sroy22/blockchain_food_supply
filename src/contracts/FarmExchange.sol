@@ -205,7 +205,7 @@ contract FarmExchange {
                                                 _id, quantity, price, name, msg.sender, msg.sender);
     }
 
-    function purchaseProduct(uint _id, uint quantity) public payable {
+    function purchaseProduct(uint _id, uint quantity) public payable   {
         // Fetch the product
         Farmer memory _farmer = farmers[_id];
         // Fetch the owner
