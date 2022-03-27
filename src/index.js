@@ -9,6 +9,8 @@ import reportWebVitals from './reportWebVitals';
 import FarmerAccount from './FarmerAccount';
 import Processor from './Processor';
 import Customer from './Customer';
+import InsuranceCompany from './InsuranceCompany';
+import FarmerInsurance from './FarmerInsurance';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,6 +20,9 @@ ReactDOM.render(
         <Route path="/farmer" element = {<FarmerAccount />} />
         <Route path="/processor" element = {<Processor />} />
         <Route path="/customer" element = {<Customer />} />
+        <Route path="/insuranceCompany" element = {<InsuranceCompany />} />
+        <Route path="/buyinsurance" element = {<FarmerInsurance />} />
+        
         <Route path="/" element={<First />}>
       </Route>
     </Routes>

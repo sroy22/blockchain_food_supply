@@ -83,6 +83,34 @@ function First (props) {
   </Card.Body>
 </Card>
 
+<Card>
+  <Card.Header>
+    <Card.Title>Insurance Company</Card.Title>
+    <Card.Options>
+      <Button color="primary" size="sm">
+      <Link to="/insuranceCompany" style={{color:"white"}}> InsuranceCompany</Link>
+      </Button>
+    </Card.Options>
+  </Card.Header>
+  <Card.Body>
+    Create Insurance Company 
+  </Card.Body>
+</Card>
+
+<Card>
+  <Card.Header>
+    <Card.Title>Insurance Company</Card.Title>
+    <Card.Options>
+      <Button color="primary" size="sm">
+      <Link to="/buyInsurance" style={{color:"white"}}> Buy the insurance</Link>
+      </Button>
+    </Card.Options>
+  </Card.Header>
+  <Card.Body>
+    Create Insurance Company 
+  </Card.Body>
+</Card>
+
         <Outlet />
       </div>
       

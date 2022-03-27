@@ -191,6 +191,8 @@ contract FarmExchange {
 
     function createMarketProduct(uint _id, uint price, uint quantity, string memory name) public {
         
+        
+
         require(price > 0);
         // Require a valid quantity
         require(quantity > 0);
