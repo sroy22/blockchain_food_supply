@@ -18,7 +18,6 @@ contract FarmExchange  {
 
         struct Farmer{
         uint farmerId;
-        string farmerName;
         string crop;
         uint256 quantity;
         uint256 expectedPrice;
@@ -29,6 +28,8 @@ contract FarmExchange  {
         bool investmentMade;
         bool boughtByProcessor;
         uint processorPrice;
+        uint farmerRating;
+        uint totalRatings;
     }
 
         struct Insurance {
@@ -63,6 +64,8 @@ contract FarmExchange  {
         string name;
         address payable processorAddress;
         address payable buyerAddress;
+        uint productRating;
+        uint productTotalRatings;
     }
 
     event FarmerCreated(
@@ -95,9 +98,9 @@ contract FarmExchange  {
         //Increment product count
         farmerCount ++;
         // Create the farmer
-        farmers[farmerCount] = Farmer(farmerCount, _farmerName,
+        farmers[farmerCount] = Farmer(farmerCount,
                                     _farmerCrop, _farmerQuantity, _farmerExpectedPrice,
-                                     msg.sender, msg.sender, holding, _costToProduce, false, false, 0);
+                                     msg.sender, msg.sender, holding, _costToProduce, false, false, 0, 0, 0);
     }
 
 
@@ -208,7 +211,7 @@ contract FarmExchange  {
         marketProductCount ++;
         // Create the farmer
         marketProducts[marketProductCount] = MarketProduct( marketProductCount,
-                                                _id, quantity, price, name, msg.sender, msg.sender);
+                                                _id, quantity, price, name, msg.sender, msg.sender, 0, 0);
     }
 
     function purchaseProduct(uint _id, uint quantity) public payable   {
@@ -260,4 +263,54 @@ contract FarmExchange  {
         address(_seller).transfer(msg.value);
         // Trigger an event
     }
+
+        function createFarmerRating(
+                        uint _farmerId,
+                        uint _farmerRating) public  {
+        
+        //Require a valid name
+        require( _farmerId > 0);
+
+        // Require a valid price
+        require(_farmerRating > 0);
+
+        Farmer memory _farmer = farmers[_farmerId];
+
+        if (_farmer.totalRatings == 0) {
+            _farmer.totalRatings = 1;
+            _farmer.farmerRating = _farmerRating;
+        } else {
+
+        uint total = _farmer.farmerRating * _farmer.totalRatings;
+        _farmer.totalRatings = _farmer.totalRatings + 1;
+        _farmer.farmerRating = (total + _farmerRating)/_farmer.totalRatings;
+        }
+
+        farmers[_farmerId] = _farmer;
+
+}
+
+        function createMarketProductRating(
+                        uint _marketProductId,
+                        uint _marketProductRating) public  {
+        
+        //Require a valid name
+        require( _marketProductId > 0);
+
+        // Require a valid price
+        require(_marketProductRating > 0);
+
+        MarketProduct memory _marketProduct = marketProducts[_marketProductId];
+
+        if (_marketProduct.productTotalRatings == 0) {
+            _marketProduct.productTotalRatings = 1;
+            _marketProduct.productRating = _marketProductRating;
+        } else {
+        uint total = _marketProduct.productRating * _marketProduct.productTotalRatings;
+        _marketProduct.productTotalRatings = _marketProduct.productTotalRatings + 1;
+        _marketProduct.productRating = (total + _marketProductRating)/_marketProduct.productTotalRatings;
+        }
+
+        marketProducts[_marketProductId] = _marketProduct;
+}
 }

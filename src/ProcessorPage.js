@@ -4,6 +4,13 @@ import { updateVariableDeclaration } from 'typescript';
 import { Button, Card, Form} from "tabler-react";
 import './bootstrapCSS.css';
 
+
+const  options = [
+  'one', 'two', 'three'
+];
+const defaultOption = options[0];
+
+
 class ProcessorPage extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +21,17 @@ class ProcessorPage extends Component {
     }
 
     this.updateVal = this.updateVal.bind(this);
+    this.updateRate = this.updateRate.bind(this);
   }
+
+
+  updateRate(e) {
+    console.log(e.target.value);
+
+    this.props.updateRate(e.target.value);
+
+  }
+
 
   updateVal(e) {
     console.log(e, e.target);
@@ -47,6 +64,8 @@ class ProcessorPage extends Component {
     <Card.Title> #{product.farmerId} Farmer: <b>{product.farmerName}</b> selling <b>{product.crop}</b> </Card.Title>
   </Card.Header>
   <Card.Body>
+            <p> Farming Rating : <b> {product.farmerRating}</b></p>
+            <p> Farming  Total Ratings : <b> {product.totalRatings}</b></p>
             <p>Agriculture Product: <b>{product.crop}</b></p>
             <p>Price per unit: <b>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</b></p>
             <p>Location: <b>{product.landLocation}</b></p>
@@ -164,6 +183,17 @@ class ProcessorPage extends Component {
             <p><b>Processor Address:</b> {product.processorAddress}</p>
             <p>Product Posted: {product.productPosted.toString()}</p>
             <p>Quantity: {product.quantity}</p>
+
+            <input
+                    id={key}
+                    name="rating"
+                    type="text"
+                    onChange={(input) => { this.updateRate(input) }}
+                    className="form-control classWithPad"
+                    placeholder="Rating"
+                    required
+                  />
+
             <input
                     id={key}
                     name="priceToSell"

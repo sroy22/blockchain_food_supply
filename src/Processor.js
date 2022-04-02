@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3'
 import FarmExchange from './abis/FarmExchange.json'
+import Rating from './abis/Rating.json'
+
 import Navbar from './Navbar'
 import ProcessorPage from './ProcessorPage';
 
@@ -11,12 +13,15 @@ function Processor() {
   const [account, setAccount] = useState(0);
   const [farmerCount, setFarmerCount] = useState(0);
   const [farmerExchange, setFarmerExchange] = useState(0);
+  const [ratingExchange, setRatingExchange] = useState(0);
   const [farmers, setFarmers] = useState([]);
   const [initial, setInitial] = useState(0);
   const [processed, setProcessed] = useState([]);
   const [priceToSell, setPriceToSell] = useState([]);
   const [quantityToSell, setQuantityToSell] = useState([]);
   const [nameToSell, setNameToSell] = useState([]);
+
+  const [farmerRating, setFarmerRating] = useState(0);
 
 
   async function loadWeb3() {
@@ -47,6 +52,12 @@ function Processor() {
     //this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
     const networkData = FarmExchange.networks[networkId]
+
+    const ratingNetworkData = Rating.networks[networkId]
+    if (ratingNetworkData){
+      const ratingPlace = new web3.eth.Contract(Rating.abi, ratingNetworkData.address)
+      setRatingExchange(ratingPlace);
+    }
     if(networkData) {
       const place = new web3.eth.Contract(FarmExchange.abi, networkData.address)
       setFarmerExchange(place);
@@ -56,6 +67,7 @@ function Processor() {
       let deals = [];
       for (var i = 1; i <= count; i++) {
         const farmer = await place.methods.farmers(i).call()
+        console.log(farmer);
         p.push(farmer);
       }
       
@@ -146,17 +158,19 @@ function Processor() {
 
 
 async function   marketProductCreation(id, key) {
-  console.log(id);
-  console.log(key);
-  console.log(priceToSell[key]);
-  console.log(quantityToSell[key]);
-  console.log(nameToSell[key]);
+
+console.log(farmerRating);
 
   const p = await farmerExchange.methods.processedItems(id).call();
   console.log(p);
 
 
   farmerExchange.methods.createMarketProduct(id, priceToSell[key], quantityToSell[key], nameToSell[key] ).send({ from: account})
+
+const l = await farmerExchange.methods.farmers(id).call();
+console.log(l);
+
+  farmerExchange.methods.createFarmerRating(p.farmerId, farmerRating ).send({ from: account})
 
 
   var delayInMilliseconds = 12000; //1 second
@@ -197,6 +211,14 @@ async function   marketProductCreation(id, key) {
     loadBlockchainData();
   }, []);
 
+function updateRate(value){
+  
+
+  setFarmerRating(value);
+
+  console.log(value);
+}
+
   function updateVal(e, id, name, value) {
     console.log(id, name,value);
     
@@ -228,6 +250,7 @@ async function   marketProductCreation(id, key) {
               createMarketProduct = {marketProductCreation}
               purchaseProduct={makeInvestment}
               updateVal = {updateVal}
+              updateRate = {updateRate}
               priceToSell={priceToSell}
               quantityToSell={quantityToSell}
               nameToSell={nameToSell}

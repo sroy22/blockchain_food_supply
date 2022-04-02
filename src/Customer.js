@@ -142,6 +142,17 @@ console.log(marketProduct);
 //     }
 //   }
 
+
+async function   submitRatings(rating, marketProductId) {
+  console.log(rating);
+  console.log(marketProductId);
+
+  farmerExchange.methods.createMarketProductRating(marketProductId, rating ).send({ from: account})
+
+
+}
+
+
  async function   purchaseProduct(id, pricePerUnit, quantity, processorAddress) {
    chain.current = true;
     const price = pricePerUnit * quantity + "000000000000000000";
@@ -172,6 +183,7 @@ console.log(marketProduct);
         <main role="main" >   
             <CustomerPage
               products={marketProducts}
+              submitRatings = {submitRatings}
               purchaseProduct={purchaseProduct}
               farmerAddress = {chainFarmerAddress}
               farmerId = {chainFarmerId}

@@ -16,6 +16,7 @@ class CustomerPage extends Component {
         <h2>Consumer Marketplace</h2>
         <div className="row">
         { this.props.products.map((product, key) => {
+          console.log(product);
           return (
             
               <Card key={key} className="col-md-5 classWithPad">
@@ -28,6 +29,9 @@ class CustomerPage extends Component {
                 <AiOutlineArrowDown />
                 <p><b>Processor</b> - {this.props.processorAddress}</p>
                 <hr/>
+                <p>Product Rating: <b>{product.productRating}</b></p>
+                <p>Product Number of Rating: <b>{product.productTotalRatings}</b></p>
+
                 <p>Price per unit: <b>{product.price} Eth</b></p>
                 <p>Quantity left: <b>{product.quantity}</b></p>
                 <p>Processor ID: <b>{product.processorId}</b></p>
@@ -41,6 +45,24 @@ class CustomerPage extends Component {
                 className="form-control classWithPad"
                 placeholder="Quantity to buy"
                 required />
+                                <input
+                id="rating"
+                type="text"
+                ref={(input) => { this.rating = input }}
+                className="form-control classWithPad"
+                placeholder="Rating"
+                required />
+
+<button
+                            name={this.rating}
+                            onClick={(event) => {
+                              console.log(event.target.name);
+                              console.log(this.rating.value);
+                              this.props.submitRatings(this.rating.value, product.marketProductId)
+                            }}
+                          >
+                            Rating
+                          </button>
                 { !product.purchased
                         ? <button
                             name={product.marketProductId}
