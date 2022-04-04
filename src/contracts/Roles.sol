@@ -1,3 +1,5 @@
+// Code referenced from OpenZeppelin for role-based management until our design change
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.5.0;
 

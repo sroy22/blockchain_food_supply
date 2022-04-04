@@ -12,9 +12,8 @@ function  addConsumer() public {
     consumers[msg.sender] = true;
 }
 
-// function  onlyConsumer()  public {
-//   require(consumers[msg.sender]);
-//   _;
-// }
+function  onlyConsumer()  public view {
+  require(consumers[msg.sender]);
+}
 
 }
