@@ -5,7 +5,6 @@ import './bootstrapCSS.css';
 class InsuranceManagementView extends Component {
     render() {
         this.props.products.map((product, key) => {
-          console.log(product);
         });
         return (
           <div id="content">
@@ -13,7 +12,6 @@ class InsuranceManagementView extends Component {
                <div className="container">
               <div className="row">
             { this.props.products.map((product, key) => {
-              console.log(product);
                   return(
             <Card className="col-sm-5 classWithPad" key={key}>
               <Card.Header>

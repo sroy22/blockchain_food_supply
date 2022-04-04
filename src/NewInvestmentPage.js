@@ -6,7 +6,6 @@ class NewInvestorPage extends Component {
 
   render() {
     this.props.products.map((product, key) => {
-        console.log(product);
     });
     return (
       <div id="content">
@@ -15,7 +14,6 @@ class NewInvestorPage extends Component {
            <div className="container-fluid">
           <div className="row">
         { this.props.products.map((product, key) => {
-            console.log(product);
               return(
                 <div>
                 { product.quantity != 0 ?
@@ -29,48 +27,48 @@ class NewInvestorPage extends Component {
             <p><b>Quantity Remaining: </b>{product.quantity}</p>
             <p><b>Holding Remaining: </b>{product.holding}%</p>
             <p><b>Cost to Produce: </b>{product.costToProduce}</p>
-                    <input
-                      id="quantityToBuy"
-                      type="text"
-                      ref={(input) => { this.quantityToBuy = input }}
-                      className="form-control classWithPad"
-                      placeholder="percentage to invest"
-                      required /> 
-                  <div>
-                    {!product.purchased
-                      ? <button
-                        name={product.farmerId}
-                        value={product.expectedPrice}
-                        quantityToBuy={this.quantityToBuy}
-                        onClick={(event) => {
-                          event.preventDefault()
-                          this.props.purchaseProduct(event.target.name, product.costToProduce, this.quantityToBuy.value)
-                        }}
-                      >
-                        Buy
-                      </button>
-                      : null
-                    }
-                    { product.investmentMade && product.boughtByProcesor
-                      ? <button
-                          name={product.farmerId}
-                          onClick={(event) => {
-                            this.props.repayToInvestor(event.target.name)
-                          }}
-                        >
-                          Repay
-                        </button>
-                      : null
-                    }
+            <input
+                id="quantityToBuy"
+                type="text"
+                ref={(input) => { this.quantityToBuy = input }}
+                className="form-control classWithPad"
+                placeholder="percentage to invest"
+            required /> 
+            <div>
+              {!product.purchased
+                  ? <button
+                    name={product.farmerId}
+                    value={product.expectedPrice}
+                    quantityToBuy={this.quantityToBuy}
+                    onClick={(event) => {
+                    event.preventDefault()
+                    this.props.purchaseProduct(event.target.name, product.costToProduce, this.quantityToBuy.value)
+              }}
+              >
+                Buy
+                </button>
+                  : null
+              }
+            { product.investmentMade && product.boughtByProcesor
+                ? <button
+                    name={product.farmerId}
+                    onClick={(event) => {
+                    this.props.repayToInvestor(event.target.name)
+                    }}
+                  >
+                  Repay
+                  </button>
+                  : null
+                  }
                   </div>
           </Card.Body>
           <Card.Footer>{product.owner}</Card.Footer>
     </Card>
     : null }
     </div>
-              )})}
-              </div>
-              </div>
+  )})}
+  </div>
+  </div>
       </div>
     );
   }

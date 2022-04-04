@@ -8,12 +8,12 @@ import WeatherApp from './WeatherApp';
 import InsuranceManagementView from './InsuranceManagementView';
 
 function InsuranceManagement() {
-    const [account, setAccount] = useState(0);
-    const [farmerCount, setFarmerCount] = useState(0);
-    const [dealCount, setDealCount] = useState(0);
-    const [farmerExchange, setFarmerExchange] = useState(0);
-    const temp = useRef(0);
-    const [farmers, setFarmers] = useState([]);
+    const [account, setAccount] = useState(0); // for current account
+    const [farmerCount, setFarmerCount] = useState(0); // for total farmer count
+    const [dealCount, setDealCount] = useState(0); // for total deal count
+    const [farmerExchange, setFarmerExchange] = useState(0); // for smart contract
+    const temp = useRef(0); // for storing current temperature
+    const [farmers, setFarmers] = useState([]); // for storing farmer info
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -39,18 +39,18 @@ function InsuranceManagement() {
   const web3 = window.web3
   // Load account
   const accounts = await web3.eth.getAccounts()
-  setAccount(accounts[0]);
+  setAccount(accounts[0]); // setting current account
   const networkId = await web3.eth.net.getId()
   const networkData = Insurance.networks[networkId]
   if(networkData) {
-    const place = new web3.eth.Contract(Insurance.abi, networkData.address)
-    setFarmerExchange(place);
+    const place = new web3.eth.Contract(Insurance.abi, networkData.address) // loading the smart contract
+    setFarmerExchange(place); // setting the smart contract
     const count = await place.methods.insuranceCompanyCount().call()
     const count1 = await place.methods.insuranceFarmerCount().call()
     let insuranceCompanyToBeTriggered;
   for (var i = 1; i <= count; i++) {
       const farmer = await place.methods.insuranceCompanies(i).call()
-      if (farmer.trigger > temp.current ){
+      if (farmer.trigger > temp.current ){ // trigger condition of insurance contract
           insuranceCompanyToBeTriggered = farmer.insuranceCompanyId;
       }
     }
@@ -58,9 +58,9 @@ function InsuranceManagement() {
     let p = []
     let deals = [];
     for (var i = 1; i <= count1; i++) {
-      const farmer = await place.methods.insuranceFarmers(i).call()
+      const farmer = await place.methods.insuranceFarmers(i).call() // getting farmer
       if (farmer.insuranceFarmerId == insuranceCompanyToBeTriggered){
-        p.push(farmer);
+        p.push(farmer); // farmer to be paid
       }
 
     }
@@ -73,21 +73,20 @@ function InsuranceManagement() {
 async function repayToInvestor(farmerId, insuranceFarmerId, insuranceCompanyId) {
       const f= await farmerExchange.methods.insuranceCompanies(insuranceCompanyId).call()
       const acc = await farmerExchange.methods.insuranceFarmers(insuranceFarmerId).call()
-      const p = f.payoutValue*0.01*acc.premium;
-    farmerExchange.methods.payToInvestor(insuranceFarmerId).send({ from: account, value: p })
+      const p = f.payoutValue*0.01*acc.premium; // calculating the amount
+    farmerExchange.methods.payToInvestor(insuranceFarmerId).send({ from: account, value: p }) // paying back to investor
     
    
 }
 
 async function createAccount(name, type, trigger, payback) {
 
-    farmerExchange.methods.createInsuranceCompany(name, type, trigger, payback).send({ from: account })
+    farmerExchange.methods.createInsuranceCompany(name, type, trigger, payback).send({ from: account }) 
    .on('transactionHash', (hash) => {
-     })
-   var delayInMilliseconds = 8000; //1 second
+     })                                          // creating the account
+   var delayInMilliseconds = 8000; 
    setTimeout( async function() {
-     //your code to be executed after 1 second
-     loadBlockchainData();
+     loadBlockchainData(); // adding a delay for blockchain state update
      }, delayInMilliseconds);
    }
 
@@ -98,10 +97,9 @@ async function createAccount(name, type, trigger, payback) {
 
 
 
-  const temperature = (data) => {
-temp.current = data;
+const temperature = (data) => {
+  temp.current = data; // storing current temperature
   }
-
 
   return (
     <div>
@@ -113,7 +111,7 @@ temp.current = data;
              createInsurance={createAccount}
              repayToInvestor = {repayToInvestor}
           />
-                        <WeatherApp data = {temperature} />
+        <WeatherApp data = {temperature} />
         </main>
     </div> 
   </div>

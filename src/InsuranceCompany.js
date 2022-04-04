@@ -9,11 +9,11 @@ import WeatherApp from './WeatherApp';
 
 
 function InsuranceCompany() {
-  const [account, setAccount] = useState(0);
-  const [farmerCount, setFarmerCount] = useState(0);
-  const [dealCount, setDealCount] = useState(0);
-  const [farmerExchange, setFarmerExchange] = useState(0);
-  const [farmers, setFarmers] = useState([]);
+  const [account, setAccount] = useState(0); // for current account
+  const [farmerCount, setFarmerCount] = useState(0); // for total farmer count
+  const [dealCount, setDealCount] = useState(0); // for total deal count
+  const [farmerExchange, setFarmerExchange] = useState(0); // for smart contract
+  const [farmers, setFarmers] = useState([]); // for all farmers
   async function loadWeb3() {
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum)
@@ -38,21 +38,20 @@ function InsuranceCompany() {
     const web3 = window.web3
     // Load account
     const accounts = await web3.eth.getAccounts()
-    setAccount(accounts[0]);
+    setAccount(accounts[0]); // setting current account
     const networkId = await web3.eth.net.getId()
     const networkData = Insurance.networks[networkId]
     if(networkData) {
-      const place = new web3.eth.Contract(Insurance.abi, networkData.address)
-      setFarmerExchange(place);
+      const place = new web3.eth.Contract(Insurance.abi, networkData.address) // loading the smart contract 
+      setFarmerExchange(place); // setting smart contract
       const count = await place.methods.insuranceCompanyCount().call()
       const count1 = await place.methods.insuranceFarmerCount().call()
       setFarmerCount(count);
       let p = []
       let deals = [];
       for (var i = 1; i <= count1; i++) {
-        const farmer = await place.methods.insuranceFarmers(i).call()
-        console.log(farmer);
-          p.push(farmer);
+        const farmerDeals = await place.methods.insuranceFarmers(i).call() // reading all farmer deals
+          p.push(farmerDeals);
 
       }
       setFarmers(p);
@@ -66,8 +65,8 @@ function InsuranceCompany() {
 async function repayToInvestor(farmerId, insuranceFarmerId, insuranceCompanyId) {
   const f= await farmerExchange.methods.insuranceCompanies(insuranceCompanyId).call()
   const acc = await farmerExchange.methods.insuranceFarmers(insuranceFarmerId).call()
-  const p = f.payoutValue*0.01*acc.premium;
-farmerExchange.methods.payToInvestor(insuranceFarmerId).send({ from: account, value: p })
+  const p = f.payoutValue*0.01*acc.premium; // calculating amount to be paid
+farmerExchange.methods.payToInvestor(insuranceFarmerId).send({ from: account, value: p }) // paying back to investor
 }
 
 
@@ -75,10 +74,10 @@ farmerExchange.methods.payToInvestor(insuranceFarmerId).send({ from: account, va
 
      farmerExchange.methods.createInsuranceCompany(name, type, trigger, payback).send({ from: account })
     .on('transactionHash', (hash) => {
-      })
+      })               // creating the account
     var delayInMilliseconds = 8000; 
     setTimeout( async function() {
-      loadBlockchainData();
+      loadBlockchainData(); // adding a delay for blockchain state update
       }, delayInMilliseconds);
     }
 

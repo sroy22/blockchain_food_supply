@@ -6,22 +6,15 @@ import FarmExchange from './abis/FarmExchange.json'
 
 import BuyInsurance from './BuyInsurance';
 import Navbar from './Navbar'
-import ProcessorPage from './ProcessorPage';
 import WeatherApp from './WeatherApp';
 
 
 
 function FarmerInsurance() {
-  const [account, setAccount] = useState(0);
-  const [farmerCount, setFarmerCount] = useState(0);
-  const [farmerExchange, setFarmerExchange] = useState(0);
-  const [farmers, setFarmers] = useState([]);
-  const [initial, setInitial] = useState(0);
-  const [processed, setProcessed] = useState([]);
-  const [priceToSell, setPriceToSell] = useState([]);
-  const [quantityToSell, setQuantityToSell] = useState([]);
-  const [nameToSell, setNameToSell] = useState([]);
-
+  const [account, setAccount] = useState(0); // setting current account
+  const [farmerCount, setFarmerCount] = useState(0); // get all farmers count
+  const [farmerExchange, setFarmerExchange] = useState(0); // get smart contract
+  const [insurancePolicy, setInsurancePolicy] = useState([]); // get all farmers
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -43,76 +36,53 @@ function FarmerInsurance() {
   })
 
   async function loadBlockchainData() {
-      console.log("KLKL");
     const web3 = window.web3
     // Load account
     const accounts = await web3.eth.getAccounts()
-    setAccount(accounts[0]);
-    //this.setState({ account: accounts[0] })
+    setAccount(accounts[0]); // set current account
     const networkId = await web3.eth.net.getId()
     const networkData = Insurance.networks[networkId]
     if(networkData) {
-      const place = new web3.eth.Contract(Insurance.abi, networkData.address)
-      setFarmerExchange(place);
-      const count = await place.methods.insuranceCompanyCount().call()
-      setFarmerCount(count);
+      const place = new web3.eth.Contract(Insurance.abi, networkData.address) // load smart contract
+      setFarmerExchange(place); // set smart contract
+      const count = await place.methods.insuranceCompanyCount().call() // get all insurance policy count
+      setFarmerCount(count); // set farmer count
       let p = []
       let deals = [];
       for (var i = 1; i <= count; i++) {
-        const farmer = await place.methods.insuranceCompanies(i).call()
-        p.push(farmer);
+        const insurancePolicies = await place.methods.insuranceCompanies(i).call() // read all insurance policies
+        p.push(insurancePolicies);
       }
-      setFarmers(p);
+      setInsurancePolicy(p);  // set all insurance policies
     } else {
       window.alert('Investment contract 1 not deployed to detected network.')
     }
   }
   
- async function createAccount(name, location, crop, quantity, price, expiryDate, holding, costToProduce) {
-
-    farmerExchange.methods.createFarmer(name, location, crop, quantity, price, expiryDate, holding, costToProduce).send({ from: account })
-    .on('transactionHash', (hash) => {
-      })
-    var delayInMilliseconds = 15000; //1 second
-    setTimeout( async function() {
-      //your code to be executed after 1 second
-      loadBlockchainData();
-      }, delayInMilliseconds);
-    }
-
-async function   marketProductCreation(id, key) {
-  farmerExchange.methods.createMarketProduct(id, priceToSell[key], quantityToSell[key], nameToSell[key] ).send({ from: account})
-  var delayInMilliseconds = 5000; //1 second
-  setTimeout( async function() {   
-    loadBlockchainData();
-    }, delayInMilliseconds);
-}
-
  async function   makeInvestment(insuranceCompanyId, price) {
-const web3 = window.web3
-// Load account
-const accounts = await web3.eth.getAccounts()
-//this.setState({ account: accounts[0] })
-const networkId = await web3.eth.net.getId()
-const networkData = FarmExchange.networks[networkId]
-if(networkData) {
-  const place1 = new web3.eth.Contract(FarmExchange.abi, networkData.address)
-  const count = await place1.methods.farmerCount().call()
-  let f;
-  for (var i = 1; i <= count; i++) {
-    const farmer = await place1.methods.farmers(i).call()
-    if (farmer.owner == account) {
+  const web3 = window.web3
+    // Load account
+  const accounts = await web3.eth.getAccounts()
+  const networkId = await web3.eth.net.getId()
+  const networkData = FarmExchange.networks[networkId]
+  if(networkData) {
+    const place1 = new web3.eth.Contract(FarmExchange.abi, networkData.address) //load smart contract
+    const count = await place1.methods.farmerCount().call()
+    let f;
+    for (var i = 1; i <= count; i++) {
+      const farmer = await place1.methods.farmers(i).call() // read each farmer
+      if (farmer.owner == account) { // check if this account is the current logged in for access control
         f = farmer;
-        let finalPrice = price + "000000000000000000";
-        farmerExchange.methods.purchaseProduct(insuranceCompanyId, farmer.farmerId).send({ from: account, value: finalPrice })
+        let finalPrice = price + "000000000000000000"; // format to ether
+        farmerExchange.methods.purchaseProduct(insuranceCompanyId, farmer.farmerId).send({ from: account, value: finalPrice }) // purchase the insurance
     }
   }
 } else {
   window.alert('Investment contract 1 not deployed to detected network.')
 }
- var delayInMilliseconds = 15000; //1 second
+ var delayInMilliseconds = 15000; 
   setTimeout( async function() {
-    loadBlockchainData();
+    loadBlockchainData(); // add a delay for blockchain state to be updated
     }, delayInMilliseconds);
 
     }
@@ -122,35 +92,16 @@ if(networkData) {
     loadWeb3();
     loadBlockchainData();
   }, []);
-
-  function updateVal(e, id, name, value) {
-    let val;
-    if(name === "priceToSell") {
-      val = priceToSell.slice();
-      val[id] = value;
-      setPriceToSell(val);
-    } else if(name === "quantityToSell") {
-      val = quantityToSell.slice();
-      val[id] = value;
-      setQuantityToSell(val);
-    } else if(name === "nameToSell") {
-      val = nameToSell.slice();
-      val[id] = value;
-      setNameToSell(val);
-    }
-    }
   
   return (
     <div>
       {}
      <Navbar account={account} />
     <div className="container-fluid mt-5">
-      
         <main role="main" >
-          
             <div> 
             <BuyInsurance
-              products={farmers}
+              products={insurancePolicy}
               purchaseProduct={makeInvestment}
             />
              <WeatherApp/>

@@ -16,7 +16,6 @@ class InsurancePage extends Component {
           const type = this.insuranceType.value
           const trigger = parseInt(this.insuranceTrigger.value)
           const payback = parseInt(this.insurancePayback.value);
-
           this.props.createInsurance(name, type, trigger, payback)
         }}>
           <div className="form-group mr-sm-2">

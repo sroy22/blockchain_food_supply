@@ -6,7 +6,6 @@ class BuyInsurance extends Component {
 
   render() {
     this.props.products.map((product, key) => {
-      console.log(product);
     });
     return (
       <div id="content">
@@ -14,7 +13,6 @@ class BuyInsurance extends Component {
        <div className='container'>
          <div className='row'>
         { this.props.products.map((product, key) => {
-                console.log(product);
               return(
         <Card className="col-sm-5 classWithPad" key={key}>
               <Card.Header>
@@ -24,7 +22,7 @@ class BuyInsurance extends Component {
                         <p>Insurance Type: <b>{product.typeOf}</b></p>
                         <p>Insurance Trigger: <b>{product.trigger}</b></p>
                         <p>Payout Return: <b>{product.payoutValue}</b>%</p>
-                        <input
+              <input
               id="premiumValue"
               type="text"
               ref={(input) => { this.premiumValue = input }}
@@ -32,7 +30,7 @@ class BuyInsurance extends Component {
               placeholder="Premium Value"
               required />
 
-      { !product.purchased
+              { !product.purchased
                       ? <button
                           name={product.insuranceCompanyId}
                           onClick={(event) => {
