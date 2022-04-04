@@ -16,13 +16,6 @@ class Navbar extends Component {
     <Nav.SubItem value="Create Insurance" to="/insuranceCompany" />
     <Nav.SubItem value="Manage Insurance" to="/insuranceManagement" />
     <Nav.SubItem value="Buy Insurance" to="/buyinsurance" />
-    {/* <Nav.SubItem value="Insurance" to={{
-            pathname: "/insurance", 
-            state: {
-                customers: []
-                }
-            }}/> */}
-
     <Nav.SubItem value="Customer Market" to="/customer" />
   </Nav.Item>
   <Nav.Item active icon="user" id="account">

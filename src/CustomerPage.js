@@ -12,13 +12,10 @@ class CustomerPage extends Component {
     return (
   
       <div id="container">
-         
         <h2>Consumer Marketplace</h2>
         <div className="row">
         { this.props.products.map((product, key) => {
-          console.log(product);
           return (
-            
               <Card key={key} className="col-md-5 classWithPad">
               <Card.Header>
                 <Card.Title><h2><u>{product.name}</u> for sale</h2></Card.Title>
@@ -45,7 +42,7 @@ class CustomerPage extends Component {
                 className="form-control classWithPad"
                 placeholder="Quantity to buy"
                 required />
-                                <input
+                <input
                 id="rating"
                 type="text"
                 ref={(input) => { this.rating = input }}
@@ -53,11 +50,9 @@ class CustomerPage extends Component {
                 placeholder="Rating"
                 required />
 
-<button
+                            <button
                             name={this.rating}
                             onClick={(event) => {
-                              console.log(event.target.name);
-                              console.log(this.rating.value);
                               this.props.submitRatings(this.rating.value, product.marketProductId)
                             }}
                           >
@@ -84,56 +79,6 @@ class CustomerPage extends Component {
            
         )})}
         </div>
-        {/* <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Market Product ID</th>
-              <th scope="col">Processor ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody id="productList">
-            { this.props.products.map((product, key) => {
-                console.log(product);
-              return(
-                <tr key={key}>
-                  <th scope="row">{product.marketProductId}</th>
-                  <td>{product.processorId}</td>
-                  <td>{product.name}</td>
-                  <td>{product.price  } Eth</td>
-                  <td>{product.quantity}</td>
-          <div className="form-group mr-sm-4">
-            <input
-              id="holdingPercent"
-              type="text"
-              ref={(input) => { this.quantityToBuy = input }}
-              className="form-control"
-              placeholder="Quantity to buy"
-              required />
-          </div>
-                  <td>
-                    { !product.purchased
-                      ? <button
-                          name={product.marketProductId}
-                          value={product.price}
-                          quantityToBuy = {this.quantityToBuy}
-                          onClick={(event) => {
-                            this.props.purchaseProduct(event.target.name, event.target.value, this.quantityToBuy.value, product.processorAddress)
-                          }}
-                        >
-                          Buy
-                        </button>
-                      : null
-                    }
-                    </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table> */}
       </div>
     );
   }

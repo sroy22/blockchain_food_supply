@@ -20,9 +20,7 @@ function Processor() {
   const [priceToSell, setPriceToSell] = useState([]);
   const [quantityToSell, setQuantityToSell] = useState([]);
   const [nameToSell, setNameToSell] = useState([]);
-
   const [farmerRating, setFarmerRating] = useState(0);
-
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -44,15 +42,12 @@ function Processor() {
   })
 
   async function loadBlockchainData() {
-      console.log("KLKL");
     const web3 = window.web3
     // Load account
     const accounts = await web3.eth.getAccounts()
     setAccount(accounts[0]);
-    //this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
     const networkData = FarmExchange.networks[networkId]
-
     const ratingNetworkData = Rating.networks[networkId]
     if (ratingNetworkData){
       const ratingPlace = new web3.eth.Contract(Rating.abi, ratingNetworkData.address)
@@ -76,58 +71,22 @@ function Processor() {
 
     for (var i = 1; i <= process; i++) {
       const processGood = await place.methods.processedItems(i).call()
-      console.log(accounts[0]);
-      console.log(processGood.processorAddress);
-      console.log(processGood);
       if (accounts[0] == processGood.processorAddress) {
         processedGoods.push(processGood);
         }
     }
-
     const marketProducs = await place.methods.marketProductCount().call();
-    console.log(marketProducs);
-
     let marketGoodsToSell = [];
-
     for (var i = 1; i <= marketProducs; i++) {
       const marketGood = await place.methods.marketProducts(i).call()
       marketGoodsToSell.push(marketGood);
     }
-
-    console.log(marketGoodsToSell);
-
-    console.log(processedGoods);
     setProcessed(processedGoods);
       setFarmers(p);
     } else {
       window.alert('Investment contract 1 not deployed to detected network.')
     }
   }
-
-
-//   async function createInsurance(name, price) {
-//      investment.methods.createProduct(name, price, initial).send({ from: account, value: price })
-//      .on('transactionHash', (hash) => {
-//      })
-//      var delayInMilliseconds = 8000; //1 second
-//     setTimeout( async function() {
-//     //your code to be executed after 1 second
-//     loadBlockchainData();
-//     }, delayInMilliseconds);
-//    }
- 
-//    function   reimburse(id, price) {
-//       investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial }) 
-//       var delayInMilliseconds = 8000; //1 second
-//       setTimeout( async function() {
-//       loadBlockchainData();
-//       }, delayInMilliseconds);
-//     }
-
-//    window.ethereum.on('accountsChanged', function (accounts) {
-//      // Time to reload your interface with accounts[0]!
-//      setAccount(accounts[0])
-//    })
   
  async function createAccount(name, location, crop, quantity, price, expiryDate, holding, costToProduce) {
 
@@ -141,66 +100,29 @@ function Processor() {
       }, delayInMilliseconds);
     }
 
-    console.log("JJ");
-
-//   async function payBackToInvestor(event){
-//     let deals = [];
-//     console.log(investorCount);
-//     for (var i = 1; i <= investorCount; i++) {
-//       const deal = await investment.methods.deals(i).call()
-//       deal.amount = deal.amount;
-//       investment.methods.repay(deal.farmerID).send({ from: account, value: deal.amount, to: deal.investorAddress})
-//       deals.push(deal);
-//     }
-//   }
-
-
-
-
 async function   marketProductCreation(id, key) {
-
-console.log(farmerRating);
-
   const p = await farmerExchange.methods.processedItems(id).call();
-  console.log(p);
-
-
   farmerExchange.methods.createMarketProduct(id, priceToSell[key], quantityToSell[key], nameToSell[key] ).send({ from: account})
 
-const l = await farmerExchange.methods.farmers(id).call();
-console.log(l);
-
+  const l = await farmerExchange.methods.farmers(id).call();
   farmerExchange.methods.createFarmerRating(p.farmerId, farmerRating ).send({ from: account})
-
 
   var delayInMilliseconds = 12000; //1 second
   setTimeout( async function() {
         //your code to be executed after 1 second
-        
-    console.log(process);
-        
-    loadBlockchainData();
-    
+    loadBlockchainData();    
     }, delayInMilliseconds);
 }
 
  async function   makeInvestment(crop, id, quantityToBuy, pricePerQuantity) {
-   console.log("Hello");
    const price = quantityToBuy*pricePerQuantity ;
-   console.log(quantityToBuy);
-   console.log(pricePerQuantity);
-   console.log(price);
     const farmer = await farmerExchange.methods.farmers(id).call();
     farmerExchange.methods.purchaseProduct(id, quantityToBuy).send({ from: account, value: price, to: initial })
     farmerExchange.methods.createProcessedItem(crop, id, pricePerQuantity, quantityToBuy ).send({from: account})
     var delayInMilliseconds = 15000; //1 second
   setTimeout( async function() {
         //your code to be executed after 1 second
-        
-    console.log(process);
-        
     loadBlockchainData();
-    
     }, delayInMilliseconds);
 
     }
@@ -212,18 +134,11 @@ console.log(l);
   }, []);
 
 function updateRate(value){
-  
-
   setFarmerRating(value);
-
-  console.log(value);
 }
 
   function updateVal(e, id, name, value) {
-    console.log(id, name,value);
-    
     let val;
-
     if(name === "priceToSell") {
       val = priceToSell.slice();
       val[id] = value;
@@ -241,7 +156,6 @@ function updateRate(value){
   
   return (
     <div>
-      {console.log("render")}
      <Navbar account={account} />
         <main role="main" >
             <ProcessorPage

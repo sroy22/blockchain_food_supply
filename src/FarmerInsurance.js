@@ -67,31 +67,6 @@ function FarmerInsurance() {
       window.alert('Investment contract 1 not deployed to detected network.')
     }
   }
-
-
-//   async function createInsurance(name, price) {
-//      investment.methods.createProduct(name, price, initial).send({ from: account, value: price })
-//      .on('transactionHash', (hash) => {
-//      })
-//      var delayInMilliseconds = 8000; //1 second
-//     setTimeout( async function() {
-//     //your code to be executed after 1 second
-//     loadBlockchainData();
-//     }, delayInMilliseconds);
-//    }
- 
-//    function   reimburse(id, price) {
-//       investment.methods.purchaseProduct(id).send({ from: account, value: price, to: initial }) 
-//       var delayInMilliseconds = 8000; //1 second
-//       setTimeout( async function() {
-//       loadBlockchainData();
-//       }, delayInMilliseconds);
-//     }
-
-//    window.ethereum.on('accountsChanged', function (accounts) {
-//      // Time to reload your interface with accounts[0]!
-//      setAccount(accounts[0])
-//    })
   
  async function createAccount(name, location, crop, quantity, price, expiryDate, holding, costToProduce) {
 
@@ -105,50 +80,15 @@ function FarmerInsurance() {
       }, delayInMilliseconds);
     }
 
-    console.log("JJ");
-
-//   async function payBackToInvestor(event){
-//     let deals = [];
-//     console.log(investorCount);
-//     for (var i = 1; i <= investorCount; i++) {
-//       const deal = await investment.methods.deals(i).call()
-//       deal.amount = deal.amount;
-//       investment.methods.repay(deal.farmerID).send({ from: account, value: deal.amount, to: deal.investorAddress})
-//       deals.push(deal);
-//     }
-//   }
-
-
-
-
 async function   marketProductCreation(id, key) {
-  console.log(id);
-  console.log(key);
-  console.log(priceToSell[key]);
-  console.log(quantityToSell[key]);
-  console.log(nameToSell[key]);
-
-
   farmerExchange.methods.createMarketProduct(id, priceToSell[key], quantityToSell[key], nameToSell[key] ).send({ from: account})
-
-
   var delayInMilliseconds = 5000; //1 second
-  setTimeout( async function() {
-        //your code to be executed after 1 second
-        
-    console.log(process);
-        
+  setTimeout( async function() {   
     loadBlockchainData();
-    
     }, delayInMilliseconds);
 }
 
  async function   makeInvestment(insuranceCompanyId, price) {
-
-console.log(insuranceCompanyId);
-console.log(price);
-
-console.log("KLKL");
 const web3 = window.web3
 // Load account
 const accounts = await web3.eth.getAccounts()
@@ -158,39 +98,21 @@ const networkData = FarmExchange.networks[networkId]
 if(networkData) {
   const place1 = new web3.eth.Contract(FarmExchange.abi, networkData.address)
   const count = await place1.methods.farmerCount().call()
-  console.log(count);
   let f;
   for (var i = 1; i <= count; i++) {
     const farmer = await place1.methods.farmers(i).call()
-    console.log(farmer.farmerId);
-    console.log(farmer.owner);
-    console.log(account);
     if (farmer.owner == account) {
         f = farmer;
-        console.log("HH");
         let finalPrice = price + "000000000000000000";
-        console.log(price);
-        console.log(insuranceCompanyId);
         farmerExchange.methods.purchaseProduct(insuranceCompanyId, farmer.farmerId).send({ from: account, value: finalPrice })
     }
   }
-
-
 } else {
   window.alert('Investment contract 1 not deployed to detected network.')
 }
-
-    // const farmer = await farmerExchange.methods.farmers(id).call();
-    // farmerExchange.methods.purchaseProduct(id, quantityToBuy).send({ from: account, value: price, to: initial })
-    // farmerExchange.methods.createProcessedItem(crop, id, pricePerQuantity, quantityToBuy ).send({from: account})
-    var delayInMilliseconds = 15000; //1 second
+ var delayInMilliseconds = 15000; //1 second
   setTimeout( async function() {
-        //your code to be executed after 1 second
-        
-    console.log(process);
-        
     loadBlockchainData();
-    
     }, delayInMilliseconds);
 
     }
@@ -202,10 +124,7 @@ if(networkData) {
   }, []);
 
   function updateVal(e, id, name, value) {
-    console.log(id, name,value);
-    
     let val;
-
     if(name === "priceToSell") {
       val = priceToSell.slice();
       val[id] = value;
@@ -223,7 +142,7 @@ if(networkData) {
   
   return (
     <div>
-      {console.log("render")}
+      {}
      <Navbar account={account} />
     <div className="container-fluid mt-5">
       

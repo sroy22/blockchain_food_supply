@@ -26,31 +26,16 @@ class ProcessorPage extends Component {
 
 
   updateRate(e) {
-    console.log(e.target.value);
-
     this.props.updateRate(e.target.value);
-
   }
 
 
   updateVal(e) {
-    console.log(e, e.target);
-
-    // let val = this.state[e.target.name];
-    // val[e.target.id] = e.target.value;
-
-    // console.log(val);
-
-    // this.setState({
-    //   [e.target.name]: val
-    // })
-
     this.props.updateVal(e, e.target.id, e.target.name, e.target.value);
   }
 
   render() {
     const { priceToSell, quantityToSell, nameToSell } = this.props;
-    console.log(">>>>", this.props)
     return (
       <div id="container">
         <h2>Products ready for processing</h2>
@@ -100,72 +85,10 @@ class ProcessorPage extends Component {
 : null }
 </div>
            )})}
-        {/* <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Crop</th>
-              <th scope="col">Price</th>
-              <th scope="col">Location</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Expiry Date</th>
-              <th scope="col">Holding</th>
-              <th scope="col">Cost to produce</th>
-              <th scope="col">Address</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody id="productList">
-            {this.props.products.map((product, key) => {
-              console.log(this.quantityToBuy);
-              return (
-                <tr key={key}>
-                  <th scope="row">{product.farmerId}</th>
-                  <td>{product.farmerName}</td>
-                  <td>{product.crop}</td>
-                  <td>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</td>
-                  <td>{product.landLocation}</td>
-                  <td>{product.quantity}</td>
-                  <td>{product.expDate}</td>
-                  <td>{product.holding}</td>
-                  <td>{product.costToProduce}</td>
-                  <td>{product.owner}</td>
-                  <div className="form-group mr-sm-4">
-                    <input
-                      id="quantityToBuy"
-                      type="text"
-                      ref={(input) => { this.quantityToBuy = input }}
-                      className="form-control"
-                      placeholder="Quantity to buy"
-                      required />
-                  </div>
-                  <td>
-                    {!product.purchased
-                      ? <button
-                        name={product.farmerId}
-                        value={product.expectedPrice}
-                        quantityToBuy={this.quantityToBuy}
-                        onClick={(event) => {
-                          event.preventDefault()
-                          this.props.purchaseProduct(product.crop, event.target.name, this.quantityToBuy.value, event.target.value)
-                        }}
-                      >
-                        Buy
-                      </button>
-                      : null
-                    }
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table> */}
         </div>
       <hr />
         <h2>Products ready for market</h2>
         <div className='row'>
-
         { this.props.processedGoods.map((product, key) => {
           
               return(
@@ -231,10 +154,7 @@ class ProcessorPage extends Component {
                       name={product.processorId}
                       onClick={(event) => {
                         event.preventDefault();
-                        console.log(key);
-
                         this.props.createMarketProduct(event.target.name, key)
-
                         this.props.updateVal(null, key, "priceToSell", '');
                         this.props.updateVal(null, key, "quantityToSell", '');
                         this.props.updateVal(null, key, "nameToSell", '');
@@ -249,7 +169,6 @@ class ProcessorPage extends Component {
     : null }
     </div>
               )})}
-
         </div>
       </div>
     );

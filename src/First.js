@@ -13,28 +13,19 @@ function First (props) {
 
   const [account, setAccount] = useState(0);
 
-
 async function getRole(event){
   event.preventDefault();
-  console.log("Hello");
 
   const web3 = window.web3
   // Load account
   const accounts = await web3.eth.getAccounts()
-  console.log(accounts[0]);
   setAccount(accounts[0]);
-  //this.setState({ account: accounts[0] })
   const networkId = await web3.eth.net.getId()
   const networkData = ConsumerRole.networks[networkId]
   if(networkData) {
     const place = new web3.eth.Contract(ConsumerRole.abi, networkData.address)
-    //      investment.methods.createProduct(name, price, initial).send({ from: account, value: price })
-
     place.methods.addConsumer().send({from : accounts[0]})
-
     const p = await place.methods.consumers("0x04deBc1e733eFb99fc6730bBdc026B88d6216a2F").call();
-    console.log(p);
-
 }
 }
 
@@ -54,7 +45,6 @@ async function loadWeb3() {
 window.ethereum.on('accountsChanged', function (accounts) {
   // Time to reload your interface with accounts[0]!
   setAccount(accounts[0])
-  
 })
 
   // Similar to componentDidMount and componentDidUpdate:
@@ -95,24 +85,6 @@ window.ethereum.on('accountsChanged', function (accounts) {
       </Button>
   </Card.Footer>
 </Card>
-{/* <Card className='col-md-2 classWithPad'>
-  <Card.Header>
-    <Card.Title>Insurance</Card.Title>
-  </Card.Header>
-  <Card.Body>
-  Buy flood, drought or wind insurance as a farmer. Reimburse insurance payments to farmers.
-  </Card.Body>
-  <Card.Footer>
-  <Button color="primary" size="sm" >
-      <Link to = {{
-            pathname: "/insurance", 
-            state: {
-                customers: []
-                }
-            }} style={{color:"white"}}>Buy Insurance</Link>
-      </Button>
-  </Card.Footer>
-</Card> */}
 <Card className='col-md-2 classWithPad'>
   <Card.Header>
     <Card.Title>Processor</Card.Title>

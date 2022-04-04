@@ -32,7 +32,7 @@ class BuyInsurance extends Component {
               placeholder="Premium Value"
               required />
 
-{ !product.purchased
+      { !product.purchased
                       ? <button
                           name={product.insuranceCompanyId}
                           onClick={(event) => {

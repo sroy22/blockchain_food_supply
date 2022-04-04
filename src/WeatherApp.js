@@ -19,7 +19,6 @@ class WeatherApp extends React.Component {
   weatherInit = () => {
 
     const success = (position) => {
-      console.log(position);
       this.setState({status: 'fetching'});
       this.getWeatherData(position.coords.latitude, position.coords.longitude);
     }
@@ -30,13 +29,8 @@ class WeatherApp extends React.Component {
     }
   
     if (navigator.geolocation) {
-      console.log("Herel");
       this.setState({status: 'fetching'});
-      console.log("Herel");
-
       navigator.geolocation.getCurrentPosition(success, error);
-      console.log("Herel");
-
     } else {
       this.setState({status: 'unsupported'});
       alert('Your browser does not support location tracking, or permission is denied.');
@@ -44,13 +38,11 @@ class WeatherApp extends React.Component {
   }
 
   getWeatherData = (lat, lon) => {
-    console.log(lat,lon);
     //const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_KEY}`;
   const weatherApi = 'http://api.openweathermap.org/data/2.5/weather?lat=49.246292&lon=-123.116226&units=metric&appid=7f3854a13e075772db49937ef6b4cca9'
     fetch(weatherApi, { signal: this.controllerSignal })
     .then(response => response.json())
     .then((result) => {
-        console.log(result);
         const { name } = result;
         const { country } = result.sys;
         const { temp, temp_min, temp_max, feels_like, humidity } = result.main;
@@ -125,16 +117,6 @@ class WeatherApp extends React.Component {
   componentWillUnmount() {
     this.abortController.abort();
   }
-
-  // render() {
-  //   return (
-  //     <div className='App'>
-  //       <div className='container'>
-  //         <WeatherData data={this.state.weatherData}/>
-  //       </div>
-  //     </div>
-  //   );
-  //   }
 }
 
 export default WeatherApp;

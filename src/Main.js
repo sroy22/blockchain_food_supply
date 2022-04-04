@@ -22,7 +22,6 @@ class InvestorPage extends Component {
           const crop = this.cropName.value;
           const location = this.location.value;
           const quantity = parseInt(this.quantity.value);
-          //const expiryDate = this.expiryDate.value;
           const holding = this.holding.value;
           const costToProduce = this.costToProduce.value;
           this.props.createProduct(name, location, crop, quantity, price, holding, costToProduce)
@@ -72,15 +71,6 @@ class InvestorPage extends Component {
               placeholder="Quantity"
               required />
           </div>
-          {/* <div className="form-group mr-sm-2">
-           Expiry Date <input
-              id="expiryDate"
-              type="date"
-              ref={(input) => { this.expiryDate = input }}
-              className="form-control"
-              placeholder="Expiry Date"
-              required />
-          </div> */}
           <div className="form-group mr-sm-2">
             Holding
             <input
@@ -137,12 +127,8 @@ class InvestorPage extends Component {
                         </button>
                       : null
                     }
-                    
           </Card.Body>
-          <Card.Footer>{product.owner}</Card.Footer>
-          
-
-                    
+          <Card.Footer>{product.owner}</Card.Footer>                    
     </Card>
               )})}
               </div>

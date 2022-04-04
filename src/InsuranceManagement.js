@@ -11,11 +11,9 @@ function InsuranceManagement() {
     const [account, setAccount] = useState(0);
     const [farmerCount, setFarmerCount] = useState(0);
     const [dealCount, setDealCount] = useState(0);
-
-  const [farmerExchange, setFarmerExchange] = useState(0);
-  const temp = useRef(0);
-
-  const [farmers, setFarmers] = useState([]);
+    const [farmerExchange, setFarmerExchange] = useState(0);
+    const temp = useRef(0);
+    const [farmers, setFarmers] = useState([]);
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -42,40 +40,26 @@ function InsuranceManagement() {
   // Load account
   const accounts = await web3.eth.getAccounts()
   setAccount(accounts[0]);
-  //this.setState({ account: accounts[0] })
   const networkId = await web3.eth.net.getId()
   const networkData = Insurance.networks[networkId]
   if(networkData) {
     const place = new web3.eth.Contract(Insurance.abi, networkData.address)
     setFarmerExchange(place);
     const count = await place.methods.insuranceCompanyCount().call()
-    console.log(count);
-
     const count1 = await place.methods.insuranceFarmerCount().call()
-    console.log(temp);
-
     let insuranceCompanyToBeTriggered;
-
-    for (var i = 1; i <= count; i++) {
+  for (var i = 1; i <= count; i++) {
       const farmer = await place.methods.insuranceCompanies(i).call()
-      console.log(farmer.trigger);
-      console.log(temp.current);
       if (farmer.trigger > temp.current ){
           insuranceCompanyToBeTriggered = farmer.insuranceCompanyId;
       }
-
     }
-    console.log(insuranceCompanyToBeTriggered);
-
-    console.log(count1);
     setFarmerCount(count);
     let p = []
     let deals = [];
     for (var i = 1; i <= count1; i++) {
       const farmer = await place.methods.insuranceFarmers(i).call()
-console.log(farmer);
       if (farmer.insuranceFarmerId == insuranceCompanyToBeTriggered){
-      console.log(farmer);
         p.push(farmer);
       }
 
@@ -87,16 +71,9 @@ console.log(farmer);
 }
 
 async function repayToInvestor(farmerId, insuranceFarmerId, insuranceCompanyId) {
-    
-    console.log(farmerId);
-    //console.log(insuranceId);
-    
-    
       const f= await farmerExchange.methods.insuranceCompanies(insuranceCompanyId).call()
       const acc = await farmerExchange.methods.insuranceFarmers(insuranceFarmerId).call()
-    console.log(acc);
       const p = f.payoutValue*0.01*acc.premium;
-    // console.log(f);
     farmerExchange.methods.payToInvestor(insuranceFarmerId).send({ from: account, value: p })
     
    
@@ -122,12 +99,7 @@ async function createAccount(name, type, trigger, payback) {
 
 
   const temperature = (data) => {
-    console.log(data);
-
-    console.log(data);
-
 temp.current = data;
-
   }
 
 
@@ -140,11 +112,8 @@ temp.current = data;
              products={farmers}
              createInsurance={createAccount}
              repayToInvestor = {repayToInvestor}
-
-             
           />
                         <WeatherApp data = {temperature} />
-
         </main>
     </div> 
   </div>

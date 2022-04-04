@@ -44,7 +44,6 @@ function Weather (props) {
     const accounts = await web3.eth.getAccounts()
     setInitial(accounts[0]);
     setAccount(accounts[0]);
-    //this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
     const networkData = Investment.networks[networkId]
     if(networkData) {

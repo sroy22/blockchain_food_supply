@@ -6,7 +6,6 @@ class InsurancePage extends Component {
 
   render() {
     this.props.products.map((product, key) => {
-      console.log(product);
     });
     return (
       <div id="content">
@@ -56,15 +55,6 @@ class InsurancePage extends Component {
               placeholder="Insurance Payback %"
               required />
           </div>
-          {/* <div className="form-group mr-sm-2">
-           Expiry Date <input
-              id="expiryDate"
-              type="date"
-              ref={(input) => { this.expiryDate = input }}
-              className="form-control"
-              placeholder="Expiry Date"
-              required />
-          </div> */}
           <button type="submit" className="btn btn-primary">Add Insurance Company Details</button>
         </form>
       </div>
