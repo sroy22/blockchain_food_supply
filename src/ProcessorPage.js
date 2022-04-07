@@ -46,8 +46,7 @@ class ProcessorPage extends Component {
           <Card.Title> #{product.farmerId} Farmer: <b>{product.farmerName}</b> selling <b>{product.crop}</b> </Card.Title>
         </Card.Header>
         <Card.Body>
-            <p> Farming Rating : <b> {product.farmerRating}</b></p>
-            <p> Farming  Total Ratings : <b> {product.totalRatings}</b></p>
+            <p> Farmer Rating : <b> {product.farmerRating} ({product.totalRatings} ratings)</b></p>
             <p>Agriculture Product: <b>{product.crop}</b></p>
             <p>Price per unit: <b>{window.web3.utils.fromWei(product.expectedPrice.toString(), 'Ether')} Eth</b></p>
             <p>Location: <b>{product.landLocation}</b></p>
