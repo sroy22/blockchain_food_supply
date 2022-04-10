@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Blockchain based Food Supply Market
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Advancement in technology, tools and culture have shaped, morphed and changed the food supply chain. Today, most of the implementations of traditional logistic information systems in Agriculture and Food (Agri-Food) supply chains solely track and store orders and deliveries, without providing features such as transparency, traceability and auditability [1]. Five main issues have been identified within the food supply chain ecosystem, namely, (i) traceability (tracking food in the supply chain) (ii) transparency (collaboration in the foodservice supply chain) (iii) trust (trusted partners and technology) (iv) threat (organized crime and food fraud) (v) tighter legislation (need for strong legislation). We posit that the combination of implementing blockchain technologies within the food supply chain as well focusing on smaller communities pave the way for us to address the current underlying challenges present in the food supply chain. Our focus on a shorter supply chain by focusing on smaller communities than large scale industrial food processing units is to empower local farmers and consumers. A key characteristic of short supply chains is their capacity to re-socialize or re-spatialize food. This rearrangement allows the locally participating stakeholders (farmers, consumers and processors) to make value-judgements about the relative desirability of foods on the basis of their own knowledge, experience, or perceived imagery [2].
 
-## Available Scripts
+The process of food supply has been integral to human and societal development throughout history. An ideal contemporary implementation of the food supply chain encapsulates all of the processes from growing food/crops on a farm to its arrival at the dinner table. The 5 stages of the food supply chain include: 
+Farm: First step of the food supply chain, where the ingredients, crops, produce etc. originate. Farmers are the primary stakeholders within this stage. They are involved in the growing and harvesting of the crop. Farmers sell (usually but not exclusively) the crops to the processors.
+Processing: In this step, the crops bought from farmers are converted to edibles forms. Processors are the primary stakeholders of this stage.
+Distribution/retail: In most large-scale food supply chains, the distributors and retailers are involved in the selling to customers, managing inventories, cost reductions, packaging, and delivering of the processed goods. As we will explain later, our interpretation of the food supply chain is focused on small-scale communities. As a result, we directly connect the local community processors with the customers. 
+Customer: The final stage of the food supply chain involves the purchasing of the food item from the consumer. 
 
-In the project directory, you can run:
+Blockchain technology, simply stated, is a peer-to-peer digital ledger that removes reliance on centralized servers. All records put on to a blockchain are done through consensus reached by participating peers. As a result, blockchain based ledgers are designed to be immutable and provide a solution that promotes trust in a trustless environment, reduces chances of fraud, allows for traceability and provides transparency. These affordances of blockchain are well fitted in the agri-food domain. For this report, we present a blockchain based food supply solution. Our decentralized traceability system allows for information sharing and storing on the whole food supply. Apart from the food supply process, our solution implements two extra features that provide capital and risk security through microfinance for farmers: risk insurance and investments. Insurance capabilities allow for farmers to secure their farmlands and potential risks to their crop yields from environmental impacts. We have also added a rating system that allows for the community to rate farm and processed products. The rating system ensures that trust and accountability is within the community. The combination of implementing blockchain technologies and the features of our d-app solution address the issues of the food supply chain. Within a tightly-knit small scale community, the ability to invest into the potential crop yields allows for farmers to gain sufficient capital for growing crops. This creates the potential for a circular economy within the community. 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Deployment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For testing of our smart contracts in the local environment, we made use of the truffle suite and meta mask. We made use of 2 tools in the truffle suite. The first one being truffle which is a development environment, testing framework and asset pipeline for blockchains using the Ethereum virtual machine. The second tool is ganache which is a personal Ethereum local blockchain that one can use to run tests ,execute commands, inspect state while controlling how the chain operates. Metamask is a software cryptocurrency wallet used to interact with the Ethereum blockchain. It allows users to access their Ethereum wallet through a browser extension which can then be used to interact with decentralized applications.
+For front-end development, we made use of the React framework which renders webpages to the user’s browser. We made use of web3.js which is a collection of libraries that allows one to interact with a local or remote Ethereum chain using HTTP or web sockets. 
+The smart contracts are migrated and deployed using the “truffle migrate” and “truffle deploy” commands respectively. The UI is deployed using the “npm start” command and is available to start the application workflow at localhost:3000.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Steps to re-run the application on the local environment
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. git clone https://github.com/sroy22/blockchain_food_supply.git
+2. In the project directory run "npm install" to install all dependencies
+3. Run "truffle compile" to ensure all smart contracts compile
+4. Start a new local blockchain using the command "ganache-cli"
+5. Run "truffle migrate" to migrate the smart contract to the local blockchain
+6. Run "truffle deploy" to deploy the contracts to the blockchain
+7. To start the D-app run "npm start"
