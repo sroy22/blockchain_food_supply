@@ -26,9 +26,7 @@ class CustomerPage extends Component {
                 <AiOutlineArrowDown />
                 <p><b>Processor</b> - {this.props.processorAddress}</p>
                 <hr/>
-                <p>Product Rating: <b>{product.productRating}</b></p>
-                <p>Product Number of Rating: <b>{product.productTotalRatings}</b></p>
-
+                <p>Product Rating: <b>{product.productRating} ({product.productTotalRatings} ratings) </b></p>
                 <p>Price per unit: <b>{product.price} Eth</b></p>
                 <p>Quantity left: <b>{product.quantity}</b></p>
                 <p>Processor ID: <b>{product.processorId}</b></p>
@@ -41,7 +39,7 @@ class CustomerPage extends Component {
                 ref={(input) => { this.quantityToBuy = input }}
                 className="form-control classWithPad"
                 placeholder="Quantity to buy"
-                required />
+                required /> 
                 <input
                 id="rating"
                 type="text"
@@ -55,8 +53,9 @@ class CustomerPage extends Component {
                             onClick={(event) => {
                               this.props.submitRatings(this.rating.value, product.marketProductId)
                             }}
+                            className="classWithPad"
                           >
-                            Rating
+                            Rate
                           </button>
                 { !product.purchased
                         ? <button
@@ -66,6 +65,7 @@ class CustomerPage extends Component {
                             onClick={(event) => {
                               this.props.purchaseProduct(event.target.name, event.target.value, this.quantityToBuy.value, product.processorAddress)
                             }}
+                            className="classWithPad"
                           >
                             Buy
                           </button>
